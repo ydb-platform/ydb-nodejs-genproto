@@ -1855,6 +1855,192 @@ export namespace Ydb {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a QuotaExceeded. */
+    interface IQuotaExceeded {
+
+        /** QuotaExceeded disk */
+        disk?: (boolean|null);
+    }
+
+    /** Represents a QuotaExceeded. */
+    class QuotaExceeded implements IQuotaExceeded {
+
+        /**
+         * Constructs a new QuotaExceeded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IQuotaExceeded);
+
+        /** QuotaExceeded disk. */
+        public disk: boolean;
+
+        /**
+         * Creates a new QuotaExceeded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns QuotaExceeded instance
+         */
+        public static create(properties?: Ydb.IQuotaExceeded): Ydb.QuotaExceeded;
+
+        /**
+         * Encodes the specified QuotaExceeded message. Does not implicitly {@link Ydb.QuotaExceeded.verify|verify} messages.
+         * @param message QuotaExceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IQuotaExceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified QuotaExceeded message, length delimited. Does not implicitly {@link Ydb.QuotaExceeded.verify|verify} messages.
+         * @param message QuotaExceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IQuotaExceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a QuotaExceeded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns QuotaExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.QuotaExceeded;
+
+        /**
+         * Decodes a QuotaExceeded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns QuotaExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.QuotaExceeded;
+
+        /**
+         * Verifies a QuotaExceeded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a QuotaExceeded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns QuotaExceeded
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.QuotaExceeded;
+
+        /**
+         * Creates a plain object from a QuotaExceeded message. Also converts values to other types if specified.
+         * @param message QuotaExceeded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.QuotaExceeded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this QuotaExceeded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a VirtualTimestamp. */
+    interface IVirtualTimestamp {
+
+        /** VirtualTimestamp planStep */
+        planStep?: (number|Long|null);
+
+        /** VirtualTimestamp txId */
+        txId?: (number|Long|null);
+    }
+
+    /** Represents a VirtualTimestamp. */
+    class VirtualTimestamp implements IVirtualTimestamp {
+
+        /**
+         * Constructs a new VirtualTimestamp.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IVirtualTimestamp);
+
+        /** VirtualTimestamp planStep. */
+        public planStep: (number|Long);
+
+        /** VirtualTimestamp txId. */
+        public txId: (number|Long);
+
+        /**
+         * Creates a new VirtualTimestamp instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns VirtualTimestamp instance
+         */
+        public static create(properties?: Ydb.IVirtualTimestamp): Ydb.VirtualTimestamp;
+
+        /**
+         * Encodes the specified VirtualTimestamp message. Does not implicitly {@link Ydb.VirtualTimestamp.verify|verify} messages.
+         * @param message VirtualTimestamp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IVirtualTimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified VirtualTimestamp message, length delimited. Does not implicitly {@link Ydb.VirtualTimestamp.verify|verify} messages.
+         * @param message VirtualTimestamp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IVirtualTimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a VirtualTimestamp message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns VirtualTimestamp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.VirtualTimestamp;
+
+        /**
+         * Decodes a VirtualTimestamp message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns VirtualTimestamp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.VirtualTimestamp;
+
+        /**
+         * Verifies a VirtualTimestamp message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a VirtualTimestamp message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns VirtualTimestamp
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.VirtualTimestamp;
+
+        /**
+         * Creates a plain object from a VirtualTimestamp message. Also converts values to other types if specified.
+         * @param message VirtualTimestamp
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.VirtualTimestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this VirtualTimestamp to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Namespace Issue. */
     namespace Issue {
 
@@ -9887,6 +10073,9 @@ export namespace Ydb {
 
             /** Entry sizeBytes */
             sizeBytes?: (number|Long|null);
+
+            /** Entry createdAt */
+            createdAt?: (Ydb.IVirtualTimestamp|null);
         }
 
         /** Represents an Entry. */
@@ -9915,6 +10104,9 @@ export namespace Ydb {
 
             /** Entry sizeBytes. */
             public sizeBytes: (number|Long);
+
+            /** Entry createdAt. */
+            public createdAt?: (Ydb.IVirtualTimestamp|null);
 
             /**
              * Creates a new Entry instance using the specified properties.
@@ -9999,6 +10191,8 @@ export namespace Ydb {
                 RTMR_VOLUME = 5,
                 BLOCK_STORE_VOLUME = 6,
                 COORDINATION_NODE = 7,
+                COLUMN_STORE = 12,
+                COLUMN_TABLE = 13,
                 SEQUENCE = 15,
                 REPLICATION = 16,
                 TOPIC = 17
@@ -10502,6 +10696,9 @@ export namespace Ydb {
 
             /** ModifyPermissionsRequest clearPermissions */
             clearPermissions?: (boolean|null);
+
+            /** ModifyPermissionsRequest interruptInheritance */
+            interruptInheritance?: (boolean|null);
         }
 
         /** Represents a ModifyPermissionsRequest. */
@@ -10524,6 +10721,12 @@ export namespace Ydb {
 
             /** ModifyPermissionsRequest clearPermissions. */
             public clearPermissions: boolean;
+
+            /** ModifyPermissionsRequest interruptInheritance. */
+            public interruptInheritance?: (boolean|null);
+
+            /** ModifyPermissionsRequest inheritance. */
+            public inheritance?: "interruptInheritance";
 
             /**
              * Creates a new ModifyPermissionsRequest instance using the specified properties.
@@ -12500,6 +12703,12 @@ export namespace Ydb {
 
             /** ExportToS3Settings storageClass */
             storageClass?: (Ydb.Export.ExportToS3Settings.StorageClass|null);
+
+            /** ExportToS3Settings compression */
+            compression?: (string|null);
+
+            /** ExportToS3Settings region */
+            region?: (string|null);
         }
 
         /** S3 */
@@ -12537,6 +12746,12 @@ export namespace Ydb {
 
             /** ExportToS3Settings storageClass. */
             public storageClass: Ydb.Export.ExportToS3Settings.StorageClass;
+
+            /** ExportToS3Settings compression. */
+            public compression: string;
+
+            /** ExportToS3Settings region. */
+            public region: string;
 
             /**
              * Creates a new ExportToS3Settings instance using the specified properties.
@@ -16251,10 +16466,10 @@ export namespace Ydb {
         interface ILocationStorageVDisk {
 
             /** LocationStorageVDisk id */
-            id?: (string|null);
+            id?: (string[]|null);
 
             /** LocationStorageVDisk pdisk */
-            pdisk?: (Ydb.Monitoring.ILocationStoragePDisk|null);
+            pdisk?: (Ydb.Monitoring.ILocationStoragePDisk[]|null);
         }
 
         /** Represents a LocationStorageVDisk. */
@@ -16267,10 +16482,10 @@ export namespace Ydb {
             constructor(properties?: Ydb.Monitoring.ILocationStorageVDisk);
 
             /** LocationStorageVDisk id. */
-            public id: string;
+            public id: string[];
 
             /** LocationStorageVDisk pdisk. */
-            public pdisk?: (Ydb.Monitoring.ILocationStoragePDisk|null);
+            public pdisk: Ydb.Monitoring.ILocationStoragePDisk[];
 
             /**
              * Creates a new LocationStorageVDisk instance using the specified properties.
@@ -16347,7 +16562,7 @@ export namespace Ydb {
         interface ILocationStorageGroup {
 
             /** LocationStorageGroup id */
-            id?: (string|null);
+            id?: (string[]|null);
 
             /** LocationStorageGroup vdisk */
             vdisk?: (Ydb.Monitoring.ILocationStorageVDisk|null);
@@ -16363,7 +16578,7 @@ export namespace Ydb {
             constructor(properties?: Ydb.Monitoring.ILocationStorageGroup);
 
             /** LocationStorageGroup id. */
-            public id: string;
+            public id: string[];
 
             /** LocationStorageGroup vdisk. */
             public vdisk?: (Ydb.Monitoring.ILocationStorageVDisk|null);
@@ -17140,6 +17355,12 @@ export namespace Ydb {
 
             /** IssueLog level */
             level?: (number|null);
+
+            /** IssueLog listed */
+            listed?: (number|null);
+
+            /** IssueLog count */
+            count?: (number|null);
         }
 
         /** Represents an IssueLog. */
@@ -17171,6 +17392,12 @@ export namespace Ydb {
 
             /** IssueLog level. */
             public level: number;
+
+            /** IssueLog listed. */
+            public listed: number;
+
+            /** IssueLog count. */
+            public count: number;
 
             /**
              * Creates a new IssueLog instance using the specified properties.
@@ -21358,6 +21585,108 @@ export namespace Ydb {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a PgType. */
+    interface IPgType {
+
+        /** PgType oid */
+        oid?: (number|null);
+
+        /** PgType typlen */
+        typlen?: (number|null);
+
+        /** PgType typmod */
+        typmod?: (number|null);
+    }
+
+    /** Represents a PgType. */
+    class PgType implements IPgType {
+
+        /**
+         * Constructs a new PgType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IPgType);
+
+        /** PgType oid. */
+        public oid: number;
+
+        /** PgType typlen. */
+        public typlen: number;
+
+        /** PgType typmod. */
+        public typmod: number;
+
+        /**
+         * Creates a new PgType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PgType instance
+         */
+        public static create(properties?: Ydb.IPgType): Ydb.PgType;
+
+        /**
+         * Encodes the specified PgType message. Does not implicitly {@link Ydb.PgType.verify|verify} messages.
+         * @param message PgType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IPgType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PgType message, length delimited. Does not implicitly {@link Ydb.PgType.verify|verify} messages.
+         * @param message PgType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IPgType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PgType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PgType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.PgType;
+
+        /**
+         * Decodes a PgType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PgType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.PgType;
+
+        /**
+         * Verifies a PgType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PgType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PgType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.PgType;
+
+        /**
+         * Creates a plain object from a PgType message. Also converts values to other types if specified.
+         * @param message PgType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.PgType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PgType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a Type. */
     interface IType {
 
@@ -21399,6 +21728,9 @@ export namespace Ydb {
 
         /** Type emptyDictType */
         emptyDictType?: (google.protobuf.NullValue|null);
+
+        /** Type pgType */
+        pgType?: (Ydb.IPgType|null);
     }
 
     /** Represents a Type. */
@@ -21449,8 +21781,11 @@ export namespace Ydb {
         /** Type emptyDictType. */
         public emptyDictType?: (google.protobuf.NullValue|null);
 
+        /** Type pgType. */
+        public pgType?: (Ydb.IPgType|null);
+
         /** Type type. */
-        public type?: ("typeId"|"decimalType"|"optionalType"|"listType"|"tupleType"|"structType"|"dictType"|"variantType"|"taggedType"|"voidType"|"nullType"|"emptyListType"|"emptyDictType");
+        public type?: ("typeId"|"decimalType"|"optionalType"|"listType"|"tupleType"|"structType"|"dictType"|"variantType"|"taggedType"|"voidType"|"nullType"|"emptyListType"|"emptyDictType"|"pgType");
 
         /**
          * Creates a new Type instance using the specified properties.
@@ -23511,6 +23846,12 @@ export namespace Ydb {
 
             /** Changefeed format */
             format?: (Ydb.Table.ChangefeedFormat.Format|null);
+
+            /** Changefeed retentionPeriod */
+            retentionPeriod?: (google.protobuf.IDuration|null);
+
+            /** Changefeed virtualTimestamps */
+            virtualTimestamps?: (boolean|null);
         }
 
         /** Represents a Changefeed. */
@@ -23530,6 +23871,12 @@ export namespace Ydb {
 
             /** Changefeed format. */
             public format: Ydb.Table.ChangefeedFormat.Format;
+
+            /** Changefeed retentionPeriod. */
+            public retentionPeriod?: (google.protobuf.IDuration|null);
+
+            /** Changefeed virtualTimestamps. */
+            public virtualTimestamps: boolean;
 
             /**
              * Creates a new Changefeed instance using the specified properties.
@@ -23616,6 +23963,9 @@ export namespace Ydb {
 
             /** ChangefeedDescription state */
             state?: (Ydb.Table.ChangefeedDescription.State|null);
+
+            /** ChangefeedDescription virtualTimestamps */
+            virtualTimestamps?: (boolean|null);
         }
 
         /** Represents a ChangefeedDescription. */
@@ -23638,6 +23988,9 @@ export namespace Ydb {
 
             /** ChangefeedDescription state. */
             public state: Ydb.Table.ChangefeedDescription.State;
+
+            /** ChangefeedDescription virtualTimestamps. */
+            public virtualTimestamps: boolean;
 
             /**
              * Creates a new ChangefeedDescription instance using the specified properties.
@@ -25638,6 +25991,9 @@ export namespace Ydb {
         /** Properties of a PartitioningSettings. */
         interface IPartitioningSettings {
 
+            /** PartitioningSettings partitionBy */
+            partitionBy?: (string[]|null);
+
             /** PartitioningSettings partitioningBySize */
             partitioningBySize?: (Ydb.FeatureFlag.Status|null);
 
@@ -25662,6 +26018,9 @@ export namespace Ydb {
              * @param [properties] Properties to set
              */
             constructor(properties?: Ydb.Table.IPartitioningSettings);
+
+            /** PartitioningSettings partitionBy. */
+            public partitionBy: string[];
 
             /** PartitioningSettings partitioningBySize. */
             public partitioningBySize: Ydb.FeatureFlag.Status;
@@ -32542,6 +32901,9 @@ export namespace Ydb {
             /** ReadTableResponse issues */
             issues?: (Ydb.Issue.IIssueMessage[]|null);
 
+            /** ReadTableResponse snapshot */
+            snapshot?: (Ydb.IVirtualTimestamp|null);
+
             /** ReadTableResponse result */
             result?: (Ydb.Table.IReadTableResult|null);
         }
@@ -32560,6 +32922,9 @@ export namespace Ydb {
 
             /** ReadTableResponse issues. */
             public issues: Ydb.Issue.IIssueMessage[];
+
+            /** ReadTableResponse snapshot. */
+            public snapshot?: (Ydb.IVirtualTimestamp|null);
 
             /** ReadTableResponse result. */
             public result?: (Ydb.Table.IReadTableResult|null);
@@ -34649,6 +35014,20 @@ export namespace Ydb {
                 public describeTopic(request: Ydb.Topic.IDescribeTopicRequest): Promise<Ydb.Topic.DescribeTopicResponse>;
 
                 /**
+                 * Calls DescribeConsumer.
+                 * @param request DescribeConsumerRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DescribeConsumerResponse
+                 */
+                public describeConsumer(request: Ydb.Topic.IDescribeConsumerRequest, callback: Ydb.Topic.V1.TopicService.DescribeConsumerCallback): void;
+
+                /**
+                 * Calls DescribeConsumer.
+                 * @param request DescribeConsumerRequest message or plain object
+                 * @returns Promise
+                 */
+                public describeConsumer(request: Ydb.Topic.IDescribeConsumerRequest): Promise<Ydb.Topic.DescribeConsumerResponse>;
+
+                /**
                  * Calls AlterTopic.
                  * @param request AlterTopicRequest message or plain object
                  * @param callback Node-style callback called with the error, if any, and AlterTopicResponse
@@ -34706,6 +35085,13 @@ export namespace Ydb {
                  * @param [response] DescribeTopicResponse
                  */
                 type DescribeTopicCallback = (error: (Error|null), response?: Ydb.Topic.DescribeTopicResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#describeConsumer}.
+                 * @param error Error, if any
+                 * @param [response] DescribeConsumerResponse
+                 */
+                type DescribeConsumerCallback = (error: (Error|null), response?: Ydb.Topic.DescribeConsumerResponse) => void;
 
                 /**
                  * Callback as used by {@link Ydb.Topic.V1.TopicService#alterTopic}.
@@ -36837,6 +37223,9 @@ export namespace Ydb {
 
                 /** InitRequest consumer */
                 consumer?: (string|null);
+
+                /** InitRequest readerName */
+                readerName?: (string|null);
             }
 
             /** Represents an InitRequest. */
@@ -36853,6 +37242,9 @@ export namespace Ydb {
 
                 /** InitRequest consumer. */
                 public consumer: string;
+
+                /** InitRequest readerName. */
+                public readerName: string;
 
                 /**
                  * Creates a new InitRequest instance using the specified properties.
@@ -38624,6 +39016,594 @@ export namespace Ydb {
             }
         }
 
+        /** Properties of an AddOffsetsToTransactionRequest. */
+        interface IAddOffsetsToTransactionRequest {
+
+            /** AddOffsetsToTransactionRequest operationParams */
+            operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** AddOffsetsToTransactionRequest sessionId */
+            sessionId?: (string|null);
+
+            /** AddOffsetsToTransactionRequest txControl */
+            txControl?: (Ydb.Table.ITransactionControl|null);
+
+            /** AddOffsetsToTransactionRequest topics */
+            topics?: (Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets[]|null);
+
+            /** AddOffsetsToTransactionRequest consumer */
+            consumer?: (string|null);
+        }
+
+        /** Represents an AddOffsetsToTransactionRequest. */
+        class AddOffsetsToTransactionRequest implements IAddOffsetsToTransactionRequest {
+
+            /**
+             * Constructs a new AddOffsetsToTransactionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IAddOffsetsToTransactionRequest);
+
+            /** AddOffsetsToTransactionRequest operationParams. */
+            public operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** AddOffsetsToTransactionRequest sessionId. */
+            public sessionId: string;
+
+            /** AddOffsetsToTransactionRequest txControl. */
+            public txControl?: (Ydb.Table.ITransactionControl|null);
+
+            /** AddOffsetsToTransactionRequest topics. */
+            public topics: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets[];
+
+            /** AddOffsetsToTransactionRequest consumer. */
+            public consumer: string;
+
+            /**
+             * Creates a new AddOffsetsToTransactionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AddOffsetsToTransactionRequest instance
+             */
+            public static create(properties?: Ydb.Topic.IAddOffsetsToTransactionRequest): Ydb.Topic.AddOffsetsToTransactionRequest;
+
+            /**
+             * Encodes the specified AddOffsetsToTransactionRequest message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.verify|verify} messages.
+             * @param message AddOffsetsToTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IAddOffsetsToTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified AddOffsetsToTransactionRequest message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.verify|verify} messages.
+             * @param message AddOffsetsToTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IAddOffsetsToTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AddOffsetsToTransactionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AddOffsetsToTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionRequest;
+
+            /**
+             * Decodes an AddOffsetsToTransactionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AddOffsetsToTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionRequest;
+
+            /**
+             * Verifies an AddOffsetsToTransactionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an AddOffsetsToTransactionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns AddOffsetsToTransactionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionRequest;
+
+            /**
+             * Creates a plain object from an AddOffsetsToTransactionRequest message. Also converts values to other types if specified.
+             * @param message AddOffsetsToTransactionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.AddOffsetsToTransactionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this AddOffsetsToTransactionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace AddOffsetsToTransactionRequest {
+
+            /** Properties of a TopicOffsets. */
+            interface ITopicOffsets {
+
+                /** TopicOffsets path */
+                path?: (string|null);
+
+                /** TopicOffsets partitions */
+                partitions?: (Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets[]|null);
+            }
+
+            /** Represents a TopicOffsets. */
+            class TopicOffsets implements ITopicOffsets {
+
+                /**
+                 * Constructs a new TopicOffsets.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets);
+
+                /** TopicOffsets path. */
+                public path: string;
+
+                /** TopicOffsets partitions. */
+                public partitions: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets[];
+
+                /**
+                 * Creates a new TopicOffsets instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns TopicOffsets instance
+                 */
+                public static create(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+
+                /**
+                 * Encodes the specified TopicOffsets message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.verify|verify} messages.
+                 * @param message TopicOffsets message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified TopicOffsets message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.verify|verify} messages.
+                 * @param message TopicOffsets message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a TopicOffsets message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns TopicOffsets
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+
+                /**
+                 * Decodes a TopicOffsets message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns TopicOffsets
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+
+                /**
+                 * Verifies a TopicOffsets message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a TopicOffsets message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns TopicOffsets
+                 */
+                public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+
+                /**
+                 * Creates a plain object from a TopicOffsets message. Also converts values to other types if specified.
+                 * @param message TopicOffsets
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this TopicOffsets to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace TopicOffsets {
+
+                /** Properties of a PartitionOffsets. */
+                interface IPartitionOffsets {
+
+                    /** PartitionOffsets partitionId */
+                    partitionId?: (number|Long|null);
+
+                    /** PartitionOffsets partitionOffsets */
+                    partitionOffsets?: (Ydb.Topic.IOffsetsRange[]|null);
+                }
+
+                /** Represents a PartitionOffsets. */
+                class PartitionOffsets implements IPartitionOffsets {
+
+                    /**
+                     * Constructs a new PartitionOffsets.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets);
+
+                    /** PartitionOffsets partitionId. */
+                    public partitionId: (number|Long);
+
+                    /** PartitionOffsets partitionOffsets. */
+                    public partitionOffsets: Ydb.Topic.IOffsetsRange[];
+
+                    /**
+                     * Creates a new PartitionOffsets instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns PartitionOffsets instance
+                     */
+                    public static create(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+
+                    /**
+                     * Encodes the specified PartitionOffsets message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets.verify|verify} messages.
+                     * @param message PartitionOffsets message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified PartitionOffsets message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets.verify|verify} messages.
+                     * @param message PartitionOffsets message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a PartitionOffsets message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns PartitionOffsets
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+
+                    /**
+                     * Decodes a PartitionOffsets message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns PartitionOffsets
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+
+                    /**
+                     * Verifies a PartitionOffsets message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a PartitionOffsets message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns PartitionOffsets
+                     */
+                    public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+
+                    /**
+                     * Creates a plain object from a PartitionOffsets message. Also converts values to other types if specified.
+                     * @param message PartitionOffsets
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this PartitionOffsets to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+            }
+        }
+
+        /** Properties of an AddOffsetsToTransactionResponse. */
+        interface IAddOffsetsToTransactionResponse {
+
+            /** AddOffsetsToTransactionResponse operation */
+            operation?: (Ydb.Operations.IOperation|null);
+        }
+
+        /** Represents an AddOffsetsToTransactionResponse. */
+        class AddOffsetsToTransactionResponse implements IAddOffsetsToTransactionResponse {
+
+            /**
+             * Constructs a new AddOffsetsToTransactionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IAddOffsetsToTransactionResponse);
+
+            /** AddOffsetsToTransactionResponse operation. */
+            public operation?: (Ydb.Operations.IOperation|null);
+
+            /**
+             * Creates a new AddOffsetsToTransactionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AddOffsetsToTransactionResponse instance
+             */
+            public static create(properties?: Ydb.Topic.IAddOffsetsToTransactionResponse): Ydb.Topic.AddOffsetsToTransactionResponse;
+
+            /**
+             * Encodes the specified AddOffsetsToTransactionResponse message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResponse.verify|verify} messages.
+             * @param message AddOffsetsToTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IAddOffsetsToTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified AddOffsetsToTransactionResponse message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResponse.verify|verify} messages.
+             * @param message AddOffsetsToTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IAddOffsetsToTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AddOffsetsToTransactionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AddOffsetsToTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionResponse;
+
+            /**
+             * Decodes an AddOffsetsToTransactionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AddOffsetsToTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionResponse;
+
+            /**
+             * Verifies an AddOffsetsToTransactionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an AddOffsetsToTransactionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns AddOffsetsToTransactionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionResponse;
+
+            /**
+             * Creates a plain object from an AddOffsetsToTransactionResponse message. Also converts values to other types if specified.
+             * @param message AddOffsetsToTransactionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.AddOffsetsToTransactionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this AddOffsetsToTransactionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of an AddOffsetsToTransactionResult. */
+        interface IAddOffsetsToTransactionResult {
+        }
+
+        /** Represents an AddOffsetsToTransactionResult. */
+        class AddOffsetsToTransactionResult implements IAddOffsetsToTransactionResult {
+
+            /**
+             * Constructs a new AddOffsetsToTransactionResult.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IAddOffsetsToTransactionResult);
+
+            /**
+             * Creates a new AddOffsetsToTransactionResult instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AddOffsetsToTransactionResult instance
+             */
+            public static create(properties?: Ydb.Topic.IAddOffsetsToTransactionResult): Ydb.Topic.AddOffsetsToTransactionResult;
+
+            /**
+             * Encodes the specified AddOffsetsToTransactionResult message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResult.verify|verify} messages.
+             * @param message AddOffsetsToTransactionResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IAddOffsetsToTransactionResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified AddOffsetsToTransactionResult message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResult.verify|verify} messages.
+             * @param message AddOffsetsToTransactionResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IAddOffsetsToTransactionResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AddOffsetsToTransactionResult message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AddOffsetsToTransactionResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionResult;
+
+            /**
+             * Decodes an AddOffsetsToTransactionResult message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AddOffsetsToTransactionResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionResult;
+
+            /**
+             * Verifies an AddOffsetsToTransactionResult message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an AddOffsetsToTransactionResult message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns AddOffsetsToTransactionResult
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionResult;
+
+            /**
+             * Creates a plain object from an AddOffsetsToTransactionResult message. Also converts values to other types if specified.
+             * @param message AddOffsetsToTransactionResult
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.AddOffsetsToTransactionResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this AddOffsetsToTransactionResult to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a MultipleWindowsStat. */
+        interface IMultipleWindowsStat {
+
+            /** MultipleWindowsStat perMinute */
+            perMinute?: (number|Long|null);
+
+            /** MultipleWindowsStat perHour */
+            perHour?: (number|Long|null);
+
+            /** MultipleWindowsStat perDay */
+            perDay?: (number|Long|null);
+        }
+
+        /** Represents a MultipleWindowsStat. */
+        class MultipleWindowsStat implements IMultipleWindowsStat {
+
+            /**
+             * Constructs a new MultipleWindowsStat.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IMultipleWindowsStat);
+
+            /** MultipleWindowsStat perMinute. */
+            public perMinute: (number|Long);
+
+            /** MultipleWindowsStat perHour. */
+            public perHour: (number|Long);
+
+            /** MultipleWindowsStat perDay. */
+            public perDay: (number|Long);
+
+            /**
+             * Creates a new MultipleWindowsStat instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns MultipleWindowsStat instance
+             */
+            public static create(properties?: Ydb.Topic.IMultipleWindowsStat): Ydb.Topic.MultipleWindowsStat;
+
+            /**
+             * Encodes the specified MultipleWindowsStat message. Does not implicitly {@link Ydb.Topic.MultipleWindowsStat.verify|verify} messages.
+             * @param message MultipleWindowsStat message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IMultipleWindowsStat, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified MultipleWindowsStat message, length delimited. Does not implicitly {@link Ydb.Topic.MultipleWindowsStat.verify|verify} messages.
+             * @param message MultipleWindowsStat message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IMultipleWindowsStat, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a MultipleWindowsStat message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MultipleWindowsStat
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.MultipleWindowsStat;
+
+            /**
+             * Decodes a MultipleWindowsStat message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns MultipleWindowsStat
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.MultipleWindowsStat;
+
+            /**
+             * Verifies a MultipleWindowsStat message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a MultipleWindowsStat message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns MultipleWindowsStat
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.MultipleWindowsStat;
+
+            /**
+             * Creates a plain object from a MultipleWindowsStat message. Also converts values to other types if specified.
+             * @param message MultipleWindowsStat
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.MultipleWindowsStat, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this MultipleWindowsStat to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
         /** Properties of a Consumer. */
         interface IConsumer {
 
@@ -38641,6 +39621,9 @@ export namespace Ydb {
 
             /** Consumer attributes */
             attributes?: ({ [k: string]: string }|null);
+
+            /** Consumer consumerStats */
+            consumerStats?: (Ydb.Topic.Consumer.IConsumerStats|null);
         }
 
         /** Represents a Consumer. */
@@ -38666,6 +39649,9 @@ export namespace Ydb {
 
             /** Consumer attributes. */
             public attributes: { [k: string]: string };
+
+            /** Consumer consumerStats. */
+            public consumerStats?: (Ydb.Topic.Consumer.IConsumerStats|null);
 
             /**
              * Creates a new Consumer instance using the specified properties.
@@ -38736,6 +39722,117 @@ export namespace Ydb {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
+        }
+
+        namespace Consumer {
+
+            /** Properties of a ConsumerStats. */
+            interface IConsumerStats {
+
+                /** ConsumerStats minPartitionsLastReadTime */
+                minPartitionsLastReadTime?: (google.protobuf.ITimestamp|null);
+
+                /** ConsumerStats maxReadTimeLag */
+                maxReadTimeLag?: (google.protobuf.IDuration|null);
+
+                /** ConsumerStats maxWriteTimeLag */
+                maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+                /** ConsumerStats bytesRead */
+                bytesRead?: (Ydb.Topic.IMultipleWindowsStat|null);
+            }
+
+            /** Represents a ConsumerStats. */
+            class ConsumerStats implements IConsumerStats {
+
+                /**
+                 * Constructs a new ConsumerStats.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: Ydb.Topic.Consumer.IConsumerStats);
+
+                /** ConsumerStats minPartitionsLastReadTime. */
+                public minPartitionsLastReadTime?: (google.protobuf.ITimestamp|null);
+
+                /** ConsumerStats maxReadTimeLag. */
+                public maxReadTimeLag?: (google.protobuf.IDuration|null);
+
+                /** ConsumerStats maxWriteTimeLag. */
+                public maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+                /** ConsumerStats bytesRead. */
+                public bytesRead?: (Ydb.Topic.IMultipleWindowsStat|null);
+
+                /**
+                 * Creates a new ConsumerStats instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ConsumerStats instance
+                 */
+                public static create(properties?: Ydb.Topic.Consumer.IConsumerStats): Ydb.Topic.Consumer.ConsumerStats;
+
+                /**
+                 * Encodes the specified ConsumerStats message. Does not implicitly {@link Ydb.Topic.Consumer.ConsumerStats.verify|verify} messages.
+                 * @param message ConsumerStats message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: Ydb.Topic.Consumer.IConsumerStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ConsumerStats message, length delimited. Does not implicitly {@link Ydb.Topic.Consumer.ConsumerStats.verify|verify} messages.
+                 * @param message ConsumerStats message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: Ydb.Topic.Consumer.IConsumerStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a ConsumerStats message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ConsumerStats
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.Consumer.ConsumerStats;
+
+                /**
+                 * Decodes a ConsumerStats message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ConsumerStats
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.Consumer.ConsumerStats;
+
+                /**
+                 * Verifies a ConsumerStats message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a ConsumerStats message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ConsumerStats
+                 */
+                public static fromObject(object: { [k: string]: any }): Ydb.Topic.Consumer.ConsumerStats;
+
+                /**
+                 * Creates a plain object from a ConsumerStats message. Also converts values to other types if specified.
+                 * @param message ConsumerStats
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: Ydb.Topic.Consumer.ConsumerStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ConsumerStats to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
         }
 
         /** Properties of an AlterConsumer. */
@@ -39392,6 +40489,9 @@ export namespace Ydb {
 
             /** DescribeTopicRequest path */
             path?: (string|null);
+
+            /** DescribeTopicRequest includeStats */
+            includeStats?: (boolean|null);
         }
 
         /** Represents a DescribeTopicRequest. */
@@ -39408,6 +40508,9 @@ export namespace Ydb {
 
             /** DescribeTopicRequest path. */
             public path: string;
+
+            /** DescribeTopicRequest includeStats. */
+            public includeStats: boolean;
 
             /**
              * Creates a new DescribeTopicRequest instance using the specified properties.
@@ -39605,6 +40708,9 @@ export namespace Ydb {
 
             /** DescribeTopicResult meteringMode */
             meteringMode?: (Ydb.Topic.MeteringMode|null);
+
+            /** DescribeTopicResult topicStats */
+            topicStats?: (Ydb.Topic.DescribeTopicResult.ITopicStats|null);
         }
 
         /** Represents a DescribeTopicResult. */
@@ -39648,6 +40754,9 @@ export namespace Ydb {
 
             /** DescribeTopicResult meteringMode. */
             public meteringMode: Ydb.Topic.MeteringMode;
+
+            /** DescribeTopicResult topicStats. */
+            public topicStats?: (Ydb.Topic.DescribeTopicResult.ITopicStats|null);
 
             /**
              * Creates a new DescribeTopicResult instance using the specified properties.
@@ -39736,6 +40845,9 @@ export namespace Ydb {
 
                 /** PartitionInfo parentPartitionIds */
                 parentPartitionIds?: ((number|Long)[]|null);
+
+                /** PartitionInfo partitionStats */
+                partitionStats?: (Ydb.Topic.IPartitionStats|null);
             }
 
             /** Represents a PartitionInfo. */
@@ -39758,6 +40870,9 @@ export namespace Ydb {
 
                 /** PartitionInfo parentPartitionIds. */
                 public parentPartitionIds: (number|Long)[];
+
+                /** PartitionInfo partitionStats. */
+                public partitionStats?: (Ydb.Topic.IPartitionStats|null);
 
                 /**
                  * Creates a new PartitionInfo instance using the specified properties.
@@ -39829,6 +40944,801 @@ export namespace Ydb {
                  */
                 public toJSON(): { [k: string]: any };
             }
+
+            /** Properties of a TopicStats. */
+            interface ITopicStats {
+
+                /** TopicStats storeSizeBytes */
+                storeSizeBytes?: (number|Long|null);
+
+                /** TopicStats minLastWriteTime */
+                minLastWriteTime?: (google.protobuf.ITimestamp|null);
+
+                /** TopicStats maxWriteTimeLag */
+                maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+                /** TopicStats bytesWritten */
+                bytesWritten?: (Ydb.Topic.IMultipleWindowsStat|null);
+            }
+
+            /** Represents a TopicStats. */
+            class TopicStats implements ITopicStats {
+
+                /**
+                 * Constructs a new TopicStats.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: Ydb.Topic.DescribeTopicResult.ITopicStats);
+
+                /** TopicStats storeSizeBytes. */
+                public storeSizeBytes: (number|Long);
+
+                /** TopicStats minLastWriteTime. */
+                public minLastWriteTime?: (google.protobuf.ITimestamp|null);
+
+                /** TopicStats maxWriteTimeLag. */
+                public maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+                /** TopicStats bytesWritten. */
+                public bytesWritten?: (Ydb.Topic.IMultipleWindowsStat|null);
+
+                /**
+                 * Creates a new TopicStats instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns TopicStats instance
+                 */
+                public static create(properties?: Ydb.Topic.DescribeTopicResult.ITopicStats): Ydb.Topic.DescribeTopicResult.TopicStats;
+
+                /**
+                 * Encodes the specified TopicStats message. Does not implicitly {@link Ydb.Topic.DescribeTopicResult.TopicStats.verify|verify} messages.
+                 * @param message TopicStats message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: Ydb.Topic.DescribeTopicResult.ITopicStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified TopicStats message, length delimited. Does not implicitly {@link Ydb.Topic.DescribeTopicResult.TopicStats.verify|verify} messages.
+                 * @param message TopicStats message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: Ydb.Topic.DescribeTopicResult.ITopicStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a TopicStats message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns TopicStats
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.DescribeTopicResult.TopicStats;
+
+                /**
+                 * Decodes a TopicStats message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns TopicStats
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.DescribeTopicResult.TopicStats;
+
+                /**
+                 * Verifies a TopicStats message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a TopicStats message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns TopicStats
+                 */
+                public static fromObject(object: { [k: string]: any }): Ydb.Topic.DescribeTopicResult.TopicStats;
+
+                /**
+                 * Creates a plain object from a TopicStats message. Also converts values to other types if specified.
+                 * @param message TopicStats
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: Ydb.Topic.DescribeTopicResult.TopicStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this TopicStats to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+        }
+
+        /** Properties of a DescribeConsumerRequest. */
+        interface IDescribeConsumerRequest {
+
+            /** DescribeConsumerRequest operationParams */
+            operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** DescribeConsumerRequest path */
+            path?: (string|null);
+
+            /** DescribeConsumerRequest consumer */
+            consumer?: (string|null);
+
+            /** DescribeConsumerRequest includeStats */
+            includeStats?: (boolean|null);
+        }
+
+        /** Represents a DescribeConsumerRequest. */
+        class DescribeConsumerRequest implements IDescribeConsumerRequest {
+
+            /**
+             * Constructs a new DescribeConsumerRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IDescribeConsumerRequest);
+
+            /** DescribeConsumerRequest operationParams. */
+            public operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** DescribeConsumerRequest path. */
+            public path: string;
+
+            /** DescribeConsumerRequest consumer. */
+            public consumer: string;
+
+            /** DescribeConsumerRequest includeStats. */
+            public includeStats: boolean;
+
+            /**
+             * Creates a new DescribeConsumerRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DescribeConsumerRequest instance
+             */
+            public static create(properties?: Ydb.Topic.IDescribeConsumerRequest): Ydb.Topic.DescribeConsumerRequest;
+
+            /**
+             * Encodes the specified DescribeConsumerRequest message. Does not implicitly {@link Ydb.Topic.DescribeConsumerRequest.verify|verify} messages.
+             * @param message DescribeConsumerRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IDescribeConsumerRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DescribeConsumerRequest message, length delimited. Does not implicitly {@link Ydb.Topic.DescribeConsumerRequest.verify|verify} messages.
+             * @param message DescribeConsumerRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IDescribeConsumerRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DescribeConsumerRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DescribeConsumerRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.DescribeConsumerRequest;
+
+            /**
+             * Decodes a DescribeConsumerRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns DescribeConsumerRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.DescribeConsumerRequest;
+
+            /**
+             * Verifies a DescribeConsumerRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DescribeConsumerRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DescribeConsumerRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.DescribeConsumerRequest;
+
+            /**
+             * Creates a plain object from a DescribeConsumerRequest message. Also converts values to other types if specified.
+             * @param message DescribeConsumerRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.DescribeConsumerRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DescribeConsumerRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a DescribeConsumerResponse. */
+        interface IDescribeConsumerResponse {
+
+            /** DescribeConsumerResponse operation */
+            operation?: (Ydb.Operations.IOperation|null);
+        }
+
+        /** Represents a DescribeConsumerResponse. */
+        class DescribeConsumerResponse implements IDescribeConsumerResponse {
+
+            /**
+             * Constructs a new DescribeConsumerResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IDescribeConsumerResponse);
+
+            /** DescribeConsumerResponse operation. */
+            public operation?: (Ydb.Operations.IOperation|null);
+
+            /**
+             * Creates a new DescribeConsumerResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DescribeConsumerResponse instance
+             */
+            public static create(properties?: Ydb.Topic.IDescribeConsumerResponse): Ydb.Topic.DescribeConsumerResponse;
+
+            /**
+             * Encodes the specified DescribeConsumerResponse message. Does not implicitly {@link Ydb.Topic.DescribeConsumerResponse.verify|verify} messages.
+             * @param message DescribeConsumerResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IDescribeConsumerResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DescribeConsumerResponse message, length delimited. Does not implicitly {@link Ydb.Topic.DescribeConsumerResponse.verify|verify} messages.
+             * @param message DescribeConsumerResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IDescribeConsumerResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DescribeConsumerResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DescribeConsumerResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.DescribeConsumerResponse;
+
+            /**
+             * Decodes a DescribeConsumerResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns DescribeConsumerResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.DescribeConsumerResponse;
+
+            /**
+             * Verifies a DescribeConsumerResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DescribeConsumerResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DescribeConsumerResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.DescribeConsumerResponse;
+
+            /**
+             * Creates a plain object from a DescribeConsumerResponse message. Also converts values to other types if specified.
+             * @param message DescribeConsumerResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.DescribeConsumerResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DescribeConsumerResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a DescribeConsumerResult. */
+        interface IDescribeConsumerResult {
+
+            /** DescribeConsumerResult self */
+            self?: (Ydb.Scheme.IEntry|null);
+
+            /** DescribeConsumerResult consumer */
+            consumer?: (Ydb.Topic.IConsumer|null);
+
+            /** DescribeConsumerResult partitions */
+            partitions?: (Ydb.Topic.DescribeConsumerResult.IPartitionInfo[]|null);
+        }
+
+        /** Represents a DescribeConsumerResult. */
+        class DescribeConsumerResult implements IDescribeConsumerResult {
+
+            /**
+             * Constructs a new DescribeConsumerResult.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IDescribeConsumerResult);
+
+            /** DescribeConsumerResult self. */
+            public self?: (Ydb.Scheme.IEntry|null);
+
+            /** DescribeConsumerResult consumer. */
+            public consumer?: (Ydb.Topic.IConsumer|null);
+
+            /** DescribeConsumerResult partitions. */
+            public partitions: Ydb.Topic.DescribeConsumerResult.IPartitionInfo[];
+
+            /**
+             * Creates a new DescribeConsumerResult instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DescribeConsumerResult instance
+             */
+            public static create(properties?: Ydb.Topic.IDescribeConsumerResult): Ydb.Topic.DescribeConsumerResult;
+
+            /**
+             * Encodes the specified DescribeConsumerResult message. Does not implicitly {@link Ydb.Topic.DescribeConsumerResult.verify|verify} messages.
+             * @param message DescribeConsumerResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IDescribeConsumerResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DescribeConsumerResult message, length delimited. Does not implicitly {@link Ydb.Topic.DescribeConsumerResult.verify|verify} messages.
+             * @param message DescribeConsumerResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IDescribeConsumerResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DescribeConsumerResult message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DescribeConsumerResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.DescribeConsumerResult;
+
+            /**
+             * Decodes a DescribeConsumerResult message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns DescribeConsumerResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.DescribeConsumerResult;
+
+            /**
+             * Verifies a DescribeConsumerResult message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DescribeConsumerResult message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DescribeConsumerResult
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.DescribeConsumerResult;
+
+            /**
+             * Creates a plain object from a DescribeConsumerResult message. Also converts values to other types if specified.
+             * @param message DescribeConsumerResult
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.DescribeConsumerResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DescribeConsumerResult to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace DescribeConsumerResult {
+
+            /** Properties of a PartitionInfo. */
+            interface IPartitionInfo {
+
+                /** PartitionInfo partitionId */
+                partitionId?: (number|Long|null);
+
+                /** PartitionInfo active */
+                active?: (boolean|null);
+
+                /** PartitionInfo childPartitionIds */
+                childPartitionIds?: ((number|Long)[]|null);
+
+                /** PartitionInfo parentPartitionIds */
+                parentPartitionIds?: ((number|Long)[]|null);
+
+                /** PartitionInfo partitionStats */
+                partitionStats?: (Ydb.Topic.IPartitionStats|null);
+
+                /** PartitionInfo partitionConsumerStats */
+                partitionConsumerStats?: (Ydb.Topic.DescribeConsumerResult.IPartitionConsumerStats|null);
+            }
+
+            /** Represents a PartitionInfo. */
+            class PartitionInfo implements IPartitionInfo {
+
+                /**
+                 * Constructs a new PartitionInfo.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: Ydb.Topic.DescribeConsumerResult.IPartitionInfo);
+
+                /** PartitionInfo partitionId. */
+                public partitionId: (number|Long);
+
+                /** PartitionInfo active. */
+                public active: boolean;
+
+                /** PartitionInfo childPartitionIds. */
+                public childPartitionIds: (number|Long)[];
+
+                /** PartitionInfo parentPartitionIds. */
+                public parentPartitionIds: (number|Long)[];
+
+                /** PartitionInfo partitionStats. */
+                public partitionStats?: (Ydb.Topic.IPartitionStats|null);
+
+                /** PartitionInfo partitionConsumerStats. */
+                public partitionConsumerStats?: (Ydb.Topic.DescribeConsumerResult.IPartitionConsumerStats|null);
+
+                /**
+                 * Creates a new PartitionInfo instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PartitionInfo instance
+                 */
+                public static create(properties?: Ydb.Topic.DescribeConsumerResult.IPartitionInfo): Ydb.Topic.DescribeConsumerResult.PartitionInfo;
+
+                /**
+                 * Encodes the specified PartitionInfo message. Does not implicitly {@link Ydb.Topic.DescribeConsumerResult.PartitionInfo.verify|verify} messages.
+                 * @param message PartitionInfo message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: Ydb.Topic.DescribeConsumerResult.IPartitionInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PartitionInfo message, length delimited. Does not implicitly {@link Ydb.Topic.DescribeConsumerResult.PartitionInfo.verify|verify} messages.
+                 * @param message PartitionInfo message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: Ydb.Topic.DescribeConsumerResult.IPartitionInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PartitionInfo message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PartitionInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.DescribeConsumerResult.PartitionInfo;
+
+                /**
+                 * Decodes a PartitionInfo message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PartitionInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.DescribeConsumerResult.PartitionInfo;
+
+                /**
+                 * Verifies a PartitionInfo message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PartitionInfo message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PartitionInfo
+                 */
+                public static fromObject(object: { [k: string]: any }): Ydb.Topic.DescribeConsumerResult.PartitionInfo;
+
+                /**
+                 * Creates a plain object from a PartitionInfo message. Also converts values to other types if specified.
+                 * @param message PartitionInfo
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: Ydb.Topic.DescribeConsumerResult.PartitionInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PartitionInfo to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a PartitionConsumerStats. */
+            interface IPartitionConsumerStats {
+
+                /** PartitionConsumerStats lastReadOffset */
+                lastReadOffset?: (number|Long|null);
+
+                /** PartitionConsumerStats committedOffset */
+                committedOffset?: (number|Long|null);
+
+                /** PartitionConsumerStats readSessionId */
+                readSessionId?: (string|null);
+
+                /** PartitionConsumerStats partitionReadSessionCreateTime */
+                partitionReadSessionCreateTime?: (google.protobuf.ITimestamp|null);
+
+                /** PartitionConsumerStats lastReadTime */
+                lastReadTime?: (google.protobuf.ITimestamp|null);
+
+                /** PartitionConsumerStats maxReadTimeLag */
+                maxReadTimeLag?: (google.protobuf.IDuration|null);
+
+                /** PartitionConsumerStats maxWriteTimeLag */
+                maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+                /** PartitionConsumerStats bytesRead */
+                bytesRead?: (Ydb.Topic.IMultipleWindowsStat|null);
+
+                /** PartitionConsumerStats readerName */
+                readerName?: (string|null);
+
+                /** PartitionConsumerStats connectionNodeId */
+                connectionNodeId?: (number|null);
+            }
+
+            /** Represents a PartitionConsumerStats. */
+            class PartitionConsumerStats implements IPartitionConsumerStats {
+
+                /**
+                 * Constructs a new PartitionConsumerStats.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: Ydb.Topic.DescribeConsumerResult.IPartitionConsumerStats);
+
+                /** PartitionConsumerStats lastReadOffset. */
+                public lastReadOffset: (number|Long);
+
+                /** PartitionConsumerStats committedOffset. */
+                public committedOffset: (number|Long);
+
+                /** PartitionConsumerStats readSessionId. */
+                public readSessionId: string;
+
+                /** PartitionConsumerStats partitionReadSessionCreateTime. */
+                public partitionReadSessionCreateTime?: (google.protobuf.ITimestamp|null);
+
+                /** PartitionConsumerStats lastReadTime. */
+                public lastReadTime?: (google.protobuf.ITimestamp|null);
+
+                /** PartitionConsumerStats maxReadTimeLag. */
+                public maxReadTimeLag?: (google.protobuf.IDuration|null);
+
+                /** PartitionConsumerStats maxWriteTimeLag. */
+                public maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+                /** PartitionConsumerStats bytesRead. */
+                public bytesRead?: (Ydb.Topic.IMultipleWindowsStat|null);
+
+                /** PartitionConsumerStats readerName. */
+                public readerName: string;
+
+                /** PartitionConsumerStats connectionNodeId. */
+                public connectionNodeId: number;
+
+                /**
+                 * Creates a new PartitionConsumerStats instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PartitionConsumerStats instance
+                 */
+                public static create(properties?: Ydb.Topic.DescribeConsumerResult.IPartitionConsumerStats): Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats;
+
+                /**
+                 * Encodes the specified PartitionConsumerStats message. Does not implicitly {@link Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats.verify|verify} messages.
+                 * @param message PartitionConsumerStats message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: Ydb.Topic.DescribeConsumerResult.IPartitionConsumerStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PartitionConsumerStats message, length delimited. Does not implicitly {@link Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats.verify|verify} messages.
+                 * @param message PartitionConsumerStats message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: Ydb.Topic.DescribeConsumerResult.IPartitionConsumerStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PartitionConsumerStats message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PartitionConsumerStats
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats;
+
+                /**
+                 * Decodes a PartitionConsumerStats message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PartitionConsumerStats
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats;
+
+                /**
+                 * Verifies a PartitionConsumerStats message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PartitionConsumerStats message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PartitionConsumerStats
+                 */
+                public static fromObject(object: { [k: string]: any }): Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats;
+
+                /**
+                 * Creates a plain object from a PartitionConsumerStats message. Also converts values to other types if specified.
+                 * @param message PartitionConsumerStats
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: Ydb.Topic.DescribeConsumerResult.PartitionConsumerStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PartitionConsumerStats to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+        }
+
+        /** Properties of a PartitionStats. */
+        interface IPartitionStats {
+
+            /** PartitionStats partitionOffsets */
+            partitionOffsets?: (Ydb.Topic.IOffsetsRange|null);
+
+            /** PartitionStats storeSizeBytes */
+            storeSizeBytes?: (number|Long|null);
+
+            /** PartitionStats lastWriteTime */
+            lastWriteTime?: (google.protobuf.ITimestamp|null);
+
+            /** PartitionStats maxWriteTimeLag */
+            maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+            /** PartitionStats bytesWritten */
+            bytesWritten?: (Ydb.Topic.IMultipleWindowsStat|null);
+
+            /** PartitionStats partitionNodeId */
+            partitionNodeId?: (number|null);
+        }
+
+        /** Represents a PartitionStats. */
+        class PartitionStats implements IPartitionStats {
+
+            /**
+             * Constructs a new PartitionStats.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IPartitionStats);
+
+            /** PartitionStats partitionOffsets. */
+            public partitionOffsets?: (Ydb.Topic.IOffsetsRange|null);
+
+            /** PartitionStats storeSizeBytes. */
+            public storeSizeBytes: (number|Long);
+
+            /** PartitionStats lastWriteTime. */
+            public lastWriteTime?: (google.protobuf.ITimestamp|null);
+
+            /** PartitionStats maxWriteTimeLag. */
+            public maxWriteTimeLag?: (google.protobuf.IDuration|null);
+
+            /** PartitionStats bytesWritten. */
+            public bytesWritten?: (Ydb.Topic.IMultipleWindowsStat|null);
+
+            /** PartitionStats partitionNodeId. */
+            public partitionNodeId: number;
+
+            /**
+             * Creates a new PartitionStats instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PartitionStats instance
+             */
+            public static create(properties?: Ydb.Topic.IPartitionStats): Ydb.Topic.PartitionStats;
+
+            /**
+             * Encodes the specified PartitionStats message. Does not implicitly {@link Ydb.Topic.PartitionStats.verify|verify} messages.
+             * @param message PartitionStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IPartitionStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified PartitionStats message, length delimited. Does not implicitly {@link Ydb.Topic.PartitionStats.verify|verify} messages.
+             * @param message PartitionStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IPartitionStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PartitionStats message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PartitionStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.PartitionStats;
+
+            /**
+             * Decodes a PartitionStats message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns PartitionStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.PartitionStats;
+
+            /**
+             * Verifies a PartitionStats message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a PartitionStats message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns PartitionStats
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.PartitionStats;
+
+            /**
+             * Creates a plain object from a PartitionStats message. Also converts values to other types if specified.
+             * @param message PartitionStats
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.PartitionStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this PartitionStats to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
         }
 
         /** Properties of an AlterTopicRequest. */
