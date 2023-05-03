@@ -20,7 +20,7 @@
   },
   "author": "Timur Sufiev",
   "license": "Apache",
-  "devDependencies": {
+  "dependencies": {
     "protobufjs": "^6.11.3"
   }
 }
