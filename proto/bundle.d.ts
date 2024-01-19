@@ -5,55 +5,6 @@ export namespace Ydb {
     /** Namespace Auth. */
     namespace Auth {
 
-        /** Namespace V1. */
-        namespace V1 {
-
-            /** Represents an AuthService */
-            class AuthService extends $protobuf.rpc.Service {
-
-                /**
-                 * Constructs a new AuthService service.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 */
-                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-                /**
-                 * Creates new AuthService service using the specified rpc implementation.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 * @returns RPC service. Useful where requests and/or responses are streamed.
-                 */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AuthService;
-
-                /**
-                 * Calls Login.
-                 * @param request LoginRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and LoginResponse
-                 */
-                public login(request: Ydb.Auth.ILoginRequest, callback: Ydb.Auth.V1.AuthService.LoginCallback): void;
-
-                /**
-                 * Calls Login.
-                 * @param request LoginRequest message or plain object
-                 * @returns Promise
-                 */
-                public login(request: Ydb.Auth.ILoginRequest): Promise<Ydb.Auth.LoginResponse>;
-            }
-
-            namespace AuthService {
-
-                /**
-                 * Callback as used by {@link Ydb.Auth.V1.AuthService#login}.
-                 * @param error Error, if any
-                 * @param [response] LoginResponse
-                 */
-                type LoginCallback = (error: (Error|null), response?: Ydb.Auth.LoginResponse) => void;
-            }
-        }
-
         /** Properties of a LoginRequest. */
         interface ILoginRequest {
 
@@ -334,6 +285,55 @@ export namespace Ydb {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
+        }
+
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents an AuthService */
+            class AuthService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new AuthService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new AuthService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AuthService;
+
+                /**
+                 * Calls Login.
+                 * @param request LoginRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and LoginResponse
+                 */
+                public login(request: Ydb.Auth.ILoginRequest, callback: Ydb.Auth.V1.AuthService.LoginCallback): void;
+
+                /**
+                 * Calls Login.
+                 * @param request LoginRequest message or plain object
+                 * @returns Promise
+                 */
+                public login(request: Ydb.Auth.ILoginRequest): Promise<Ydb.Auth.LoginResponse>;
+            }
+
+            namespace AuthService {
+
+                /**
+                 * Callback as used by {@link Ydb.Auth.V1.AuthService#login}.
+                 * @param error Error, if any
+                 * @param [response] LoginResponse
+                 */
+                type LoginCallback = (error: (Error|null), response?: Ydb.Auth.LoginResponse) => void;
+            }
         }
     }
 
@@ -2377,166 +2377,13 @@ export namespace Ydb {
             CANCELLED = 400160,
             UNDETERMINED = 400170,
             UNSUPPORTED = 400180,
-            SESSION_BUSY = 400190
+            SESSION_BUSY = 400190,
+            EXTERNAL_ERROR = 400200
         }
     }
 
     /** Namespace Cms. */
     namespace Cms {
-
-        /** Namespace V1. */
-        namespace V1 {
-
-            /** Represents a CmsService */
-            class CmsService extends $protobuf.rpc.Service {
-
-                /**
-                 * Constructs a new CmsService service.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 */
-                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-                /**
-                 * Creates new CmsService service using the specified rpc implementation.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 * @returns RPC service. Useful where requests and/or responses are streamed.
-                 */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): CmsService;
-
-                /**
-                 * Calls CreateDatabase.
-                 * @param request CreateDatabaseRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and CreateDatabaseResponse
-                 */
-                public createDatabase(request: Ydb.Cms.ICreateDatabaseRequest, callback: Ydb.Cms.V1.CmsService.CreateDatabaseCallback): void;
-
-                /**
-                 * Calls CreateDatabase.
-                 * @param request CreateDatabaseRequest message or plain object
-                 * @returns Promise
-                 */
-                public createDatabase(request: Ydb.Cms.ICreateDatabaseRequest): Promise<Ydb.Cms.CreateDatabaseResponse>;
-
-                /**
-                 * Calls GetDatabaseStatus.
-                 * @param request GetDatabaseStatusRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and GetDatabaseStatusResponse
-                 */
-                public getDatabaseStatus(request: Ydb.Cms.IGetDatabaseStatusRequest, callback: Ydb.Cms.V1.CmsService.GetDatabaseStatusCallback): void;
-
-                /**
-                 * Calls GetDatabaseStatus.
-                 * @param request GetDatabaseStatusRequest message or plain object
-                 * @returns Promise
-                 */
-                public getDatabaseStatus(request: Ydb.Cms.IGetDatabaseStatusRequest): Promise<Ydb.Cms.GetDatabaseStatusResponse>;
-
-                /**
-                 * Calls AlterDatabase.
-                 * @param request AlterDatabaseRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and AlterDatabaseResponse
-                 */
-                public alterDatabase(request: Ydb.Cms.IAlterDatabaseRequest, callback: Ydb.Cms.V1.CmsService.AlterDatabaseCallback): void;
-
-                /**
-                 * Calls AlterDatabase.
-                 * @param request AlterDatabaseRequest message or plain object
-                 * @returns Promise
-                 */
-                public alterDatabase(request: Ydb.Cms.IAlterDatabaseRequest): Promise<Ydb.Cms.AlterDatabaseResponse>;
-
-                /**
-                 * Calls ListDatabases.
-                 * @param request ListDatabasesRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ListDatabasesResponse
-                 */
-                public listDatabases(request: Ydb.Cms.IListDatabasesRequest, callback: Ydb.Cms.V1.CmsService.ListDatabasesCallback): void;
-
-                /**
-                 * Calls ListDatabases.
-                 * @param request ListDatabasesRequest message or plain object
-                 * @returns Promise
-                 */
-                public listDatabases(request: Ydb.Cms.IListDatabasesRequest): Promise<Ydb.Cms.ListDatabasesResponse>;
-
-                /**
-                 * Calls RemoveDatabase.
-                 * @param request RemoveDatabaseRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and RemoveDatabaseResponse
-                 */
-                public removeDatabase(request: Ydb.Cms.IRemoveDatabaseRequest, callback: Ydb.Cms.V1.CmsService.RemoveDatabaseCallback): void;
-
-                /**
-                 * Calls RemoveDatabase.
-                 * @param request RemoveDatabaseRequest message or plain object
-                 * @returns Promise
-                 */
-                public removeDatabase(request: Ydb.Cms.IRemoveDatabaseRequest): Promise<Ydb.Cms.RemoveDatabaseResponse>;
-
-                /**
-                 * Calls DescribeDatabaseOptions.
-                 * @param request DescribeDatabaseOptionsRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DescribeDatabaseOptionsResponse
-                 */
-                public describeDatabaseOptions(request: Ydb.Cms.IDescribeDatabaseOptionsRequest, callback: Ydb.Cms.V1.CmsService.DescribeDatabaseOptionsCallback): void;
-
-                /**
-                 * Calls DescribeDatabaseOptions.
-                 * @param request DescribeDatabaseOptionsRequest message or plain object
-                 * @returns Promise
-                 */
-                public describeDatabaseOptions(request: Ydb.Cms.IDescribeDatabaseOptionsRequest): Promise<Ydb.Cms.DescribeDatabaseOptionsResponse>;
-            }
-
-            namespace CmsService {
-
-                /**
-                 * Callback as used by {@link Ydb.Cms.V1.CmsService#createDatabase}.
-                 * @param error Error, if any
-                 * @param [response] CreateDatabaseResponse
-                 */
-                type CreateDatabaseCallback = (error: (Error|null), response?: Ydb.Cms.CreateDatabaseResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Cms.V1.CmsService#getDatabaseStatus}.
-                 * @param error Error, if any
-                 * @param [response] GetDatabaseStatusResponse
-                 */
-                type GetDatabaseStatusCallback = (error: (Error|null), response?: Ydb.Cms.GetDatabaseStatusResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Cms.V1.CmsService#alterDatabase}.
-                 * @param error Error, if any
-                 * @param [response] AlterDatabaseResponse
-                 */
-                type AlterDatabaseCallback = (error: (Error|null), response?: Ydb.Cms.AlterDatabaseResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Cms.V1.CmsService#listDatabases}.
-                 * @param error Error, if any
-                 * @param [response] ListDatabasesResponse
-                 */
-                type ListDatabasesCallback = (error: (Error|null), response?: Ydb.Cms.ListDatabasesResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Cms.V1.CmsService#removeDatabase}.
-                 * @param error Error, if any
-                 * @param [response] RemoveDatabaseResponse
-                 */
-                type RemoveDatabaseCallback = (error: (Error|null), response?: Ydb.Cms.RemoveDatabaseResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Cms.V1.CmsService#describeDatabaseOptions}.
-                 * @param error Error, if any
-                 * @param [response] DescribeDatabaseOptionsResponse
-                 */
-                type DescribeDatabaseOptionsCallback = (error: (Error|null), response?: Ydb.Cms.DescribeDatabaseOptionsResponse) => void;
-            }
-        }
 
         /** Properties of a StorageUnits. */
         interface IStorageUnits {
@@ -5289,19 +5136,15 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
-
-    /** Namespace Coordination. */
-    namespace Coordination {
 
         /** Namespace V1. */
         namespace V1 {
 
-            /** Represents a CoordinationService */
-            class CoordinationService extends $protobuf.rpc.Service {
+            /** Represents a CmsService */
+            class CmsService extends $protobuf.rpc.Service {
 
                 /**
-                 * Constructs a new CoordinationService service.
+                 * Constructs a new CmsService service.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
@@ -5309,135 +5152,148 @@ export namespace Ydb {
                 constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
                 /**
-                 * Creates new CoordinationService service using the specified rpc implementation.
+                 * Creates new CmsService service using the specified rpc implementation.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
                  * @returns RPC service. Useful where requests and/or responses are streamed.
                  */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): CoordinationService;
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): CmsService;
 
                 /**
-                 * Bidirectional stream used to establish a session with a coordination node
-                 *
-                 * Relevant APIs for managing semaphores, distributed locking, creating or
-                 * restoring a previously established session are described using nested
-                 * messages in SessionRequest and SessionResponse. Session is established
-                 * with a specific coordination node (previously created using CreateNode
-                 * below) and semaphores are local to that coordination node.
-                 * @param request SessionRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and SessionResponse
+                 * Calls CreateDatabase.
+                 * @param request CreateDatabaseRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CreateDatabaseResponse
                  */
-                public session(request: Ydb.Coordination.ISessionRequest, callback: Ydb.Coordination.V1.CoordinationService.SessionCallback): void;
+                public createDatabase(request: Ydb.Cms.ICreateDatabaseRequest, callback: Ydb.Cms.V1.CmsService.CreateDatabaseCallback): void;
 
                 /**
-                 * Bidirectional stream used to establish a session with a coordination node
-                 *
-                 * Relevant APIs for managing semaphores, distributed locking, creating or
-                 * restoring a previously established session are described using nested
-                 * messages in SessionRequest and SessionResponse. Session is established
-                 * with a specific coordination node (previously created using CreateNode
-                 * below) and semaphores are local to that coordination node.
-                 * @param request SessionRequest message or plain object
+                 * Calls CreateDatabase.
+                 * @param request CreateDatabaseRequest message or plain object
                  * @returns Promise
                  */
-                public session(request: Ydb.Coordination.ISessionRequest): Promise<Ydb.Coordination.SessionResponse>;
+                public createDatabase(request: Ydb.Cms.ICreateDatabaseRequest): Promise<Ydb.Cms.CreateDatabaseResponse>;
 
                 /**
-                 * Calls CreateNode.
-                 * @param request CreateNodeRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and CreateNodeResponse
+                 * Calls GetDatabaseStatus.
+                 * @param request GetDatabaseStatusRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and GetDatabaseStatusResponse
                  */
-                public createNode(request: Ydb.Coordination.ICreateNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.CreateNodeCallback): void;
+                public getDatabaseStatus(request: Ydb.Cms.IGetDatabaseStatusRequest, callback: Ydb.Cms.V1.CmsService.GetDatabaseStatusCallback): void;
 
                 /**
-                 * Calls CreateNode.
-                 * @param request CreateNodeRequest message or plain object
+                 * Calls GetDatabaseStatus.
+                 * @param request GetDatabaseStatusRequest message or plain object
                  * @returns Promise
                  */
-                public createNode(request: Ydb.Coordination.ICreateNodeRequest): Promise<Ydb.Coordination.CreateNodeResponse>;
+                public getDatabaseStatus(request: Ydb.Cms.IGetDatabaseStatusRequest): Promise<Ydb.Cms.GetDatabaseStatusResponse>;
 
                 /**
-                 * Calls AlterNode.
-                 * @param request AlterNodeRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and AlterNodeResponse
+                 * Calls AlterDatabase.
+                 * @param request AlterDatabaseRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and AlterDatabaseResponse
                  */
-                public alterNode(request: Ydb.Coordination.IAlterNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.AlterNodeCallback): void;
+                public alterDatabase(request: Ydb.Cms.IAlterDatabaseRequest, callback: Ydb.Cms.V1.CmsService.AlterDatabaseCallback): void;
 
                 /**
-                 * Calls AlterNode.
-                 * @param request AlterNodeRequest message or plain object
+                 * Calls AlterDatabase.
+                 * @param request AlterDatabaseRequest message or plain object
                  * @returns Promise
                  */
-                public alterNode(request: Ydb.Coordination.IAlterNodeRequest): Promise<Ydb.Coordination.AlterNodeResponse>;
+                public alterDatabase(request: Ydb.Cms.IAlterDatabaseRequest): Promise<Ydb.Cms.AlterDatabaseResponse>;
 
                 /**
-                 * Calls DropNode.
-                 * @param request DropNodeRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DropNodeResponse
+                 * Calls ListDatabases.
+                 * @param request ListDatabasesRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ListDatabasesResponse
                  */
-                public dropNode(request: Ydb.Coordination.IDropNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.DropNodeCallback): void;
+                public listDatabases(request: Ydb.Cms.IListDatabasesRequest, callback: Ydb.Cms.V1.CmsService.ListDatabasesCallback): void;
 
                 /**
-                 * Calls DropNode.
-                 * @param request DropNodeRequest message or plain object
+                 * Calls ListDatabases.
+                 * @param request ListDatabasesRequest message or plain object
                  * @returns Promise
                  */
-                public dropNode(request: Ydb.Coordination.IDropNodeRequest): Promise<Ydb.Coordination.DropNodeResponse>;
+                public listDatabases(request: Ydb.Cms.IListDatabasesRequest): Promise<Ydb.Cms.ListDatabasesResponse>;
 
                 /**
-                 * Calls DescribeNode.
-                 * @param request DescribeNodeRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DescribeNodeResponse
+                 * Calls RemoveDatabase.
+                 * @param request RemoveDatabaseRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and RemoveDatabaseResponse
                  */
-                public describeNode(request: Ydb.Coordination.IDescribeNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.DescribeNodeCallback): void;
+                public removeDatabase(request: Ydb.Cms.IRemoveDatabaseRequest, callback: Ydb.Cms.V1.CmsService.RemoveDatabaseCallback): void;
 
                 /**
-                 * Calls DescribeNode.
-                 * @param request DescribeNodeRequest message or plain object
+                 * Calls RemoveDatabase.
+                 * @param request RemoveDatabaseRequest message or plain object
                  * @returns Promise
                  */
-                public describeNode(request: Ydb.Coordination.IDescribeNodeRequest): Promise<Ydb.Coordination.DescribeNodeResponse>;
+                public removeDatabase(request: Ydb.Cms.IRemoveDatabaseRequest): Promise<Ydb.Cms.RemoveDatabaseResponse>;
+
+                /**
+                 * Calls DescribeDatabaseOptions.
+                 * @param request DescribeDatabaseOptionsRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DescribeDatabaseOptionsResponse
+                 */
+                public describeDatabaseOptions(request: Ydb.Cms.IDescribeDatabaseOptionsRequest, callback: Ydb.Cms.V1.CmsService.DescribeDatabaseOptionsCallback): void;
+
+                /**
+                 * Calls DescribeDatabaseOptions.
+                 * @param request DescribeDatabaseOptionsRequest message or plain object
+                 * @returns Promise
+                 */
+                public describeDatabaseOptions(request: Ydb.Cms.IDescribeDatabaseOptionsRequest): Promise<Ydb.Cms.DescribeDatabaseOptionsResponse>;
             }
 
-            namespace CoordinationService {
+            namespace CmsService {
 
                 /**
-                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#session}.
+                 * Callback as used by {@link Ydb.Cms.V1.CmsService#createDatabase}.
                  * @param error Error, if any
-                 * @param [response] SessionResponse
+                 * @param [response] CreateDatabaseResponse
                  */
-                type SessionCallback = (error: (Error|null), response?: Ydb.Coordination.SessionResponse) => void;
+                type CreateDatabaseCallback = (error: (Error|null), response?: Ydb.Cms.CreateDatabaseResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#createNode}.
+                 * Callback as used by {@link Ydb.Cms.V1.CmsService#getDatabaseStatus}.
                  * @param error Error, if any
-                 * @param [response] CreateNodeResponse
+                 * @param [response] GetDatabaseStatusResponse
                  */
-                type CreateNodeCallback = (error: (Error|null), response?: Ydb.Coordination.CreateNodeResponse) => void;
+                type GetDatabaseStatusCallback = (error: (Error|null), response?: Ydb.Cms.GetDatabaseStatusResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#alterNode}.
+                 * Callback as used by {@link Ydb.Cms.V1.CmsService#alterDatabase}.
                  * @param error Error, if any
-                 * @param [response] AlterNodeResponse
+                 * @param [response] AlterDatabaseResponse
                  */
-                type AlterNodeCallback = (error: (Error|null), response?: Ydb.Coordination.AlterNodeResponse) => void;
+                type AlterDatabaseCallback = (error: (Error|null), response?: Ydb.Cms.AlterDatabaseResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#dropNode}.
+                 * Callback as used by {@link Ydb.Cms.V1.CmsService#listDatabases}.
                  * @param error Error, if any
-                 * @param [response] DropNodeResponse
+                 * @param [response] ListDatabasesResponse
                  */
-                type DropNodeCallback = (error: (Error|null), response?: Ydb.Coordination.DropNodeResponse) => void;
+                type ListDatabasesCallback = (error: (Error|null), response?: Ydb.Cms.ListDatabasesResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#describeNode}.
+                 * Callback as used by {@link Ydb.Cms.V1.CmsService#removeDatabase}.
                  * @param error Error, if any
-                 * @param [response] DescribeNodeResponse
+                 * @param [response] RemoveDatabaseResponse
                  */
-                type DescribeNodeCallback = (error: (Error|null), response?: Ydb.Coordination.DescribeNodeResponse) => void;
+                type RemoveDatabaseCallback = (error: (Error|null), response?: Ydb.Cms.RemoveDatabaseResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Cms.V1.CmsService#describeDatabaseOptions}.
+                 * @param error Error, if any
+                 * @param [response] DescribeDatabaseOptionsResponse
+                 */
+                type DescribeDatabaseOptionsCallback = (error: (Error|null), response?: Ydb.Cms.DescribeDatabaseOptionsResponse) => void;
             }
         }
+    }
+
+    /** Namespace Coordination. */
+    namespace Coordination {
 
         /** Properties of an Unsupported. */
         interface IUnsupported {
@@ -9394,6 +9250,151 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
+
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents a CoordinationService */
+            class CoordinationService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new CoordinationService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new CoordinationService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): CoordinationService;
+
+                /**
+                 * Bidirectional stream used to establish a session with a coordination node
+                 *
+                 * Relevant APIs for managing semaphores, distributed locking, creating or
+                 * restoring a previously established session are described using nested
+                 * messages in SessionRequest and SessionResponse. Session is established
+                 * with a specific coordination node (previously created using CreateNode
+                 * below) and semaphores are local to that coordination node.
+                 * @param request SessionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and SessionResponse
+                 */
+                public session(request: Ydb.Coordination.ISessionRequest, callback: Ydb.Coordination.V1.CoordinationService.SessionCallback): void;
+
+                /**
+                 * Bidirectional stream used to establish a session with a coordination node
+                 *
+                 * Relevant APIs for managing semaphores, distributed locking, creating or
+                 * restoring a previously established session are described using nested
+                 * messages in SessionRequest and SessionResponse. Session is established
+                 * with a specific coordination node (previously created using CreateNode
+                 * below) and semaphores are local to that coordination node.
+                 * @param request SessionRequest message or plain object
+                 * @returns Promise
+                 */
+                public session(request: Ydb.Coordination.ISessionRequest): Promise<Ydb.Coordination.SessionResponse>;
+
+                /**
+                 * Calls CreateNode.
+                 * @param request CreateNodeRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CreateNodeResponse
+                 */
+                public createNode(request: Ydb.Coordination.ICreateNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.CreateNodeCallback): void;
+
+                /**
+                 * Calls CreateNode.
+                 * @param request CreateNodeRequest message or plain object
+                 * @returns Promise
+                 */
+                public createNode(request: Ydb.Coordination.ICreateNodeRequest): Promise<Ydb.Coordination.CreateNodeResponse>;
+
+                /**
+                 * Calls AlterNode.
+                 * @param request AlterNodeRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and AlterNodeResponse
+                 */
+                public alterNode(request: Ydb.Coordination.IAlterNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.AlterNodeCallback): void;
+
+                /**
+                 * Calls AlterNode.
+                 * @param request AlterNodeRequest message or plain object
+                 * @returns Promise
+                 */
+                public alterNode(request: Ydb.Coordination.IAlterNodeRequest): Promise<Ydb.Coordination.AlterNodeResponse>;
+
+                /**
+                 * Calls DropNode.
+                 * @param request DropNodeRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DropNodeResponse
+                 */
+                public dropNode(request: Ydb.Coordination.IDropNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.DropNodeCallback): void;
+
+                /**
+                 * Calls DropNode.
+                 * @param request DropNodeRequest message or plain object
+                 * @returns Promise
+                 */
+                public dropNode(request: Ydb.Coordination.IDropNodeRequest): Promise<Ydb.Coordination.DropNodeResponse>;
+
+                /**
+                 * Calls DescribeNode.
+                 * @param request DescribeNodeRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DescribeNodeResponse
+                 */
+                public describeNode(request: Ydb.Coordination.IDescribeNodeRequest, callback: Ydb.Coordination.V1.CoordinationService.DescribeNodeCallback): void;
+
+                /**
+                 * Calls DescribeNode.
+                 * @param request DescribeNodeRequest message or plain object
+                 * @returns Promise
+                 */
+                public describeNode(request: Ydb.Coordination.IDescribeNodeRequest): Promise<Ydb.Coordination.DescribeNodeResponse>;
+            }
+
+            namespace CoordinationService {
+
+                /**
+                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#session}.
+                 * @param error Error, if any
+                 * @param [response] SessionResponse
+                 */
+                type SessionCallback = (error: (Error|null), response?: Ydb.Coordination.SessionResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#createNode}.
+                 * @param error Error, if any
+                 * @param [response] CreateNodeResponse
+                 */
+                type CreateNodeCallback = (error: (Error|null), response?: Ydb.Coordination.CreateNodeResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#alterNode}.
+                 * @param error Error, if any
+                 * @param [response] AlterNodeResponse
+                 */
+                type AlterNodeCallback = (error: (Error|null), response?: Ydb.Coordination.AlterNodeResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#dropNode}.
+                 * @param error Error, if any
+                 * @param [response] DropNodeResponse
+                 */
+                type DropNodeCallback = (error: (Error|null), response?: Ydb.Coordination.DropNodeResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Coordination.V1.CoordinationService#describeNode}.
+                 * @param error Error, if any
+                 * @param [response] DescribeNodeResponse
+                 */
+                type DescribeNodeCallback = (error: (Error|null), response?: Ydb.Coordination.DescribeNodeResponse) => void;
+            }
+        }
     }
 
     /** Namespace Scheme. */
@@ -11026,76 +11027,6 @@ export namespace Ydb {
     /** Namespace Discovery. */
     namespace Discovery {
 
-        /** Namespace V1. */
-        namespace V1 {
-
-            /** Represents a DiscoveryService */
-            class DiscoveryService extends $protobuf.rpc.Service {
-
-                /**
-                 * Constructs a new DiscoveryService service.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 */
-                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-                /**
-                 * Creates new DiscoveryService service using the specified rpc implementation.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 * @returns RPC service. Useful where requests and/or responses are streamed.
-                 */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): DiscoveryService;
-
-                /**
-                 * Calls ListEndpoints.
-                 * @param request ListEndpointsRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ListEndpointsResponse
-                 */
-                public listEndpoints(request: Ydb.Discovery.IListEndpointsRequest, callback: Ydb.Discovery.V1.DiscoveryService.ListEndpointsCallback): void;
-
-                /**
-                 * Calls ListEndpoints.
-                 * @param request ListEndpointsRequest message or plain object
-                 * @returns Promise
-                 */
-                public listEndpoints(request: Ydb.Discovery.IListEndpointsRequest): Promise<Ydb.Discovery.ListEndpointsResponse>;
-
-                /**
-                 * Calls WhoAmI.
-                 * @param request WhoAmIRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and WhoAmIResponse
-                 */
-                public whoAmI(request: Ydb.Discovery.IWhoAmIRequest, callback: Ydb.Discovery.V1.DiscoveryService.WhoAmICallback): void;
-
-                /**
-                 * Calls WhoAmI.
-                 * @param request WhoAmIRequest message or plain object
-                 * @returns Promise
-                 */
-                public whoAmI(request: Ydb.Discovery.IWhoAmIRequest): Promise<Ydb.Discovery.WhoAmIResponse>;
-            }
-
-            namespace DiscoveryService {
-
-                /**
-                 * Callback as used by {@link Ydb.Discovery.V1.DiscoveryService#listEndpoints}.
-                 * @param error Error, if any
-                 * @param [response] ListEndpointsResponse
-                 */
-                type ListEndpointsCallback = (error: (Error|null), response?: Ydb.Discovery.ListEndpointsResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Discovery.V1.DiscoveryService#whoAmI}.
-                 * @param error Error, if any
-                 * @param [response] WhoAmIResponse
-                 */
-                type WhoAmICallback = (error: (Error|null), response?: Ydb.Discovery.WhoAmIResponse) => void;
-            }
-        }
-
         /** Properties of a ListEndpointsRequest. */
         interface IListEndpointsRequest {
 
@@ -11797,19 +11728,180 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
 
-    /** Namespace Export. */
-    namespace Export {
+        /** Properties of a NodeLocation. */
+        interface INodeLocation {
+
+            /** NodeLocation dataCenterNum */
+            dataCenterNum?: (number|null);
+
+            /** NodeLocation roomNum */
+            roomNum?: (number|null);
+
+            /** NodeLocation rackNum */
+            rackNum?: (number|null);
+
+            /** NodeLocation bodyNum */
+            bodyNum?: (number|null);
+
+            /** NodeLocation body */
+            body?: (number|null);
+
+            /** NodeLocation dataCenter */
+            dataCenter?: (string|null);
+
+            /** NodeLocation module */
+            module?: (string|null);
+
+            /** NodeLocation rack */
+            rack?: (string|null);
+
+            /** NodeLocation unit */
+            unit?: (string|null);
+        }
+
+        /** Represents a NodeLocation. */
+        class NodeLocation implements INodeLocation {
+
+            /**
+             * Constructs a new NodeLocation.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Discovery.INodeLocation);
+
+            /** NodeLocation dataCenterNum. */
+            public dataCenterNum?: (number|null);
+
+            /** NodeLocation roomNum. */
+            public roomNum?: (number|null);
+
+            /** NodeLocation rackNum. */
+            public rackNum?: (number|null);
+
+            /** NodeLocation bodyNum. */
+            public bodyNum?: (number|null);
+
+            /** NodeLocation body. */
+            public body?: (number|null);
+
+            /** NodeLocation dataCenter. */
+            public dataCenter?: (string|null);
+
+            /** NodeLocation module. */
+            public module?: (string|null);
+
+            /** NodeLocation rack. */
+            public rack?: (string|null);
+
+            /** NodeLocation unit. */
+            public unit?: (string|null);
+
+            /** NodeLocation _dataCenterNum. */
+            public _dataCenterNum?: "dataCenterNum";
+
+            /** NodeLocation _roomNum. */
+            public _roomNum?: "roomNum";
+
+            /** NodeLocation _rackNum. */
+            public _rackNum?: "rackNum";
+
+            /** NodeLocation _bodyNum. */
+            public _bodyNum?: "bodyNum";
+
+            /** NodeLocation _body. */
+            public _body?: "body";
+
+            /** NodeLocation _dataCenter. */
+            public _dataCenter?: "dataCenter";
+
+            /** NodeLocation _module. */
+            public _module?: "module";
+
+            /** NodeLocation _rack. */
+            public _rack?: "rack";
+
+            /** NodeLocation _unit. */
+            public _unit?: "unit";
+
+            /**
+             * Creates a new NodeLocation instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeLocation instance
+             */
+            public static create(properties?: Ydb.Discovery.INodeLocation): Ydb.Discovery.NodeLocation;
+
+            /**
+             * Encodes the specified NodeLocation message. Does not implicitly {@link Ydb.Discovery.NodeLocation.verify|verify} messages.
+             * @param message NodeLocation message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Discovery.INodeLocation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified NodeLocation message, length delimited. Does not implicitly {@link Ydb.Discovery.NodeLocation.verify|verify} messages.
+             * @param message NodeLocation message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Discovery.INodeLocation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeLocation message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeLocation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Discovery.NodeLocation;
+
+            /**
+             * Decodes a NodeLocation message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns NodeLocation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Discovery.NodeLocation;
+
+            /**
+             * Verifies a NodeLocation message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a NodeLocation message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns NodeLocation
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Discovery.NodeLocation;
+
+            /**
+             * Creates a plain object from a NodeLocation message. Also converts values to other types if specified.
+             * @param message NodeLocation
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Discovery.NodeLocation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this NodeLocation to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
 
         /** Namespace V1. */
         namespace V1 {
 
-            /** Represents an ExportService */
-            class ExportService extends $protobuf.rpc.Service {
+            /** Represents a DiscoveryService */
+            class DiscoveryService extends $protobuf.rpc.Service {
 
                 /**
-                 * Constructs a new ExportService service.
+                 * Constructs a new DiscoveryService service.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
@@ -11817,60 +11909,64 @@ export namespace Ydb {
                 constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
                 /**
-                 * Creates new ExportService service using the specified rpc implementation.
+                 * Creates new DiscoveryService service using the specified rpc implementation.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
                  * @returns RPC service. Useful where requests and/or responses are streamed.
                  */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ExportService;
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): DiscoveryService;
 
                 /**
-                 * Calls ExportToYt.
-                 * @param request ExportToYtRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ExportToYtResponse
+                 * Calls ListEndpoints.
+                 * @param request ListEndpointsRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ListEndpointsResponse
                  */
-                public exportToYt(request: Ydb.Export.IExportToYtRequest, callback: Ydb.Export.V1.ExportService.ExportToYtCallback): void;
+                public listEndpoints(request: Ydb.Discovery.IListEndpointsRequest, callback: Ydb.Discovery.V1.DiscoveryService.ListEndpointsCallback): void;
 
                 /**
-                 * Calls ExportToYt.
-                 * @param request ExportToYtRequest message or plain object
+                 * Calls ListEndpoints.
+                 * @param request ListEndpointsRequest message or plain object
                  * @returns Promise
                  */
-                public exportToYt(request: Ydb.Export.IExportToYtRequest): Promise<Ydb.Export.ExportToYtResponse>;
+                public listEndpoints(request: Ydb.Discovery.IListEndpointsRequest): Promise<Ydb.Discovery.ListEndpointsResponse>;
 
                 /**
-                 * Calls ExportToS3.
-                 * @param request ExportToS3Request message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ExportToS3Response
+                 * Calls WhoAmI.
+                 * @param request WhoAmIRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and WhoAmIResponse
                  */
-                public exportToS3(request: Ydb.Export.IExportToS3Request, callback: Ydb.Export.V1.ExportService.ExportToS3Callback): void;
+                public whoAmI(request: Ydb.Discovery.IWhoAmIRequest, callback: Ydb.Discovery.V1.DiscoveryService.WhoAmICallback): void;
 
                 /**
-                 * Calls ExportToS3.
-                 * @param request ExportToS3Request message or plain object
+                 * Calls WhoAmI.
+                 * @param request WhoAmIRequest message or plain object
                  * @returns Promise
                  */
-                public exportToS3(request: Ydb.Export.IExportToS3Request): Promise<Ydb.Export.ExportToS3Response>;
+                public whoAmI(request: Ydb.Discovery.IWhoAmIRequest): Promise<Ydb.Discovery.WhoAmIResponse>;
             }
 
-            namespace ExportService {
+            namespace DiscoveryService {
 
                 /**
-                 * Callback as used by {@link Ydb.Export.V1.ExportService#exportToYt}.
+                 * Callback as used by {@link Ydb.Discovery.V1.DiscoveryService#listEndpoints}.
                  * @param error Error, if any
-                 * @param [response] ExportToYtResponse
+                 * @param [response] ListEndpointsResponse
                  */
-                type ExportToYtCallback = (error: (Error|null), response?: Ydb.Export.ExportToYtResponse) => void;
+                type ListEndpointsCallback = (error: (Error|null), response?: Ydb.Discovery.ListEndpointsResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Export.V1.ExportService#exportToS3}.
+                 * Callback as used by {@link Ydb.Discovery.V1.DiscoveryService#whoAmI}.
                  * @param error Error, if any
-                 * @param [response] ExportToS3Response
+                 * @param [response] WhoAmIResponse
                  */
-                type ExportToS3Callback = (error: (Error|null), response?: Ydb.Export.ExportToS3Response) => void;
+                type WhoAmICallback = (error: (Error|null), response?: Ydb.Discovery.WhoAmIResponse) => void;
             }
         }
+    }
+
+    /** Namespace Export. */
+    namespace Export {
 
         /** Properties of an ExportProgress. */
         interface IExportProgress {
@@ -13314,19 +13410,15 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
-
-    /** Namespace Import. */
-    namespace Import {
 
         /** Namespace V1. */
         namespace V1 {
 
-            /** Represents an ImportService */
-            class ImportService extends $protobuf.rpc.Service {
+            /** Represents an ExportService */
+            class ExportService extends $protobuf.rpc.Service {
 
                 /**
-                 * Constructs a new ImportService service.
+                 * Constructs a new ExportService service.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
@@ -13334,60 +13426,732 @@ export namespace Ydb {
                 constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
                 /**
-                 * Creates new ImportService service using the specified rpc implementation.
+                 * Creates new ExportService service using the specified rpc implementation.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
                  * @returns RPC service. Useful where requests and/or responses are streamed.
                  */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ImportService;
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ExportService;
 
                 /**
-                 * Calls ImportFromS3.
-                 * @param request ImportFromS3Request message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ImportFromS3Response
+                 * Calls ExportToYt.
+                 * @param request ExportToYtRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ExportToYtResponse
                  */
-                public importFromS3(request: Ydb.Import.IImportFromS3Request, callback: Ydb.Import.V1.ImportService.ImportFromS3Callback): void;
+                public exportToYt(request: Ydb.Export.IExportToYtRequest, callback: Ydb.Export.V1.ExportService.ExportToYtCallback): void;
 
                 /**
-                 * Calls ImportFromS3.
-                 * @param request ImportFromS3Request message or plain object
+                 * Calls ExportToYt.
+                 * @param request ExportToYtRequest message or plain object
                  * @returns Promise
                  */
-                public importFromS3(request: Ydb.Import.IImportFromS3Request): Promise<Ydb.Import.ImportFromS3Response>;
+                public exportToYt(request: Ydb.Export.IExportToYtRequest): Promise<Ydb.Export.ExportToYtResponse>;
 
                 /**
-                 * Calls ImportData.
-                 * @param request ImportDataRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ImportDataResponse
+                 * Calls ExportToS3.
+                 * @param request ExportToS3Request message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ExportToS3Response
                  */
-                public importData(request: Ydb.Import.IImportDataRequest, callback: Ydb.Import.V1.ImportService.ImportDataCallback): void;
+                public exportToS3(request: Ydb.Export.IExportToS3Request, callback: Ydb.Export.V1.ExportService.ExportToS3Callback): void;
 
                 /**
-                 * Calls ImportData.
-                 * @param request ImportDataRequest message or plain object
+                 * Calls ExportToS3.
+                 * @param request ExportToS3Request message or plain object
                  * @returns Promise
                  */
-                public importData(request: Ydb.Import.IImportDataRequest): Promise<Ydb.Import.ImportDataResponse>;
+                public exportToS3(request: Ydb.Export.IExportToS3Request): Promise<Ydb.Export.ExportToS3Response>;
             }
 
-            namespace ImportService {
+            namespace ExportService {
 
                 /**
-                 * Callback as used by {@link Ydb.Import.V1.ImportService#importFromS3}.
+                 * Callback as used by {@link Ydb.Export.V1.ExportService#exportToYt}.
                  * @param error Error, if any
-                 * @param [response] ImportFromS3Response
+                 * @param [response] ExportToYtResponse
                  */
-                type ImportFromS3Callback = (error: (Error|null), response?: Ydb.Import.ImportFromS3Response) => void;
+                type ExportToYtCallback = (error: (Error|null), response?: Ydb.Export.ExportToYtResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Import.V1.ImportService#importData}.
+                 * Callback as used by {@link Ydb.Export.V1.ExportService#exportToS3}.
                  * @param error Error, if any
-                 * @param [response] ImportDataResponse
+                 * @param [response] ExportToS3Response
                  */
-                type ImportDataCallback = (error: (Error|null), response?: Ydb.Import.ImportDataResponse) => void;
+                type ExportToS3Callback = (error: (Error|null), response?: Ydb.Export.ExportToS3Response) => void;
             }
         }
+    }
+
+    /** Namespace FederationDiscovery. */
+    namespace FederationDiscovery {
+
+        /** Properties of a DatabaseInfo. */
+        interface IDatabaseInfo {
+
+            /** DatabaseInfo name */
+            name?: (string|null);
+
+            /** DatabaseInfo path */
+            path?: (string|null);
+
+            /** DatabaseInfo id */
+            id?: (string|null);
+
+            /** DatabaseInfo endpoint */
+            endpoint?: (string|null);
+
+            /** DatabaseInfo location */
+            location?: (string|null);
+
+            /** DatabaseInfo status */
+            status?: (Ydb.FederationDiscovery.DatabaseInfo.Status|null);
+
+            /** DatabaseInfo weight */
+            weight?: (number|Long|null);
+        }
+
+        /** Represents a DatabaseInfo. */
+        class DatabaseInfo implements IDatabaseInfo {
+
+            /**
+             * Constructs a new DatabaseInfo.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.FederationDiscovery.IDatabaseInfo);
+
+            /** DatabaseInfo name. */
+            public name: string;
+
+            /** DatabaseInfo path. */
+            public path: string;
+
+            /** DatabaseInfo id. */
+            public id: string;
+
+            /** DatabaseInfo endpoint. */
+            public endpoint: string;
+
+            /** DatabaseInfo location. */
+            public location: string;
+
+            /** DatabaseInfo status. */
+            public status: Ydb.FederationDiscovery.DatabaseInfo.Status;
+
+            /** DatabaseInfo weight. */
+            public weight: (number|Long);
+
+            /**
+             * Creates a new DatabaseInfo instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DatabaseInfo instance
+             */
+            public static create(properties?: Ydb.FederationDiscovery.IDatabaseInfo): Ydb.FederationDiscovery.DatabaseInfo;
+
+            /**
+             * Encodes the specified DatabaseInfo message. Does not implicitly {@link Ydb.FederationDiscovery.DatabaseInfo.verify|verify} messages.
+             * @param message DatabaseInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.FederationDiscovery.IDatabaseInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DatabaseInfo message, length delimited. Does not implicitly {@link Ydb.FederationDiscovery.DatabaseInfo.verify|verify} messages.
+             * @param message DatabaseInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.FederationDiscovery.IDatabaseInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DatabaseInfo message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DatabaseInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.FederationDiscovery.DatabaseInfo;
+
+            /**
+             * Decodes a DatabaseInfo message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns DatabaseInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.FederationDiscovery.DatabaseInfo;
+
+            /**
+             * Verifies a DatabaseInfo message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DatabaseInfo message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DatabaseInfo
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.FederationDiscovery.DatabaseInfo;
+
+            /**
+             * Creates a plain object from a DatabaseInfo message. Also converts values to other types if specified.
+             * @param message DatabaseInfo
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.FederationDiscovery.DatabaseInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DatabaseInfo to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace DatabaseInfo {
+
+            /** Status enum. */
+            enum Status {
+                STATUS_UNSPECIFIED = 0,
+                AVAILABLE = 1,
+                READ_ONLY = 2,
+                UNAVAILABLE = 3
+            }
+        }
+
+        /** Properties of a ListFederationDatabasesRequest. */
+        interface IListFederationDatabasesRequest {
+        }
+
+        /** Represents a ListFederationDatabasesRequest. */
+        class ListFederationDatabasesRequest implements IListFederationDatabasesRequest {
+
+            /**
+             * Constructs a new ListFederationDatabasesRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.FederationDiscovery.IListFederationDatabasesRequest);
+
+            /**
+             * Creates a new ListFederationDatabasesRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListFederationDatabasesRequest instance
+             */
+            public static create(properties?: Ydb.FederationDiscovery.IListFederationDatabasesRequest): Ydb.FederationDiscovery.ListFederationDatabasesRequest;
+
+            /**
+             * Encodes the specified ListFederationDatabasesRequest message. Does not implicitly {@link Ydb.FederationDiscovery.ListFederationDatabasesRequest.verify|verify} messages.
+             * @param message ListFederationDatabasesRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.FederationDiscovery.IListFederationDatabasesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ListFederationDatabasesRequest message, length delimited. Does not implicitly {@link Ydb.FederationDiscovery.ListFederationDatabasesRequest.verify|verify} messages.
+             * @param message ListFederationDatabasesRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.FederationDiscovery.IListFederationDatabasesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListFederationDatabasesRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListFederationDatabasesRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.FederationDiscovery.ListFederationDatabasesRequest;
+
+            /**
+             * Decodes a ListFederationDatabasesRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ListFederationDatabasesRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.FederationDiscovery.ListFederationDatabasesRequest;
+
+            /**
+             * Verifies a ListFederationDatabasesRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ListFederationDatabasesRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ListFederationDatabasesRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.FederationDiscovery.ListFederationDatabasesRequest;
+
+            /**
+             * Creates a plain object from a ListFederationDatabasesRequest message. Also converts values to other types if specified.
+             * @param message ListFederationDatabasesRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.FederationDiscovery.ListFederationDatabasesRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ListFederationDatabasesRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a ListFederationDatabasesResponse. */
+        interface IListFederationDatabasesResponse {
+
+            /** ListFederationDatabasesResponse operation */
+            operation?: (Ydb.Operations.IOperation|null);
+        }
+
+        /** Represents a ListFederationDatabasesResponse. */
+        class ListFederationDatabasesResponse implements IListFederationDatabasesResponse {
+
+            /**
+             * Constructs a new ListFederationDatabasesResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.FederationDiscovery.IListFederationDatabasesResponse);
+
+            /** ListFederationDatabasesResponse operation. */
+            public operation?: (Ydb.Operations.IOperation|null);
+
+            /**
+             * Creates a new ListFederationDatabasesResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListFederationDatabasesResponse instance
+             */
+            public static create(properties?: Ydb.FederationDiscovery.IListFederationDatabasesResponse): Ydb.FederationDiscovery.ListFederationDatabasesResponse;
+
+            /**
+             * Encodes the specified ListFederationDatabasesResponse message. Does not implicitly {@link Ydb.FederationDiscovery.ListFederationDatabasesResponse.verify|verify} messages.
+             * @param message ListFederationDatabasesResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.FederationDiscovery.IListFederationDatabasesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ListFederationDatabasesResponse message, length delimited. Does not implicitly {@link Ydb.FederationDiscovery.ListFederationDatabasesResponse.verify|verify} messages.
+             * @param message ListFederationDatabasesResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.FederationDiscovery.IListFederationDatabasesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListFederationDatabasesResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListFederationDatabasesResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.FederationDiscovery.ListFederationDatabasesResponse;
+
+            /**
+             * Decodes a ListFederationDatabasesResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ListFederationDatabasesResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.FederationDiscovery.ListFederationDatabasesResponse;
+
+            /**
+             * Verifies a ListFederationDatabasesResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ListFederationDatabasesResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ListFederationDatabasesResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.FederationDiscovery.ListFederationDatabasesResponse;
+
+            /**
+             * Creates a plain object from a ListFederationDatabasesResponse message. Also converts values to other types if specified.
+             * @param message ListFederationDatabasesResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.FederationDiscovery.ListFederationDatabasesResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ListFederationDatabasesResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a ListFederationDatabasesResult. */
+        interface IListFederationDatabasesResult {
+
+            /** ListFederationDatabasesResult controlPlaneEndpoint */
+            controlPlaneEndpoint?: (string|null);
+
+            /** ListFederationDatabasesResult federationDatabases */
+            federationDatabases?: (Ydb.FederationDiscovery.IDatabaseInfo[]|null);
+
+            /** ListFederationDatabasesResult selfLocation */
+            selfLocation?: (string|null);
+        }
+
+        /** Represents a ListFederationDatabasesResult. */
+        class ListFederationDatabasesResult implements IListFederationDatabasesResult {
+
+            /**
+             * Constructs a new ListFederationDatabasesResult.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.FederationDiscovery.IListFederationDatabasesResult);
+
+            /** ListFederationDatabasesResult controlPlaneEndpoint. */
+            public controlPlaneEndpoint: string;
+
+            /** ListFederationDatabasesResult federationDatabases. */
+            public federationDatabases: Ydb.FederationDiscovery.IDatabaseInfo[];
+
+            /** ListFederationDatabasesResult selfLocation. */
+            public selfLocation: string;
+
+            /**
+             * Creates a new ListFederationDatabasesResult instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListFederationDatabasesResult instance
+             */
+            public static create(properties?: Ydb.FederationDiscovery.IListFederationDatabasesResult): Ydb.FederationDiscovery.ListFederationDatabasesResult;
+
+            /**
+             * Encodes the specified ListFederationDatabasesResult message. Does not implicitly {@link Ydb.FederationDiscovery.ListFederationDatabasesResult.verify|verify} messages.
+             * @param message ListFederationDatabasesResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.FederationDiscovery.IListFederationDatabasesResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ListFederationDatabasesResult message, length delimited. Does not implicitly {@link Ydb.FederationDiscovery.ListFederationDatabasesResult.verify|verify} messages.
+             * @param message ListFederationDatabasesResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.FederationDiscovery.IListFederationDatabasesResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListFederationDatabasesResult message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListFederationDatabasesResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.FederationDiscovery.ListFederationDatabasesResult;
+
+            /**
+             * Decodes a ListFederationDatabasesResult message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ListFederationDatabasesResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.FederationDiscovery.ListFederationDatabasesResult;
+
+            /**
+             * Verifies a ListFederationDatabasesResult message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ListFederationDatabasesResult message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ListFederationDatabasesResult
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.FederationDiscovery.ListFederationDatabasesResult;
+
+            /**
+             * Creates a plain object from a ListFederationDatabasesResult message. Also converts values to other types if specified.
+             * @param message ListFederationDatabasesResult
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.FederationDiscovery.ListFederationDatabasesResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ListFederationDatabasesResult to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents a FederationDiscoveryService */
+            class FederationDiscoveryService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new FederationDiscoveryService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new FederationDiscoveryService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): FederationDiscoveryService;
+
+                /**
+                 * Calls ListFederationDatabases.
+                 * @param request ListFederationDatabasesRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ListFederationDatabasesResponse
+                 */
+                public listFederationDatabases(request: Ydb.FederationDiscovery.IListFederationDatabasesRequest, callback: Ydb.FederationDiscovery.V1.FederationDiscoveryService.ListFederationDatabasesCallback): void;
+
+                /**
+                 * Calls ListFederationDatabases.
+                 * @param request ListFederationDatabasesRequest message or plain object
+                 * @returns Promise
+                 */
+                public listFederationDatabases(request: Ydb.FederationDiscovery.IListFederationDatabasesRequest): Promise<Ydb.FederationDiscovery.ListFederationDatabasesResponse>;
+            }
+
+            namespace FederationDiscoveryService {
+
+                /**
+                 * Callback as used by {@link Ydb.FederationDiscovery.V1.FederationDiscoveryService#listFederationDatabases}.
+                 * @param error Error, if any
+                 * @param [response] ListFederationDatabasesResponse
+                 */
+                type ListFederationDatabasesCallback = (error: (Error|null), response?: Ydb.FederationDiscovery.ListFederationDatabasesResponse) => void;
+            }
+        }
+    }
+
+    /** Namespace Formats. */
+    namespace Formats {
+
+        /** Properties of an ArrowBatchSettings. */
+        interface IArrowBatchSettings {
+
+            /** ArrowBatchSettings schema */
+            schema?: (Uint8Array|null);
+        }
+
+        /** Represents an ArrowBatchSettings. */
+        class ArrowBatchSettings implements IArrowBatchSettings {
+
+            /**
+             * Constructs a new ArrowBatchSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Formats.IArrowBatchSettings);
+
+            /** ArrowBatchSettings schema. */
+            public schema: Uint8Array;
+
+            /**
+             * Creates a new ArrowBatchSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArrowBatchSettings instance
+             */
+            public static create(properties?: Ydb.Formats.IArrowBatchSettings): Ydb.Formats.ArrowBatchSettings;
+
+            /**
+             * Encodes the specified ArrowBatchSettings message. Does not implicitly {@link Ydb.Formats.ArrowBatchSettings.verify|verify} messages.
+             * @param message ArrowBatchSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Formats.IArrowBatchSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ArrowBatchSettings message, length delimited. Does not implicitly {@link Ydb.Formats.ArrowBatchSettings.verify|verify} messages.
+             * @param message ArrowBatchSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Formats.IArrowBatchSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArrowBatchSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArrowBatchSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Formats.ArrowBatchSettings;
+
+            /**
+             * Decodes an ArrowBatchSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ArrowBatchSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Formats.ArrowBatchSettings;
+
+            /**
+             * Verifies an ArrowBatchSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an ArrowBatchSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ArrowBatchSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Formats.ArrowBatchSettings;
+
+            /**
+             * Creates a plain object from an ArrowBatchSettings message. Also converts values to other types if specified.
+             * @param message ArrowBatchSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Formats.ArrowBatchSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ArrowBatchSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CsvSettings. */
+        interface ICsvSettings {
+
+            /** CsvSettings skipRows */
+            skipRows?: (number|null);
+
+            /** CsvSettings delimiter */
+            delimiter?: (Uint8Array|null);
+
+            /** CsvSettings nullValue */
+            nullValue?: (Uint8Array|null);
+
+            /** CsvSettings header */
+            header?: (boolean|null);
+        }
+
+        /** Represents a CsvSettings. */
+        class CsvSettings implements ICsvSettings {
+
+            /**
+             * Constructs a new CsvSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Formats.ICsvSettings);
+
+            /** CsvSettings skipRows. */
+            public skipRows: number;
+
+            /** CsvSettings delimiter. */
+            public delimiter: Uint8Array;
+
+            /** CsvSettings nullValue. */
+            public nullValue: Uint8Array;
+
+            /** CsvSettings header. */
+            public header: boolean;
+
+            /**
+             * Creates a new CsvSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CsvSettings instance
+             */
+            public static create(properties?: Ydb.Formats.ICsvSettings): Ydb.Formats.CsvSettings;
+
+            /**
+             * Encodes the specified CsvSettings message. Does not implicitly {@link Ydb.Formats.CsvSettings.verify|verify} messages.
+             * @param message CsvSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Formats.ICsvSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CsvSettings message, length delimited. Does not implicitly {@link Ydb.Formats.CsvSettings.verify|verify} messages.
+             * @param message CsvSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Formats.ICsvSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CsvSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CsvSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Formats.CsvSettings;
+
+            /**
+             * Decodes a CsvSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CsvSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Formats.CsvSettings;
+
+            /**
+             * Verifies a CsvSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CsvSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CsvSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Formats.CsvSettings;
+
+            /**
+             * Creates a plain object from a CsvSettings message. Also converts values to other types if specified.
+             * @param message CsvSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Formats.CsvSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CsvSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+    }
+
+    /** Namespace Import. */
+    namespace Import {
 
         /** Properties of an ImportProgress. */
         interface IImportProgress {
@@ -13621,6 +14385,9 @@ export namespace Ydb {
 
             /** ImportFromS3Settings numberOfRetries */
             numberOfRetries?: (number|null);
+
+            /** ImportFromS3Settings region */
+            region?: (string|null);
         }
 
         /** S3 */
@@ -13655,6 +14422,9 @@ export namespace Ydb {
 
             /** ImportFromS3Settings numberOfRetries. */
             public numberOfRetries: number;
+
+            /** ImportFromS3Settings region. */
+            public region: string;
 
             /**
              * Creates a new ImportFromS3Settings instance using the specified properties.
@@ -14579,19 +15349,15 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
-
-    /** Namespace Monitoring. */
-    namespace Monitoring {
 
         /** Namespace V1. */
         namespace V1 {
 
-            /** Represents a MonitoringService */
-            class MonitoringService extends $protobuf.rpc.Service {
+            /** Represents an ImportService */
+            class ImportService extends $protobuf.rpc.Service {
 
                 /**
-                 * Constructs a new MonitoringService service.
+                 * Constructs a new ImportService service.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
@@ -14599,60 +15365,64 @@ export namespace Ydb {
                 constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
                 /**
-                 * Creates new MonitoringService service using the specified rpc implementation.
+                 * Creates new ImportService service using the specified rpc implementation.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
                  * @returns RPC service. Useful where requests and/or responses are streamed.
                  */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): MonitoringService;
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ImportService;
 
                 /**
-                 * Calls SelfCheck.
-                 * @param request SelfCheckRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and SelfCheckResponse
+                 * Calls ImportFromS3.
+                 * @param request ImportFromS3Request message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ImportFromS3Response
                  */
-                public selfCheck(request: Ydb.Monitoring.ISelfCheckRequest, callback: Ydb.Monitoring.V1.MonitoringService.SelfCheckCallback): void;
+                public importFromS3(request: Ydb.Import.IImportFromS3Request, callback: Ydb.Import.V1.ImportService.ImportFromS3Callback): void;
 
                 /**
-                 * Calls SelfCheck.
-                 * @param request SelfCheckRequest message or plain object
+                 * Calls ImportFromS3.
+                 * @param request ImportFromS3Request message or plain object
                  * @returns Promise
                  */
-                public selfCheck(request: Ydb.Monitoring.ISelfCheckRequest): Promise<Ydb.Monitoring.SelfCheckResponse>;
+                public importFromS3(request: Ydb.Import.IImportFromS3Request): Promise<Ydb.Import.ImportFromS3Response>;
 
                 /**
-                 * Calls NodeCheck.
-                 * @param request NodeCheckRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and NodeCheckResponse
+                 * Calls ImportData.
+                 * @param request ImportDataRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ImportDataResponse
                  */
-                public nodeCheck(request: Ydb.Monitoring.INodeCheckRequest, callback: Ydb.Monitoring.V1.MonitoringService.NodeCheckCallback): void;
+                public importData(request: Ydb.Import.IImportDataRequest, callback: Ydb.Import.V1.ImportService.ImportDataCallback): void;
 
                 /**
-                 * Calls NodeCheck.
-                 * @param request NodeCheckRequest message or plain object
+                 * Calls ImportData.
+                 * @param request ImportDataRequest message or plain object
                  * @returns Promise
                  */
-                public nodeCheck(request: Ydb.Monitoring.INodeCheckRequest): Promise<Ydb.Monitoring.NodeCheckResponse>;
+                public importData(request: Ydb.Import.IImportDataRequest): Promise<Ydb.Import.ImportDataResponse>;
             }
 
-            namespace MonitoringService {
+            namespace ImportService {
 
                 /**
-                 * Callback as used by {@link Ydb.Monitoring.V1.MonitoringService#selfCheck}.
+                 * Callback as used by {@link Ydb.Import.V1.ImportService#importFromS3}.
                  * @param error Error, if any
-                 * @param [response] SelfCheckResponse
+                 * @param [response] ImportFromS3Response
                  */
-                type SelfCheckCallback = (error: (Error|null), response?: Ydb.Monitoring.SelfCheckResponse) => void;
+                type ImportFromS3Callback = (error: (Error|null), response?: Ydb.Import.ImportFromS3Response) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Monitoring.V1.MonitoringService#nodeCheck}.
+                 * Callback as used by {@link Ydb.Import.V1.ImportService#importData}.
                  * @param error Error, if any
-                 * @param [response] NodeCheckResponse
+                 * @param [response] ImportDataResponse
                  */
-                type NodeCheckCallback = (error: (Error|null), response?: Ydb.Monitoring.NodeCheckResponse) => void;
+                type ImportDataCallback = (error: (Error|null), response?: Ydb.Import.ImportDataResponse) => void;
             }
         }
+    }
+
+    /** Namespace Monitoring. */
+    namespace Monitoring {
 
         /** Properties of a StatusFlag. */
         interface IStatusFlag {
@@ -17679,19 +18449,15 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
-
-    /** Namespace Operation. */
-    namespace Operation {
 
         /** Namespace V1. */
         namespace V1 {
 
-            /** Represents an OperationService */
-            class OperationService extends $protobuf.rpc.Service {
+            /** Represents a MonitoringService */
+            class MonitoringService extends $protobuf.rpc.Service {
 
                 /**
-                 * Constructs a new OperationService service.
+                 * Constructs a new MonitoringService service.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
@@ -17699,260 +18465,5373 @@ export namespace Ydb {
                 constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
                 /**
-                 * Creates new OperationService service using the specified rpc implementation.
+                 * Creates new MonitoringService service using the specified rpc implementation.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
                  * @returns RPC service. Useful where requests and/or responses are streamed.
                  */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): OperationService;
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): MonitoringService;
 
                 /**
-                 * Calls GetOperation.
-                 * @param request GetOperationRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and GetOperationResponse
+                 * Calls SelfCheck.
+                 * @param request SelfCheckRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and SelfCheckResponse
                  */
-                public getOperation(request: Ydb.Operations.IGetOperationRequest, callback: Ydb.Operation.V1.OperationService.GetOperationCallback): void;
+                public selfCheck(request: Ydb.Monitoring.ISelfCheckRequest, callback: Ydb.Monitoring.V1.MonitoringService.SelfCheckCallback): void;
 
                 /**
-                 * Calls GetOperation.
-                 * @param request GetOperationRequest message or plain object
+                 * Calls SelfCheck.
+                 * @param request SelfCheckRequest message or plain object
                  * @returns Promise
                  */
-                public getOperation(request: Ydb.Operations.IGetOperationRequest): Promise<Ydb.Operations.GetOperationResponse>;
+                public selfCheck(request: Ydb.Monitoring.ISelfCheckRequest): Promise<Ydb.Monitoring.SelfCheckResponse>;
 
                 /**
-                 * Calls CancelOperation.
-                 * @param request CancelOperationRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and CancelOperationResponse
+                 * Calls NodeCheck.
+                 * @param request NodeCheckRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and NodeCheckResponse
                  */
-                public cancelOperation(request: Ydb.Operations.ICancelOperationRequest, callback: Ydb.Operation.V1.OperationService.CancelOperationCallback): void;
+                public nodeCheck(request: Ydb.Monitoring.INodeCheckRequest, callback: Ydb.Monitoring.V1.MonitoringService.NodeCheckCallback): void;
 
                 /**
-                 * Calls CancelOperation.
-                 * @param request CancelOperationRequest message or plain object
+                 * Calls NodeCheck.
+                 * @param request NodeCheckRequest message or plain object
                  * @returns Promise
                  */
-                public cancelOperation(request: Ydb.Operations.ICancelOperationRequest): Promise<Ydb.Operations.CancelOperationResponse>;
-
-                /**
-                 * Calls ForgetOperation.
-                 * @param request ForgetOperationRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ForgetOperationResponse
-                 */
-                public forgetOperation(request: Ydb.Operations.IForgetOperationRequest, callback: Ydb.Operation.V1.OperationService.ForgetOperationCallback): void;
-
-                /**
-                 * Calls ForgetOperation.
-                 * @param request ForgetOperationRequest message or plain object
-                 * @returns Promise
-                 */
-                public forgetOperation(request: Ydb.Operations.IForgetOperationRequest): Promise<Ydb.Operations.ForgetOperationResponse>;
-
-                /**
-                 * Calls ListOperations.
-                 * @param request ListOperationsRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ListOperationsResponse
-                 */
-                public listOperations(request: Ydb.Operations.IListOperationsRequest, callback: Ydb.Operation.V1.OperationService.ListOperationsCallback): void;
-
-                /**
-                 * Calls ListOperations.
-                 * @param request ListOperationsRequest message or plain object
-                 * @returns Promise
-                 */
-                public listOperations(request: Ydb.Operations.IListOperationsRequest): Promise<Ydb.Operations.ListOperationsResponse>;
+                public nodeCheck(request: Ydb.Monitoring.INodeCheckRequest): Promise<Ydb.Monitoring.NodeCheckResponse>;
             }
 
-            namespace OperationService {
+            namespace MonitoringService {
 
                 /**
-                 * Callback as used by {@link Ydb.Operation.V1.OperationService#getOperation}.
+                 * Callback as used by {@link Ydb.Monitoring.V1.MonitoringService#selfCheck}.
                  * @param error Error, if any
-                 * @param [response] GetOperationResponse
+                 * @param [response] SelfCheckResponse
                  */
-                type GetOperationCallback = (error: (Error|null), response?: Ydb.Operations.GetOperationResponse) => void;
+                type SelfCheckCallback = (error: (Error|null), response?: Ydb.Monitoring.SelfCheckResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Operation.V1.OperationService#cancelOperation}.
+                 * Callback as used by {@link Ydb.Monitoring.V1.MonitoringService#nodeCheck}.
                  * @param error Error, if any
-                 * @param [response] CancelOperationResponse
+                 * @param [response] NodeCheckResponse
                  */
-                type CancelOperationCallback = (error: (Error|null), response?: Ydb.Operations.CancelOperationResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Operation.V1.OperationService#forgetOperation}.
-                 * @param error Error, if any
-                 * @param [response] ForgetOperationResponse
-                 */
-                type ForgetOperationCallback = (error: (Error|null), response?: Ydb.Operations.ForgetOperationResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Operation.V1.OperationService#listOperations}.
-                 * @param error Error, if any
-                 * @param [response] ListOperationsResponse
-                 */
-                type ListOperationsCallback = (error: (Error|null), response?: Ydb.Operations.ListOperationsResponse) => void;
+                type NodeCheckCallback = (error: (Error|null), response?: Ydb.Monitoring.NodeCheckResponse) => void;
             }
         }
+    }
+
+    /** Namespace TableStats. */
+    namespace TableStats {
+
+        /** Properties of an OperationStats. */
+        interface IOperationStats {
+
+            /** OperationStats rows */
+            rows?: (number|Long|null);
+
+            /** OperationStats bytes */
+            bytes?: (number|Long|null);
+        }
+
+        /** Represents an OperationStats. */
+        class OperationStats implements IOperationStats {
+
+            /**
+             * Constructs a new OperationStats.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.TableStats.IOperationStats);
+
+            /** OperationStats rows. */
+            public rows: (number|Long);
+
+            /** OperationStats bytes. */
+            public bytes: (number|Long);
+
+            /**
+             * Creates a new OperationStats instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns OperationStats instance
+             */
+            public static create(properties?: Ydb.TableStats.IOperationStats): Ydb.TableStats.OperationStats;
+
+            /**
+             * Encodes the specified OperationStats message. Does not implicitly {@link Ydb.TableStats.OperationStats.verify|verify} messages.
+             * @param message OperationStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.TableStats.IOperationStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified OperationStats message, length delimited. Does not implicitly {@link Ydb.TableStats.OperationStats.verify|verify} messages.
+             * @param message OperationStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.TableStats.IOperationStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an OperationStats message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OperationStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.OperationStats;
+
+            /**
+             * Decodes an OperationStats message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns OperationStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.OperationStats;
+
+            /**
+             * Verifies an OperationStats message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an OperationStats message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns OperationStats
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.OperationStats;
+
+            /**
+             * Creates a plain object from an OperationStats message. Also converts values to other types if specified.
+             * @param message OperationStats
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.TableStats.OperationStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this OperationStats to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a TableAccessStats. */
+        interface ITableAccessStats {
+
+            /** TableAccessStats name */
+            name?: (string|null);
+
+            /** TableAccessStats reads */
+            reads?: (Ydb.TableStats.IOperationStats|null);
+
+            /** TableAccessStats updates */
+            updates?: (Ydb.TableStats.IOperationStats|null);
+
+            /** TableAccessStats deletes */
+            deletes?: (Ydb.TableStats.IOperationStats|null);
+
+            /** TableAccessStats partitionsCount */
+            partitionsCount?: (number|Long|null);
+        }
+
+        /** Represents a TableAccessStats. */
+        class TableAccessStats implements ITableAccessStats {
+
+            /**
+             * Constructs a new TableAccessStats.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.TableStats.ITableAccessStats);
+
+            /** TableAccessStats name. */
+            public name: string;
+
+            /** TableAccessStats reads. */
+            public reads?: (Ydb.TableStats.IOperationStats|null);
+
+            /** TableAccessStats updates. */
+            public updates?: (Ydb.TableStats.IOperationStats|null);
+
+            /** TableAccessStats deletes. */
+            public deletes?: (Ydb.TableStats.IOperationStats|null);
+
+            /** TableAccessStats partitionsCount. */
+            public partitionsCount: (number|Long);
+
+            /**
+             * Creates a new TableAccessStats instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TableAccessStats instance
+             */
+            public static create(properties?: Ydb.TableStats.ITableAccessStats): Ydb.TableStats.TableAccessStats;
+
+            /**
+             * Encodes the specified TableAccessStats message. Does not implicitly {@link Ydb.TableStats.TableAccessStats.verify|verify} messages.
+             * @param message TableAccessStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.TableStats.ITableAccessStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified TableAccessStats message, length delimited. Does not implicitly {@link Ydb.TableStats.TableAccessStats.verify|verify} messages.
+             * @param message TableAccessStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.TableStats.ITableAccessStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TableAccessStats message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TableAccessStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.TableAccessStats;
+
+            /**
+             * Decodes a TableAccessStats message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns TableAccessStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.TableAccessStats;
+
+            /**
+             * Verifies a TableAccessStats message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a TableAccessStats message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns TableAccessStats
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.TableAccessStats;
+
+            /**
+             * Creates a plain object from a TableAccessStats message. Also converts values to other types if specified.
+             * @param message TableAccessStats
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.TableStats.TableAccessStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this TableAccessStats to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a QueryPhaseStats. */
+        interface IQueryPhaseStats {
+
+            /** QueryPhaseStats durationUs */
+            durationUs?: (number|Long|null);
+
+            /** QueryPhaseStats tableAccess */
+            tableAccess?: (Ydb.TableStats.ITableAccessStats[]|null);
+
+            /** QueryPhaseStats cpuTimeUs */
+            cpuTimeUs?: (number|Long|null);
+
+            /** QueryPhaseStats affectedShards */
+            affectedShards?: (number|Long|null);
+
+            /** QueryPhaseStats literalPhase */
+            literalPhase?: (boolean|null);
+        }
+
+        /** Represents a QueryPhaseStats. */
+        class QueryPhaseStats implements IQueryPhaseStats {
+
+            /**
+             * Constructs a new QueryPhaseStats.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.TableStats.IQueryPhaseStats);
+
+            /** QueryPhaseStats durationUs. */
+            public durationUs: (number|Long);
+
+            /** QueryPhaseStats tableAccess. */
+            public tableAccess: Ydb.TableStats.ITableAccessStats[];
+
+            /** QueryPhaseStats cpuTimeUs. */
+            public cpuTimeUs: (number|Long);
+
+            /** QueryPhaseStats affectedShards. */
+            public affectedShards: (number|Long);
+
+            /** QueryPhaseStats literalPhase. */
+            public literalPhase: boolean;
+
+            /**
+             * Creates a new QueryPhaseStats instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QueryPhaseStats instance
+             */
+            public static create(properties?: Ydb.TableStats.IQueryPhaseStats): Ydb.TableStats.QueryPhaseStats;
+
+            /**
+             * Encodes the specified QueryPhaseStats message. Does not implicitly {@link Ydb.TableStats.QueryPhaseStats.verify|verify} messages.
+             * @param message QueryPhaseStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.TableStats.IQueryPhaseStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified QueryPhaseStats message, length delimited. Does not implicitly {@link Ydb.TableStats.QueryPhaseStats.verify|verify} messages.
+             * @param message QueryPhaseStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.TableStats.IQueryPhaseStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QueryPhaseStats message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QueryPhaseStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.QueryPhaseStats;
+
+            /**
+             * Decodes a QueryPhaseStats message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns QueryPhaseStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.QueryPhaseStats;
+
+            /**
+             * Verifies a QueryPhaseStats message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a QueryPhaseStats message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns QueryPhaseStats
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.QueryPhaseStats;
+
+            /**
+             * Creates a plain object from a QueryPhaseStats message. Also converts values to other types if specified.
+             * @param message QueryPhaseStats
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.TableStats.QueryPhaseStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this QueryPhaseStats to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CompilationStats. */
+        interface ICompilationStats {
+
+            /** CompilationStats fromCache */
+            fromCache?: (boolean|null);
+
+            /** CompilationStats durationUs */
+            durationUs?: (number|Long|null);
+
+            /** CompilationStats cpuTimeUs */
+            cpuTimeUs?: (number|Long|null);
+        }
+
+        /** Represents a CompilationStats. */
+        class CompilationStats implements ICompilationStats {
+
+            /**
+             * Constructs a new CompilationStats.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.TableStats.ICompilationStats);
+
+            /** CompilationStats fromCache. */
+            public fromCache: boolean;
+
+            /** CompilationStats durationUs. */
+            public durationUs: (number|Long);
+
+            /** CompilationStats cpuTimeUs. */
+            public cpuTimeUs: (number|Long);
+
+            /**
+             * Creates a new CompilationStats instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CompilationStats instance
+             */
+            public static create(properties?: Ydb.TableStats.ICompilationStats): Ydb.TableStats.CompilationStats;
+
+            /**
+             * Encodes the specified CompilationStats message. Does not implicitly {@link Ydb.TableStats.CompilationStats.verify|verify} messages.
+             * @param message CompilationStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.TableStats.ICompilationStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CompilationStats message, length delimited. Does not implicitly {@link Ydb.TableStats.CompilationStats.verify|verify} messages.
+             * @param message CompilationStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.TableStats.ICompilationStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CompilationStats message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CompilationStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.CompilationStats;
+
+            /**
+             * Decodes a CompilationStats message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CompilationStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.CompilationStats;
+
+            /**
+             * Verifies a CompilationStats message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CompilationStats message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CompilationStats
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.CompilationStats;
+
+            /**
+             * Creates a plain object from a CompilationStats message. Also converts values to other types if specified.
+             * @param message CompilationStats
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.TableStats.CompilationStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CompilationStats to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a QueryStats. */
+        interface IQueryStats {
+
+            /** QueryStats queryPhases */
+            queryPhases?: (Ydb.TableStats.IQueryPhaseStats[]|null);
+
+            /** QueryStats compilation */
+            compilation?: (Ydb.TableStats.ICompilationStats|null);
+
+            /** QueryStats processCpuTimeUs */
+            processCpuTimeUs?: (number|Long|null);
+
+            /** QueryStats queryPlan */
+            queryPlan?: (string|null);
+
+            /** QueryStats queryAst */
+            queryAst?: (string|null);
+
+            /** QueryStats totalDurationUs */
+            totalDurationUs?: (number|Long|null);
+
+            /** QueryStats totalCpuTimeUs */
+            totalCpuTimeUs?: (number|Long|null);
+        }
+
+        /** Represents a QueryStats. */
+        class QueryStats implements IQueryStats {
+
+            /**
+             * Constructs a new QueryStats.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.TableStats.IQueryStats);
+
+            /** QueryStats queryPhases. */
+            public queryPhases: Ydb.TableStats.IQueryPhaseStats[];
+
+            /** QueryStats compilation. */
+            public compilation?: (Ydb.TableStats.ICompilationStats|null);
+
+            /** QueryStats processCpuTimeUs. */
+            public processCpuTimeUs: (number|Long);
+
+            /** QueryStats queryPlan. */
+            public queryPlan: string;
+
+            /** QueryStats queryAst. */
+            public queryAst: string;
+
+            /** QueryStats totalDurationUs. */
+            public totalDurationUs: (number|Long);
+
+            /** QueryStats totalCpuTimeUs. */
+            public totalCpuTimeUs: (number|Long);
+
+            /**
+             * Creates a new QueryStats instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QueryStats instance
+             */
+            public static create(properties?: Ydb.TableStats.IQueryStats): Ydb.TableStats.QueryStats;
+
+            /**
+             * Encodes the specified QueryStats message. Does not implicitly {@link Ydb.TableStats.QueryStats.verify|verify} messages.
+             * @param message QueryStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.TableStats.IQueryStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified QueryStats message, length delimited. Does not implicitly {@link Ydb.TableStats.QueryStats.verify|verify} messages.
+             * @param message QueryStats message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.TableStats.IQueryStats, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QueryStats message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QueryStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.QueryStats;
+
+            /**
+             * Decodes a QueryStats message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns QueryStats
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.QueryStats;
+
+            /**
+             * Verifies a QueryStats message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a QueryStats message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns QueryStats
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.QueryStats;
+
+            /**
+             * Creates a plain object from a QueryStats message. Also converts values to other types if specified.
+             * @param message QueryStats
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.TableStats.QueryStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this QueryStats to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+    }
+
+    /** Namespace Query. */
+    namespace Query {
+
+        /** Properties of a CreateSessionRequest. */
+        interface ICreateSessionRequest {
+        }
+
+        /** Represents a CreateSessionRequest. */
+        class CreateSessionRequest implements ICreateSessionRequest {
+
+            /**
+             * Constructs a new CreateSessionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ICreateSessionRequest);
+
+            /**
+             * Creates a new CreateSessionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateSessionRequest instance
+             */
+            public static create(properties?: Ydb.Query.ICreateSessionRequest): Ydb.Query.CreateSessionRequest;
+
+            /**
+             * Encodes the specified CreateSessionRequest message. Does not implicitly {@link Ydb.Query.CreateSessionRequest.verify|verify} messages.
+             * @param message CreateSessionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ICreateSessionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CreateSessionRequest message, length delimited. Does not implicitly {@link Ydb.Query.CreateSessionRequest.verify|verify} messages.
+             * @param message CreateSessionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ICreateSessionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateSessionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateSessionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.CreateSessionRequest;
+
+            /**
+             * Decodes a CreateSessionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CreateSessionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.CreateSessionRequest;
+
+            /**
+             * Verifies a CreateSessionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CreateSessionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CreateSessionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.CreateSessionRequest;
+
+            /**
+             * Creates a plain object from a CreateSessionRequest message. Also converts values to other types if specified.
+             * @param message CreateSessionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.CreateSessionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CreateSessionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CreateSessionResponse. */
+        interface ICreateSessionResponse {
+
+            /** CreateSessionResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** CreateSessionResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+
+            /** CreateSessionResponse sessionId */
+            sessionId?: (string|null);
+
+            /** CreateSessionResponse nodeId */
+            nodeId?: (number|Long|null);
+        }
+
+        /** Represents a CreateSessionResponse. */
+        class CreateSessionResponse implements ICreateSessionResponse {
+
+            /**
+             * Constructs a new CreateSessionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ICreateSessionResponse);
+
+            /** CreateSessionResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** CreateSessionResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /** CreateSessionResponse sessionId. */
+            public sessionId: string;
+
+            /** CreateSessionResponse nodeId. */
+            public nodeId: (number|Long);
+
+            /**
+             * Creates a new CreateSessionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateSessionResponse instance
+             */
+            public static create(properties?: Ydb.Query.ICreateSessionResponse): Ydb.Query.CreateSessionResponse;
+
+            /**
+             * Encodes the specified CreateSessionResponse message. Does not implicitly {@link Ydb.Query.CreateSessionResponse.verify|verify} messages.
+             * @param message CreateSessionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ICreateSessionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CreateSessionResponse message, length delimited. Does not implicitly {@link Ydb.Query.CreateSessionResponse.verify|verify} messages.
+             * @param message CreateSessionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ICreateSessionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateSessionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateSessionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.CreateSessionResponse;
+
+            /**
+             * Decodes a CreateSessionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CreateSessionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.CreateSessionResponse;
+
+            /**
+             * Verifies a CreateSessionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CreateSessionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CreateSessionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.CreateSessionResponse;
+
+            /**
+             * Creates a plain object from a CreateSessionResponse message. Also converts values to other types if specified.
+             * @param message CreateSessionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.CreateSessionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CreateSessionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a DeleteSessionRequest. */
+        interface IDeleteSessionRequest {
+
+            /** DeleteSessionRequest sessionId */
+            sessionId?: (string|null);
+        }
+
+        /** Represents a DeleteSessionRequest. */
+        class DeleteSessionRequest implements IDeleteSessionRequest {
+
+            /**
+             * Constructs a new DeleteSessionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IDeleteSessionRequest);
+
+            /** DeleteSessionRequest sessionId. */
+            public sessionId: string;
+
+            /**
+             * Creates a new DeleteSessionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DeleteSessionRequest instance
+             */
+            public static create(properties?: Ydb.Query.IDeleteSessionRequest): Ydb.Query.DeleteSessionRequest;
+
+            /**
+             * Encodes the specified DeleteSessionRequest message. Does not implicitly {@link Ydb.Query.DeleteSessionRequest.verify|verify} messages.
+             * @param message DeleteSessionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IDeleteSessionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DeleteSessionRequest message, length delimited. Does not implicitly {@link Ydb.Query.DeleteSessionRequest.verify|verify} messages.
+             * @param message DeleteSessionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IDeleteSessionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DeleteSessionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DeleteSessionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.DeleteSessionRequest;
+
+            /**
+             * Decodes a DeleteSessionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns DeleteSessionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.DeleteSessionRequest;
+
+            /**
+             * Verifies a DeleteSessionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DeleteSessionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DeleteSessionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.DeleteSessionRequest;
+
+            /**
+             * Creates a plain object from a DeleteSessionRequest message. Also converts values to other types if specified.
+             * @param message DeleteSessionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.DeleteSessionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DeleteSessionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a DeleteSessionResponse. */
+        interface IDeleteSessionResponse {
+
+            /** DeleteSessionResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** DeleteSessionResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+        }
+
+        /** Represents a DeleteSessionResponse. */
+        class DeleteSessionResponse implements IDeleteSessionResponse {
+
+            /**
+             * Constructs a new DeleteSessionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IDeleteSessionResponse);
+
+            /** DeleteSessionResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** DeleteSessionResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /**
+             * Creates a new DeleteSessionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DeleteSessionResponse instance
+             */
+            public static create(properties?: Ydb.Query.IDeleteSessionResponse): Ydb.Query.DeleteSessionResponse;
+
+            /**
+             * Encodes the specified DeleteSessionResponse message. Does not implicitly {@link Ydb.Query.DeleteSessionResponse.verify|verify} messages.
+             * @param message DeleteSessionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IDeleteSessionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DeleteSessionResponse message, length delimited. Does not implicitly {@link Ydb.Query.DeleteSessionResponse.verify|verify} messages.
+             * @param message DeleteSessionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IDeleteSessionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DeleteSessionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DeleteSessionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.DeleteSessionResponse;
+
+            /**
+             * Decodes a DeleteSessionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns DeleteSessionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.DeleteSessionResponse;
+
+            /**
+             * Verifies a DeleteSessionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DeleteSessionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DeleteSessionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.DeleteSessionResponse;
+
+            /**
+             * Creates a plain object from a DeleteSessionResponse message. Also converts values to other types if specified.
+             * @param message DeleteSessionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.DeleteSessionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DeleteSessionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of an AttachSessionRequest. */
+        interface IAttachSessionRequest {
+
+            /** AttachSessionRequest sessionId */
+            sessionId?: (string|null);
+        }
+
+        /** Represents an AttachSessionRequest. */
+        class AttachSessionRequest implements IAttachSessionRequest {
+
+            /**
+             * Constructs a new AttachSessionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IAttachSessionRequest);
+
+            /** AttachSessionRequest sessionId. */
+            public sessionId: string;
+
+            /**
+             * Creates a new AttachSessionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AttachSessionRequest instance
+             */
+            public static create(properties?: Ydb.Query.IAttachSessionRequest): Ydb.Query.AttachSessionRequest;
+
+            /**
+             * Encodes the specified AttachSessionRequest message. Does not implicitly {@link Ydb.Query.AttachSessionRequest.verify|verify} messages.
+             * @param message AttachSessionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IAttachSessionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified AttachSessionRequest message, length delimited. Does not implicitly {@link Ydb.Query.AttachSessionRequest.verify|verify} messages.
+             * @param message AttachSessionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IAttachSessionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AttachSessionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AttachSessionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.AttachSessionRequest;
+
+            /**
+             * Decodes an AttachSessionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AttachSessionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.AttachSessionRequest;
+
+            /**
+             * Verifies an AttachSessionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an AttachSessionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns AttachSessionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.AttachSessionRequest;
+
+            /**
+             * Creates a plain object from an AttachSessionRequest message. Also converts values to other types if specified.
+             * @param message AttachSessionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.AttachSessionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this AttachSessionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a SessionState. */
+        interface ISessionState {
+
+            /** SessionState status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** SessionState issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+        }
+
+        /** Represents a SessionState. */
+        class SessionState implements ISessionState {
+
+            /**
+             * Constructs a new SessionState.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ISessionState);
+
+            /** SessionState status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** SessionState issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /**
+             * Creates a new SessionState instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SessionState instance
+             */
+            public static create(properties?: Ydb.Query.ISessionState): Ydb.Query.SessionState;
+
+            /**
+             * Encodes the specified SessionState message. Does not implicitly {@link Ydb.Query.SessionState.verify|verify} messages.
+             * @param message SessionState message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ISessionState, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified SessionState message, length delimited. Does not implicitly {@link Ydb.Query.SessionState.verify|verify} messages.
+             * @param message SessionState message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ISessionState, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SessionState message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SessionState
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.SessionState;
+
+            /**
+             * Decodes a SessionState message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns SessionState
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.SessionState;
+
+            /**
+             * Verifies a SessionState message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a SessionState message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns SessionState
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.SessionState;
+
+            /**
+             * Creates a plain object from a SessionState message. Also converts values to other types if specified.
+             * @param message SessionState
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.SessionState, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this SessionState to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a SerializableModeSettings. */
+        interface ISerializableModeSettings {
+        }
+
+        /** Represents a SerializableModeSettings. */
+        class SerializableModeSettings implements ISerializableModeSettings {
+
+            /**
+             * Constructs a new SerializableModeSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ISerializableModeSettings);
+
+            /**
+             * Creates a new SerializableModeSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SerializableModeSettings instance
+             */
+            public static create(properties?: Ydb.Query.ISerializableModeSettings): Ydb.Query.SerializableModeSettings;
+
+            /**
+             * Encodes the specified SerializableModeSettings message. Does not implicitly {@link Ydb.Query.SerializableModeSettings.verify|verify} messages.
+             * @param message SerializableModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ISerializableModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified SerializableModeSettings message, length delimited. Does not implicitly {@link Ydb.Query.SerializableModeSettings.verify|verify} messages.
+             * @param message SerializableModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ISerializableModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SerializableModeSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SerializableModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.SerializableModeSettings;
+
+            /**
+             * Decodes a SerializableModeSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns SerializableModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.SerializableModeSettings;
+
+            /**
+             * Verifies a SerializableModeSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a SerializableModeSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns SerializableModeSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.SerializableModeSettings;
+
+            /**
+             * Creates a plain object from a SerializableModeSettings message. Also converts values to other types if specified.
+             * @param message SerializableModeSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.SerializableModeSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this SerializableModeSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of an OnlineModeSettings. */
+        interface IOnlineModeSettings {
+
+            /** OnlineModeSettings allowInconsistentReads */
+            allowInconsistentReads?: (boolean|null);
+        }
+
+        /** Represents an OnlineModeSettings. */
+        class OnlineModeSettings implements IOnlineModeSettings {
+
+            /**
+             * Constructs a new OnlineModeSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IOnlineModeSettings);
+
+            /** OnlineModeSettings allowInconsistentReads. */
+            public allowInconsistentReads: boolean;
+
+            /**
+             * Creates a new OnlineModeSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns OnlineModeSettings instance
+             */
+            public static create(properties?: Ydb.Query.IOnlineModeSettings): Ydb.Query.OnlineModeSettings;
+
+            /**
+             * Encodes the specified OnlineModeSettings message. Does not implicitly {@link Ydb.Query.OnlineModeSettings.verify|verify} messages.
+             * @param message OnlineModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IOnlineModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified OnlineModeSettings message, length delimited. Does not implicitly {@link Ydb.Query.OnlineModeSettings.verify|verify} messages.
+             * @param message OnlineModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IOnlineModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an OnlineModeSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OnlineModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.OnlineModeSettings;
+
+            /**
+             * Decodes an OnlineModeSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns OnlineModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.OnlineModeSettings;
+
+            /**
+             * Verifies an OnlineModeSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an OnlineModeSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns OnlineModeSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.OnlineModeSettings;
+
+            /**
+             * Creates a plain object from an OnlineModeSettings message. Also converts values to other types if specified.
+             * @param message OnlineModeSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.OnlineModeSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this OnlineModeSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a StaleModeSettings. */
+        interface IStaleModeSettings {
+        }
+
+        /** Represents a StaleModeSettings. */
+        class StaleModeSettings implements IStaleModeSettings {
+
+            /**
+             * Constructs a new StaleModeSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IStaleModeSettings);
+
+            /**
+             * Creates a new StaleModeSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StaleModeSettings instance
+             */
+            public static create(properties?: Ydb.Query.IStaleModeSettings): Ydb.Query.StaleModeSettings;
+
+            /**
+             * Encodes the specified StaleModeSettings message. Does not implicitly {@link Ydb.Query.StaleModeSettings.verify|verify} messages.
+             * @param message StaleModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IStaleModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified StaleModeSettings message, length delimited. Does not implicitly {@link Ydb.Query.StaleModeSettings.verify|verify} messages.
+             * @param message StaleModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IStaleModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StaleModeSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StaleModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.StaleModeSettings;
+
+            /**
+             * Decodes a StaleModeSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns StaleModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.StaleModeSettings;
+
+            /**
+             * Verifies a StaleModeSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a StaleModeSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns StaleModeSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.StaleModeSettings;
+
+            /**
+             * Creates a plain object from a StaleModeSettings message. Also converts values to other types if specified.
+             * @param message StaleModeSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.StaleModeSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this StaleModeSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a SnapshotModeSettings. */
+        interface ISnapshotModeSettings {
+        }
+
+        /** Represents a SnapshotModeSettings. */
+        class SnapshotModeSettings implements ISnapshotModeSettings {
+
+            /**
+             * Constructs a new SnapshotModeSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ISnapshotModeSettings);
+
+            /**
+             * Creates a new SnapshotModeSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SnapshotModeSettings instance
+             */
+            public static create(properties?: Ydb.Query.ISnapshotModeSettings): Ydb.Query.SnapshotModeSettings;
+
+            /**
+             * Encodes the specified SnapshotModeSettings message. Does not implicitly {@link Ydb.Query.SnapshotModeSettings.verify|verify} messages.
+             * @param message SnapshotModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ISnapshotModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified SnapshotModeSettings message, length delimited. Does not implicitly {@link Ydb.Query.SnapshotModeSettings.verify|verify} messages.
+             * @param message SnapshotModeSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ISnapshotModeSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SnapshotModeSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SnapshotModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.SnapshotModeSettings;
+
+            /**
+             * Decodes a SnapshotModeSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns SnapshotModeSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.SnapshotModeSettings;
+
+            /**
+             * Verifies a SnapshotModeSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a SnapshotModeSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns SnapshotModeSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.SnapshotModeSettings;
+
+            /**
+             * Creates a plain object from a SnapshotModeSettings message. Also converts values to other types if specified.
+             * @param message SnapshotModeSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.SnapshotModeSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this SnapshotModeSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a TransactionSettings. */
+        interface ITransactionSettings {
+
+            /** TransactionSettings serializableReadWrite */
+            serializableReadWrite?: (Ydb.Query.ISerializableModeSettings|null);
+
+            /** TransactionSettings onlineReadOnly */
+            onlineReadOnly?: (Ydb.Query.IOnlineModeSettings|null);
+
+            /** TransactionSettings staleReadOnly */
+            staleReadOnly?: (Ydb.Query.IStaleModeSettings|null);
+
+            /** TransactionSettings snapshotReadOnly */
+            snapshotReadOnly?: (Ydb.Query.ISnapshotModeSettings|null);
+        }
+
+        /** Represents a TransactionSettings. */
+        class TransactionSettings implements ITransactionSettings {
+
+            /**
+             * Constructs a new TransactionSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ITransactionSettings);
+
+            /** TransactionSettings serializableReadWrite. */
+            public serializableReadWrite?: (Ydb.Query.ISerializableModeSettings|null);
+
+            /** TransactionSettings onlineReadOnly. */
+            public onlineReadOnly?: (Ydb.Query.IOnlineModeSettings|null);
+
+            /** TransactionSettings staleReadOnly. */
+            public staleReadOnly?: (Ydb.Query.IStaleModeSettings|null);
+
+            /** TransactionSettings snapshotReadOnly. */
+            public snapshotReadOnly?: (Ydb.Query.ISnapshotModeSettings|null);
+
+            /** TransactionSettings txMode. */
+            public txMode?: ("serializableReadWrite"|"onlineReadOnly"|"staleReadOnly"|"snapshotReadOnly");
+
+            /**
+             * Creates a new TransactionSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TransactionSettings instance
+             */
+            public static create(properties?: Ydb.Query.ITransactionSettings): Ydb.Query.TransactionSettings;
+
+            /**
+             * Encodes the specified TransactionSettings message. Does not implicitly {@link Ydb.Query.TransactionSettings.verify|verify} messages.
+             * @param message TransactionSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ITransactionSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified TransactionSettings message, length delimited. Does not implicitly {@link Ydb.Query.TransactionSettings.verify|verify} messages.
+             * @param message TransactionSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ITransactionSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TransactionSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TransactionSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.TransactionSettings;
+
+            /**
+             * Decodes a TransactionSettings message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns TransactionSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.TransactionSettings;
+
+            /**
+             * Verifies a TransactionSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a TransactionSettings message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns TransactionSettings
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.TransactionSettings;
+
+            /**
+             * Creates a plain object from a TransactionSettings message. Also converts values to other types if specified.
+             * @param message TransactionSettings
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.TransactionSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this TransactionSettings to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a TransactionControl. */
+        interface ITransactionControl {
+
+            /** TransactionControl txId */
+            txId?: (string|null);
+
+            /** TransactionControl beginTx */
+            beginTx?: (Ydb.Query.ITransactionSettings|null);
+
+            /** TransactionControl commitTx */
+            commitTx?: (boolean|null);
+        }
+
+        /** Represents a TransactionControl. */
+        class TransactionControl implements ITransactionControl {
+
+            /**
+             * Constructs a new TransactionControl.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ITransactionControl);
+
+            /** TransactionControl txId. */
+            public txId?: (string|null);
+
+            /** TransactionControl beginTx. */
+            public beginTx?: (Ydb.Query.ITransactionSettings|null);
+
+            /** TransactionControl commitTx. */
+            public commitTx: boolean;
+
+            /** TransactionControl txSelector. */
+            public txSelector?: ("txId"|"beginTx");
+
+            /**
+             * Creates a new TransactionControl instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TransactionControl instance
+             */
+            public static create(properties?: Ydb.Query.ITransactionControl): Ydb.Query.TransactionControl;
+
+            /**
+             * Encodes the specified TransactionControl message. Does not implicitly {@link Ydb.Query.TransactionControl.verify|verify} messages.
+             * @param message TransactionControl message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ITransactionControl, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified TransactionControl message, length delimited. Does not implicitly {@link Ydb.Query.TransactionControl.verify|verify} messages.
+             * @param message TransactionControl message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ITransactionControl, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TransactionControl message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TransactionControl
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.TransactionControl;
+
+            /**
+             * Decodes a TransactionControl message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns TransactionControl
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.TransactionControl;
+
+            /**
+             * Verifies a TransactionControl message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a TransactionControl message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns TransactionControl
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.TransactionControl;
+
+            /**
+             * Creates a plain object from a TransactionControl message. Also converts values to other types if specified.
+             * @param message TransactionControl
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.TransactionControl, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this TransactionControl to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a BeginTransactionRequest. */
+        interface IBeginTransactionRequest {
+
+            /** BeginTransactionRequest sessionId */
+            sessionId?: (string|null);
+
+            /** BeginTransactionRequest txSettings */
+            txSettings?: (Ydb.Query.ITransactionSettings|null);
+        }
+
+        /** Represents a BeginTransactionRequest. */
+        class BeginTransactionRequest implements IBeginTransactionRequest {
+
+            /**
+             * Constructs a new BeginTransactionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IBeginTransactionRequest);
+
+            /** BeginTransactionRequest sessionId. */
+            public sessionId: string;
+
+            /** BeginTransactionRequest txSettings. */
+            public txSettings?: (Ydb.Query.ITransactionSettings|null);
+
+            /**
+             * Creates a new BeginTransactionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BeginTransactionRequest instance
+             */
+            public static create(properties?: Ydb.Query.IBeginTransactionRequest): Ydb.Query.BeginTransactionRequest;
+
+            /**
+             * Encodes the specified BeginTransactionRequest message. Does not implicitly {@link Ydb.Query.BeginTransactionRequest.verify|verify} messages.
+             * @param message BeginTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IBeginTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified BeginTransactionRequest message, length delimited. Does not implicitly {@link Ydb.Query.BeginTransactionRequest.verify|verify} messages.
+             * @param message BeginTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IBeginTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BeginTransactionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BeginTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.BeginTransactionRequest;
+
+            /**
+             * Decodes a BeginTransactionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns BeginTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.BeginTransactionRequest;
+
+            /**
+             * Verifies a BeginTransactionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a BeginTransactionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns BeginTransactionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.BeginTransactionRequest;
+
+            /**
+             * Creates a plain object from a BeginTransactionRequest message. Also converts values to other types if specified.
+             * @param message BeginTransactionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.BeginTransactionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this BeginTransactionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a TransactionMeta. */
+        interface ITransactionMeta {
+
+            /** TransactionMeta id */
+            id?: (string|null);
+        }
+
+        /** Represents a TransactionMeta. */
+        class TransactionMeta implements ITransactionMeta {
+
+            /**
+             * Constructs a new TransactionMeta.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ITransactionMeta);
+
+            /** TransactionMeta id. */
+            public id: string;
+
+            /**
+             * Creates a new TransactionMeta instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TransactionMeta instance
+             */
+            public static create(properties?: Ydb.Query.ITransactionMeta): Ydb.Query.TransactionMeta;
+
+            /**
+             * Encodes the specified TransactionMeta message. Does not implicitly {@link Ydb.Query.TransactionMeta.verify|verify} messages.
+             * @param message TransactionMeta message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ITransactionMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified TransactionMeta message, length delimited. Does not implicitly {@link Ydb.Query.TransactionMeta.verify|verify} messages.
+             * @param message TransactionMeta message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ITransactionMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TransactionMeta message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TransactionMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.TransactionMeta;
+
+            /**
+             * Decodes a TransactionMeta message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns TransactionMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.TransactionMeta;
+
+            /**
+             * Verifies a TransactionMeta message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a TransactionMeta message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns TransactionMeta
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.TransactionMeta;
+
+            /**
+             * Creates a plain object from a TransactionMeta message. Also converts values to other types if specified.
+             * @param message TransactionMeta
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.TransactionMeta, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this TransactionMeta to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a BeginTransactionResponse. */
+        interface IBeginTransactionResponse {
+
+            /** BeginTransactionResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** BeginTransactionResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+
+            /** BeginTransactionResponse txMeta */
+            txMeta?: (Ydb.Query.ITransactionMeta|null);
+        }
+
+        /** Represents a BeginTransactionResponse. */
+        class BeginTransactionResponse implements IBeginTransactionResponse {
+
+            /**
+             * Constructs a new BeginTransactionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IBeginTransactionResponse);
+
+            /** BeginTransactionResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** BeginTransactionResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /** BeginTransactionResponse txMeta. */
+            public txMeta?: (Ydb.Query.ITransactionMeta|null);
+
+            /**
+             * Creates a new BeginTransactionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BeginTransactionResponse instance
+             */
+            public static create(properties?: Ydb.Query.IBeginTransactionResponse): Ydb.Query.BeginTransactionResponse;
+
+            /**
+             * Encodes the specified BeginTransactionResponse message. Does not implicitly {@link Ydb.Query.BeginTransactionResponse.verify|verify} messages.
+             * @param message BeginTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IBeginTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified BeginTransactionResponse message, length delimited. Does not implicitly {@link Ydb.Query.BeginTransactionResponse.verify|verify} messages.
+             * @param message BeginTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IBeginTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BeginTransactionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BeginTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.BeginTransactionResponse;
+
+            /**
+             * Decodes a BeginTransactionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns BeginTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.BeginTransactionResponse;
+
+            /**
+             * Verifies a BeginTransactionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a BeginTransactionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns BeginTransactionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.BeginTransactionResponse;
+
+            /**
+             * Creates a plain object from a BeginTransactionResponse message. Also converts values to other types if specified.
+             * @param message BeginTransactionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.BeginTransactionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this BeginTransactionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CommitTransactionRequest. */
+        interface ICommitTransactionRequest {
+
+            /** CommitTransactionRequest sessionId */
+            sessionId?: (string|null);
+
+            /** CommitTransactionRequest txId */
+            txId?: (string|null);
+        }
+
+        /** Represents a CommitTransactionRequest. */
+        class CommitTransactionRequest implements ICommitTransactionRequest {
+
+            /**
+             * Constructs a new CommitTransactionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ICommitTransactionRequest);
+
+            /** CommitTransactionRequest sessionId. */
+            public sessionId: string;
+
+            /** CommitTransactionRequest txId. */
+            public txId: string;
+
+            /**
+             * Creates a new CommitTransactionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CommitTransactionRequest instance
+             */
+            public static create(properties?: Ydb.Query.ICommitTransactionRequest): Ydb.Query.CommitTransactionRequest;
+
+            /**
+             * Encodes the specified CommitTransactionRequest message. Does not implicitly {@link Ydb.Query.CommitTransactionRequest.verify|verify} messages.
+             * @param message CommitTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ICommitTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CommitTransactionRequest message, length delimited. Does not implicitly {@link Ydb.Query.CommitTransactionRequest.verify|verify} messages.
+             * @param message CommitTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ICommitTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CommitTransactionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CommitTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.CommitTransactionRequest;
+
+            /**
+             * Decodes a CommitTransactionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CommitTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.CommitTransactionRequest;
+
+            /**
+             * Verifies a CommitTransactionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CommitTransactionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CommitTransactionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.CommitTransactionRequest;
+
+            /**
+             * Creates a plain object from a CommitTransactionRequest message. Also converts values to other types if specified.
+             * @param message CommitTransactionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.CommitTransactionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CommitTransactionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CommitTransactionResponse. */
+        interface ICommitTransactionResponse {
+
+            /** CommitTransactionResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** CommitTransactionResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+        }
+
+        /** Represents a CommitTransactionResponse. */
+        class CommitTransactionResponse implements ICommitTransactionResponse {
+
+            /**
+             * Constructs a new CommitTransactionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.ICommitTransactionResponse);
+
+            /** CommitTransactionResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** CommitTransactionResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /**
+             * Creates a new CommitTransactionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CommitTransactionResponse instance
+             */
+            public static create(properties?: Ydb.Query.ICommitTransactionResponse): Ydb.Query.CommitTransactionResponse;
+
+            /**
+             * Encodes the specified CommitTransactionResponse message. Does not implicitly {@link Ydb.Query.CommitTransactionResponse.verify|verify} messages.
+             * @param message CommitTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.ICommitTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CommitTransactionResponse message, length delimited. Does not implicitly {@link Ydb.Query.CommitTransactionResponse.verify|verify} messages.
+             * @param message CommitTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.ICommitTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CommitTransactionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CommitTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.CommitTransactionResponse;
+
+            /**
+             * Decodes a CommitTransactionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CommitTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.CommitTransactionResponse;
+
+            /**
+             * Verifies a CommitTransactionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CommitTransactionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CommitTransactionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.CommitTransactionResponse;
+
+            /**
+             * Creates a plain object from a CommitTransactionResponse message. Also converts values to other types if specified.
+             * @param message CommitTransactionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.CommitTransactionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CommitTransactionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a RollbackTransactionRequest. */
+        interface IRollbackTransactionRequest {
+
+            /** RollbackTransactionRequest sessionId */
+            sessionId?: (string|null);
+
+            /** RollbackTransactionRequest txId */
+            txId?: (string|null);
+        }
+
+        /** Represents a RollbackTransactionRequest. */
+        class RollbackTransactionRequest implements IRollbackTransactionRequest {
+
+            /**
+             * Constructs a new RollbackTransactionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IRollbackTransactionRequest);
+
+            /** RollbackTransactionRequest sessionId. */
+            public sessionId: string;
+
+            /** RollbackTransactionRequest txId. */
+            public txId: string;
+
+            /**
+             * Creates a new RollbackTransactionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RollbackTransactionRequest instance
+             */
+            public static create(properties?: Ydb.Query.IRollbackTransactionRequest): Ydb.Query.RollbackTransactionRequest;
+
+            /**
+             * Encodes the specified RollbackTransactionRequest message. Does not implicitly {@link Ydb.Query.RollbackTransactionRequest.verify|verify} messages.
+             * @param message RollbackTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IRollbackTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified RollbackTransactionRequest message, length delimited. Does not implicitly {@link Ydb.Query.RollbackTransactionRequest.verify|verify} messages.
+             * @param message RollbackTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IRollbackTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RollbackTransactionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RollbackTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.RollbackTransactionRequest;
+
+            /**
+             * Decodes a RollbackTransactionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns RollbackTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.RollbackTransactionRequest;
+
+            /**
+             * Verifies a RollbackTransactionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a RollbackTransactionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns RollbackTransactionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.RollbackTransactionRequest;
+
+            /**
+             * Creates a plain object from a RollbackTransactionRequest message. Also converts values to other types if specified.
+             * @param message RollbackTransactionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.RollbackTransactionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this RollbackTransactionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a RollbackTransactionResponse. */
+        interface IRollbackTransactionResponse {
+
+            /** RollbackTransactionResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** RollbackTransactionResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+        }
+
+        /** Represents a RollbackTransactionResponse. */
+        class RollbackTransactionResponse implements IRollbackTransactionResponse {
+
+            /**
+             * Constructs a new RollbackTransactionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IRollbackTransactionResponse);
+
+            /** RollbackTransactionResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** RollbackTransactionResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /**
+             * Creates a new RollbackTransactionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RollbackTransactionResponse instance
+             */
+            public static create(properties?: Ydb.Query.IRollbackTransactionResponse): Ydb.Query.RollbackTransactionResponse;
+
+            /**
+             * Encodes the specified RollbackTransactionResponse message. Does not implicitly {@link Ydb.Query.RollbackTransactionResponse.verify|verify} messages.
+             * @param message RollbackTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IRollbackTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified RollbackTransactionResponse message, length delimited. Does not implicitly {@link Ydb.Query.RollbackTransactionResponse.verify|verify} messages.
+             * @param message RollbackTransactionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IRollbackTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RollbackTransactionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RollbackTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.RollbackTransactionResponse;
+
+            /**
+             * Decodes a RollbackTransactionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns RollbackTransactionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.RollbackTransactionResponse;
+
+            /**
+             * Verifies a RollbackTransactionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a RollbackTransactionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns RollbackTransactionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.RollbackTransactionResponse;
+
+            /**
+             * Creates a plain object from a RollbackTransactionResponse message. Also converts values to other types if specified.
+             * @param message RollbackTransactionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.RollbackTransactionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this RollbackTransactionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Syntax enum. */
+        enum Syntax {
+            SYNTAX_UNSPECIFIED = 0,
+            SYNTAX_YQL_V1 = 1,
+            SYNTAX_PG = 2
+        }
+
+        /** Properties of a QueryContent. */
+        interface IQueryContent {
+
+            /** QueryContent syntax */
+            syntax?: (Ydb.Query.Syntax|null);
+
+            /** QueryContent text */
+            text?: (string|null);
+        }
+
+        /** Represents a QueryContent. */
+        class QueryContent implements IQueryContent {
+
+            /**
+             * Constructs a new QueryContent.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IQueryContent);
+
+            /** QueryContent syntax. */
+            public syntax: Ydb.Query.Syntax;
+
+            /** QueryContent text. */
+            public text: string;
+
+            /**
+             * Creates a new QueryContent instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QueryContent instance
+             */
+            public static create(properties?: Ydb.Query.IQueryContent): Ydb.Query.QueryContent;
+
+            /**
+             * Encodes the specified QueryContent message. Does not implicitly {@link Ydb.Query.QueryContent.verify|verify} messages.
+             * @param message QueryContent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IQueryContent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified QueryContent message, length delimited. Does not implicitly {@link Ydb.Query.QueryContent.verify|verify} messages.
+             * @param message QueryContent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IQueryContent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QueryContent message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QueryContent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.QueryContent;
+
+            /**
+             * Decodes a QueryContent message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns QueryContent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.QueryContent;
+
+            /**
+             * Verifies a QueryContent message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a QueryContent message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns QueryContent
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.QueryContent;
+
+            /**
+             * Creates a plain object from a QueryContent message. Also converts values to other types if specified.
+             * @param message QueryContent
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.QueryContent, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this QueryContent to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** ExecMode enum. */
+        enum ExecMode {
+            EXEC_MODE_UNSPECIFIED = 0,
+            EXEC_MODE_PARSE = 10,
+            EXEC_MODE_VALIDATE = 20,
+            EXEC_MODE_EXPLAIN = 30,
+            EXEC_MODE_EXECUTE = 50
+        }
+
+        /** StatsMode enum. */
+        enum StatsMode {
+            STATS_MODE_UNSPECIFIED = 0,
+            STATS_MODE_NONE = 10,
+            STATS_MODE_BASIC = 20,
+            STATS_MODE_FULL = 30,
+            STATS_MODE_PROFILE = 40
+        }
+
+        /** Properties of an ExecuteQueryRequest. */
+        interface IExecuteQueryRequest {
+
+            /** ExecuteQueryRequest sessionId */
+            sessionId?: (string|null);
+
+            /** ExecuteQueryRequest execMode */
+            execMode?: (Ydb.Query.ExecMode|null);
+
+            /** ExecuteQueryRequest txControl */
+            txControl?: (Ydb.Query.ITransactionControl|null);
+
+            /** ExecuteQueryRequest queryContent */
+            queryContent?: (Ydb.Query.IQueryContent|null);
+
+            /** ExecuteQueryRequest parameters */
+            parameters?: ({ [k: string]: Ydb.ITypedValue }|null);
+
+            /** ExecuteQueryRequest statsMode */
+            statsMode?: (Ydb.Query.StatsMode|null);
+
+            /** ExecuteQueryRequest concurrentResultSets */
+            concurrentResultSets?: (boolean|null);
+        }
+
+        /** Represents an ExecuteQueryRequest. */
+        class ExecuteQueryRequest implements IExecuteQueryRequest {
+
+            /**
+             * Constructs a new ExecuteQueryRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IExecuteQueryRequest);
+
+            /** ExecuteQueryRequest sessionId. */
+            public sessionId: string;
+
+            /** ExecuteQueryRequest execMode. */
+            public execMode: Ydb.Query.ExecMode;
+
+            /** ExecuteQueryRequest txControl. */
+            public txControl?: (Ydb.Query.ITransactionControl|null);
+
+            /** ExecuteQueryRequest queryContent. */
+            public queryContent?: (Ydb.Query.IQueryContent|null);
+
+            /** ExecuteQueryRequest parameters. */
+            public parameters: { [k: string]: Ydb.ITypedValue };
+
+            /** ExecuteQueryRequest statsMode. */
+            public statsMode: Ydb.Query.StatsMode;
+
+            /** ExecuteQueryRequest concurrentResultSets. */
+            public concurrentResultSets: boolean;
+
+            /** ExecuteQueryRequest query. */
+            public query?: "queryContent";
+
+            /**
+             * Creates a new ExecuteQueryRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecuteQueryRequest instance
+             */
+            public static create(properties?: Ydb.Query.IExecuteQueryRequest): Ydb.Query.ExecuteQueryRequest;
+
+            /**
+             * Encodes the specified ExecuteQueryRequest message. Does not implicitly {@link Ydb.Query.ExecuteQueryRequest.verify|verify} messages.
+             * @param message ExecuteQueryRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IExecuteQueryRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ExecuteQueryRequest message, length delimited. Does not implicitly {@link Ydb.Query.ExecuteQueryRequest.verify|verify} messages.
+             * @param message ExecuteQueryRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IExecuteQueryRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecuteQueryRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecuteQueryRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.ExecuteQueryRequest;
+
+            /**
+             * Decodes an ExecuteQueryRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ExecuteQueryRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.ExecuteQueryRequest;
+
+            /**
+             * Verifies an ExecuteQueryRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an ExecuteQueryRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ExecuteQueryRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.ExecuteQueryRequest;
+
+            /**
+             * Creates a plain object from an ExecuteQueryRequest message. Also converts values to other types if specified.
+             * @param message ExecuteQueryRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.ExecuteQueryRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ExecuteQueryRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a ResultSetMeta. */
+        interface IResultSetMeta {
+
+            /** ResultSetMeta columns */
+            columns?: (Ydb.IColumn[]|null);
+        }
+
+        /** Represents a ResultSetMeta. */
+        class ResultSetMeta implements IResultSetMeta {
+
+            /**
+             * Constructs a new ResultSetMeta.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IResultSetMeta);
+
+            /** ResultSetMeta columns. */
+            public columns: Ydb.IColumn[];
+
+            /**
+             * Creates a new ResultSetMeta instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResultSetMeta instance
+             */
+            public static create(properties?: Ydb.Query.IResultSetMeta): Ydb.Query.ResultSetMeta;
+
+            /**
+             * Encodes the specified ResultSetMeta message. Does not implicitly {@link Ydb.Query.ResultSetMeta.verify|verify} messages.
+             * @param message ResultSetMeta message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IResultSetMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ResultSetMeta message, length delimited. Does not implicitly {@link Ydb.Query.ResultSetMeta.verify|verify} messages.
+             * @param message ResultSetMeta message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IResultSetMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResultSetMeta message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResultSetMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.ResultSetMeta;
+
+            /**
+             * Decodes a ResultSetMeta message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ResultSetMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.ResultSetMeta;
+
+            /**
+             * Verifies a ResultSetMeta message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ResultSetMeta message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ResultSetMeta
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.ResultSetMeta;
+
+            /**
+             * Creates a plain object from a ResultSetMeta message. Also converts values to other types if specified.
+             * @param message ResultSetMeta
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.ResultSetMeta, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ResultSetMeta to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of an ExecuteQueryResponsePart. */
+        interface IExecuteQueryResponsePart {
+
+            /** ExecuteQueryResponsePart status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** ExecuteQueryResponsePart issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+
+            /** ExecuteQueryResponsePart resultSetIndex */
+            resultSetIndex?: (number|Long|null);
+
+            /** ExecuteQueryResponsePart resultSet */
+            resultSet?: (Ydb.IResultSet|null);
+
+            /** ExecuteQueryResponsePart execStats */
+            execStats?: (Ydb.TableStats.IQueryStats|null);
+        }
+
+        /** Represents an ExecuteQueryResponsePart. */
+        class ExecuteQueryResponsePart implements IExecuteQueryResponsePart {
+
+            /**
+             * Constructs a new ExecuteQueryResponsePart.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IExecuteQueryResponsePart);
+
+            /** ExecuteQueryResponsePart status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** ExecuteQueryResponsePart issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /** ExecuteQueryResponsePart resultSetIndex. */
+            public resultSetIndex: (number|Long);
+
+            /** ExecuteQueryResponsePart resultSet. */
+            public resultSet?: (Ydb.IResultSet|null);
+
+            /** ExecuteQueryResponsePart execStats. */
+            public execStats?: (Ydb.TableStats.IQueryStats|null);
+
+            /**
+             * Creates a new ExecuteQueryResponsePart instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecuteQueryResponsePart instance
+             */
+            public static create(properties?: Ydb.Query.IExecuteQueryResponsePart): Ydb.Query.ExecuteQueryResponsePart;
+
+            /**
+             * Encodes the specified ExecuteQueryResponsePart message. Does not implicitly {@link Ydb.Query.ExecuteQueryResponsePart.verify|verify} messages.
+             * @param message ExecuteQueryResponsePart message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IExecuteQueryResponsePart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ExecuteQueryResponsePart message, length delimited. Does not implicitly {@link Ydb.Query.ExecuteQueryResponsePart.verify|verify} messages.
+             * @param message ExecuteQueryResponsePart message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IExecuteQueryResponsePart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecuteQueryResponsePart message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecuteQueryResponsePart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.ExecuteQueryResponsePart;
+
+            /**
+             * Decodes an ExecuteQueryResponsePart message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ExecuteQueryResponsePart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.ExecuteQueryResponsePart;
+
+            /**
+             * Verifies an ExecuteQueryResponsePart message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an ExecuteQueryResponsePart message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ExecuteQueryResponsePart
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.ExecuteQueryResponsePart;
+
+            /**
+             * Creates a plain object from an ExecuteQueryResponsePart message. Also converts values to other types if specified.
+             * @param message ExecuteQueryResponsePart
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.ExecuteQueryResponsePart, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ExecuteQueryResponsePart to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of an ExecuteScriptRequest. */
+        interface IExecuteScriptRequest {
+
+            /** ExecuteScriptRequest operationParams */
+            operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** ExecuteScriptRequest execMode */
+            execMode?: (Ydb.Query.ExecMode|null);
+
+            /** ExecuteScriptRequest scriptContent */
+            scriptContent?: (Ydb.Query.IQueryContent|null);
+
+            /** ExecuteScriptRequest parameters */
+            parameters?: ({ [k: string]: Ydb.ITypedValue }|null);
+
+            /** ExecuteScriptRequest statsMode */
+            statsMode?: (Ydb.Query.StatsMode|null);
+
+            /** ExecuteScriptRequest resultsTtl */
+            resultsTtl?: (google.protobuf.IDuration|null);
+        }
+
+        /** Represents an ExecuteScriptRequest. */
+        class ExecuteScriptRequest implements IExecuteScriptRequest {
+
+            /**
+             * Constructs a new ExecuteScriptRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IExecuteScriptRequest);
+
+            /** ExecuteScriptRequest operationParams. */
+            public operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** ExecuteScriptRequest execMode. */
+            public execMode: Ydb.Query.ExecMode;
+
+            /** ExecuteScriptRequest scriptContent. */
+            public scriptContent?: (Ydb.Query.IQueryContent|null);
+
+            /** ExecuteScriptRequest parameters. */
+            public parameters: { [k: string]: Ydb.ITypedValue };
+
+            /** ExecuteScriptRequest statsMode. */
+            public statsMode: Ydb.Query.StatsMode;
+
+            /** ExecuteScriptRequest resultsTtl. */
+            public resultsTtl?: (google.protobuf.IDuration|null);
+
+            /**
+             * Creates a new ExecuteScriptRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecuteScriptRequest instance
+             */
+            public static create(properties?: Ydb.Query.IExecuteScriptRequest): Ydb.Query.ExecuteScriptRequest;
+
+            /**
+             * Encodes the specified ExecuteScriptRequest message. Does not implicitly {@link Ydb.Query.ExecuteScriptRequest.verify|verify} messages.
+             * @param message ExecuteScriptRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IExecuteScriptRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ExecuteScriptRequest message, length delimited. Does not implicitly {@link Ydb.Query.ExecuteScriptRequest.verify|verify} messages.
+             * @param message ExecuteScriptRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IExecuteScriptRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecuteScriptRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecuteScriptRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.ExecuteScriptRequest;
+
+            /**
+             * Decodes an ExecuteScriptRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ExecuteScriptRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.ExecuteScriptRequest;
+
+            /**
+             * Verifies an ExecuteScriptRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an ExecuteScriptRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ExecuteScriptRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.ExecuteScriptRequest;
+
+            /**
+             * Creates a plain object from an ExecuteScriptRequest message. Also converts values to other types if specified.
+             * @param message ExecuteScriptRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.ExecuteScriptRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ExecuteScriptRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** ExecStatus enum. */
+        enum ExecStatus {
+            EXEC_STATUS_UNSPECIFIED = 0,
+            EXEC_STATUS_STARTING = 10,
+            EXEC_STATUS_ABORTED = 20,
+            EXEC_STATUS_CANCELLED = 30,
+            EXEC_STATUS_COMPLETED = 40,
+            EXEC_STATUS_FAILED = 50
+        }
+
+        /** Properties of an ExecuteScriptMetadata. */
+        interface IExecuteScriptMetadata {
+
+            /** ExecuteScriptMetadata executionId */
+            executionId?: (string|null);
+
+            /** ExecuteScriptMetadata execStatus */
+            execStatus?: (Ydb.Query.ExecStatus|null);
+
+            /** ExecuteScriptMetadata scriptContent */
+            scriptContent?: (Ydb.Query.IQueryContent|null);
+
+            /** ExecuteScriptMetadata resultSetsMeta */
+            resultSetsMeta?: (Ydb.Query.IResultSetMeta[]|null);
+
+            /** ExecuteScriptMetadata execMode */
+            execMode?: (Ydb.Query.ExecMode|null);
+
+            /** ExecuteScriptMetadata execStats */
+            execStats?: (Ydb.TableStats.IQueryStats|null);
+        }
+
+        /** Represents an ExecuteScriptMetadata. */
+        class ExecuteScriptMetadata implements IExecuteScriptMetadata {
+
+            /**
+             * Constructs a new ExecuteScriptMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IExecuteScriptMetadata);
+
+            /** ExecuteScriptMetadata executionId. */
+            public executionId: string;
+
+            /** ExecuteScriptMetadata execStatus. */
+            public execStatus: Ydb.Query.ExecStatus;
+
+            /** ExecuteScriptMetadata scriptContent. */
+            public scriptContent?: (Ydb.Query.IQueryContent|null);
+
+            /** ExecuteScriptMetadata resultSetsMeta. */
+            public resultSetsMeta: Ydb.Query.IResultSetMeta[];
+
+            /** ExecuteScriptMetadata execMode. */
+            public execMode: Ydb.Query.ExecMode;
+
+            /** ExecuteScriptMetadata execStats. */
+            public execStats?: (Ydb.TableStats.IQueryStats|null);
+
+            /**
+             * Creates a new ExecuteScriptMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecuteScriptMetadata instance
+             */
+            public static create(properties?: Ydb.Query.IExecuteScriptMetadata): Ydb.Query.ExecuteScriptMetadata;
+
+            /**
+             * Encodes the specified ExecuteScriptMetadata message. Does not implicitly {@link Ydb.Query.ExecuteScriptMetadata.verify|verify} messages.
+             * @param message ExecuteScriptMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IExecuteScriptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ExecuteScriptMetadata message, length delimited. Does not implicitly {@link Ydb.Query.ExecuteScriptMetadata.verify|verify} messages.
+             * @param message ExecuteScriptMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IExecuteScriptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecuteScriptMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecuteScriptMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.ExecuteScriptMetadata;
+
+            /**
+             * Decodes an ExecuteScriptMetadata message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ExecuteScriptMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.ExecuteScriptMetadata;
+
+            /**
+             * Verifies an ExecuteScriptMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an ExecuteScriptMetadata message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ExecuteScriptMetadata
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.ExecuteScriptMetadata;
+
+            /**
+             * Creates a plain object from an ExecuteScriptMetadata message. Also converts values to other types if specified.
+             * @param message ExecuteScriptMetadata
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.ExecuteScriptMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ExecuteScriptMetadata to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a FetchScriptResultsRequest. */
+        interface IFetchScriptResultsRequest {
+
+            /** FetchScriptResultsRequest operationId */
+            operationId?: (string|null);
+
+            /** FetchScriptResultsRequest resultSetIndex */
+            resultSetIndex?: (number|Long|null);
+
+            /** FetchScriptResultsRequest fetchToken */
+            fetchToken?: (string|null);
+
+            /** FetchScriptResultsRequest rowsLimit */
+            rowsLimit?: (number|Long|null);
+        }
+
+        /** Represents a FetchScriptResultsRequest. */
+        class FetchScriptResultsRequest implements IFetchScriptResultsRequest {
+
+            /**
+             * Constructs a new FetchScriptResultsRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IFetchScriptResultsRequest);
+
+            /** FetchScriptResultsRequest operationId. */
+            public operationId: string;
+
+            /** FetchScriptResultsRequest resultSetIndex. */
+            public resultSetIndex: (number|Long);
+
+            /** FetchScriptResultsRequest fetchToken. */
+            public fetchToken: string;
+
+            /** FetchScriptResultsRequest rowsLimit. */
+            public rowsLimit: (number|Long);
+
+            /**
+             * Creates a new FetchScriptResultsRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FetchScriptResultsRequest instance
+             */
+            public static create(properties?: Ydb.Query.IFetchScriptResultsRequest): Ydb.Query.FetchScriptResultsRequest;
+
+            /**
+             * Encodes the specified FetchScriptResultsRequest message. Does not implicitly {@link Ydb.Query.FetchScriptResultsRequest.verify|verify} messages.
+             * @param message FetchScriptResultsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IFetchScriptResultsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified FetchScriptResultsRequest message, length delimited. Does not implicitly {@link Ydb.Query.FetchScriptResultsRequest.verify|verify} messages.
+             * @param message FetchScriptResultsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IFetchScriptResultsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FetchScriptResultsRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FetchScriptResultsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.FetchScriptResultsRequest;
+
+            /**
+             * Decodes a FetchScriptResultsRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns FetchScriptResultsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.FetchScriptResultsRequest;
+
+            /**
+             * Verifies a FetchScriptResultsRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a FetchScriptResultsRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns FetchScriptResultsRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.FetchScriptResultsRequest;
+
+            /**
+             * Creates a plain object from a FetchScriptResultsRequest message. Also converts values to other types if specified.
+             * @param message FetchScriptResultsRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.FetchScriptResultsRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this FetchScriptResultsRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a FetchScriptResultsResponse. */
+        interface IFetchScriptResultsResponse {
+
+            /** FetchScriptResultsResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** FetchScriptResultsResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+
+            /** FetchScriptResultsResponse resultSetIndex */
+            resultSetIndex?: (number|Long|null);
+
+            /** FetchScriptResultsResponse resultSet */
+            resultSet?: (Ydb.IResultSet|null);
+
+            /** FetchScriptResultsResponse nextFetchToken */
+            nextFetchToken?: (string|null);
+        }
+
+        /** Represents a FetchScriptResultsResponse. */
+        class FetchScriptResultsResponse implements IFetchScriptResultsResponse {
+
+            /**
+             * Constructs a new FetchScriptResultsResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IFetchScriptResultsResponse);
+
+            /** FetchScriptResultsResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** FetchScriptResultsResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /** FetchScriptResultsResponse resultSetIndex. */
+            public resultSetIndex: (number|Long);
+
+            /** FetchScriptResultsResponse resultSet. */
+            public resultSet?: (Ydb.IResultSet|null);
+
+            /** FetchScriptResultsResponse nextFetchToken. */
+            public nextFetchToken: string;
+
+            /**
+             * Creates a new FetchScriptResultsResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FetchScriptResultsResponse instance
+             */
+            public static create(properties?: Ydb.Query.IFetchScriptResultsResponse): Ydb.Query.FetchScriptResultsResponse;
+
+            /**
+             * Encodes the specified FetchScriptResultsResponse message. Does not implicitly {@link Ydb.Query.FetchScriptResultsResponse.verify|verify} messages.
+             * @param message FetchScriptResultsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IFetchScriptResultsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified FetchScriptResultsResponse message, length delimited. Does not implicitly {@link Ydb.Query.FetchScriptResultsResponse.verify|verify} messages.
+             * @param message FetchScriptResultsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IFetchScriptResultsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FetchScriptResultsResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FetchScriptResultsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.FetchScriptResultsResponse;
+
+            /**
+             * Decodes a FetchScriptResultsResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns FetchScriptResultsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.FetchScriptResultsResponse;
+
+            /**
+             * Verifies a FetchScriptResultsResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a FetchScriptResultsResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns FetchScriptResultsResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.FetchScriptResultsResponse;
+
+            /**
+             * Creates a plain object from a FetchScriptResultsResponse message. Also converts values to other types if specified.
+             * @param message FetchScriptResultsResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.FetchScriptResultsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this FetchScriptResultsResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a Script. */
+        interface IScript {
+
+            /** Script scriptContent */
+            scriptContent?: (Ydb.Query.IQueryContent|null);
+        }
+
+        /** Represents a Script. */
+        class Script implements IScript {
+
+            /**
+             * Constructs a new Script.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Query.IScript);
+
+            /** Script scriptContent. */
+            public scriptContent?: (Ydb.Query.IQueryContent|null);
+
+            /**
+             * Creates a new Script instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Script instance
+             */
+            public static create(properties?: Ydb.Query.IScript): Ydb.Query.Script;
+
+            /**
+             * Encodes the specified Script message. Does not implicitly {@link Ydb.Query.Script.verify|verify} messages.
+             * @param message Script message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Query.IScript, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Script message, length delimited. Does not implicitly {@link Ydb.Query.Script.verify|verify} messages.
+             * @param message Script message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Query.IScript, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Script message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Script
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Query.Script;
+
+            /**
+             * Decodes a Script message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Script
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Query.Script;
+
+            /**
+             * Verifies a Script message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Script message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Script
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Query.Script;
+
+            /**
+             * Creates a plain object from a Script message. Also converts values to other types if specified.
+             * @param message Script
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Query.Script, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Script to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents a QueryService */
+            class QueryService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new QueryService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new QueryService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): QueryService;
+
+                /**
+                 * Calls CreateSession.
+                 * @param request CreateSessionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CreateSessionResponse
+                 */
+                public createSession(request: Ydb.Query.ICreateSessionRequest, callback: Ydb.Query.V1.QueryService.CreateSessionCallback): void;
+
+                /**
+                 * Calls CreateSession.
+                 * @param request CreateSessionRequest message or plain object
+                 * @returns Promise
+                 */
+                public createSession(request: Ydb.Query.ICreateSessionRequest): Promise<Ydb.Query.CreateSessionResponse>;
+
+                /**
+                 * Calls DeleteSession.
+                 * @param request DeleteSessionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DeleteSessionResponse
+                 */
+                public deleteSession(request: Ydb.Query.IDeleteSessionRequest, callback: Ydb.Query.V1.QueryService.DeleteSessionCallback): void;
+
+                /**
+                 * Calls DeleteSession.
+                 * @param request DeleteSessionRequest message or plain object
+                 * @returns Promise
+                 */
+                public deleteSession(request: Ydb.Query.IDeleteSessionRequest): Promise<Ydb.Query.DeleteSessionResponse>;
+
+                /**
+                 * Calls AttachSession.
+                 * @param request AttachSessionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and SessionState
+                 */
+                public attachSession(request: Ydb.Query.IAttachSessionRequest, callback: Ydb.Query.V1.QueryService.AttachSessionCallback): void;
+
+                /**
+                 * Calls AttachSession.
+                 * @param request AttachSessionRequest message or plain object
+                 * @returns Promise
+                 */
+                public attachSession(request: Ydb.Query.IAttachSessionRequest): Promise<Ydb.Query.SessionState>;
+
+                /**
+                 * Calls BeginTransaction.
+                 * @param request BeginTransactionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and BeginTransactionResponse
+                 */
+                public beginTransaction(request: Ydb.Query.IBeginTransactionRequest, callback: Ydb.Query.V1.QueryService.BeginTransactionCallback): void;
+
+                /**
+                 * Calls BeginTransaction.
+                 * @param request BeginTransactionRequest message or plain object
+                 * @returns Promise
+                 */
+                public beginTransaction(request: Ydb.Query.IBeginTransactionRequest): Promise<Ydb.Query.BeginTransactionResponse>;
+
+                /**
+                 * Calls CommitTransaction.
+                 * @param request CommitTransactionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CommitTransactionResponse
+                 */
+                public commitTransaction(request: Ydb.Query.ICommitTransactionRequest, callback: Ydb.Query.V1.QueryService.CommitTransactionCallback): void;
+
+                /**
+                 * Calls CommitTransaction.
+                 * @param request CommitTransactionRequest message or plain object
+                 * @returns Promise
+                 */
+                public commitTransaction(request: Ydb.Query.ICommitTransactionRequest): Promise<Ydb.Query.CommitTransactionResponse>;
+
+                /**
+                 * Calls RollbackTransaction.
+                 * @param request RollbackTransactionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and RollbackTransactionResponse
+                 */
+                public rollbackTransaction(request: Ydb.Query.IRollbackTransactionRequest, callback: Ydb.Query.V1.QueryService.RollbackTransactionCallback): void;
+
+                /**
+                 * Calls RollbackTransaction.
+                 * @param request RollbackTransactionRequest message or plain object
+                 * @returns Promise
+                 */
+                public rollbackTransaction(request: Ydb.Query.IRollbackTransactionRequest): Promise<Ydb.Query.RollbackTransactionResponse>;
+
+                /**
+                 * Calls ExecuteQuery.
+                 * @param request ExecuteQueryRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ExecuteQueryResponsePart
+                 */
+                public executeQuery(request: Ydb.Query.IExecuteQueryRequest, callback: Ydb.Query.V1.QueryService.ExecuteQueryCallback): void;
+
+                /**
+                 * Calls ExecuteQuery.
+                 * @param request ExecuteQueryRequest message or plain object
+                 * @returns Promise
+                 */
+                public executeQuery(request: Ydb.Query.IExecuteQueryRequest): Promise<Ydb.Query.ExecuteQueryResponsePart>;
+
+                /**
+                 * Calls ExecuteScript.
+                 * @param request ExecuteScriptRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and Operation
+                 */
+                public executeScript(request: Ydb.Query.IExecuteScriptRequest, callback: Ydb.Query.V1.QueryService.ExecuteScriptCallback): void;
+
+                /**
+                 * Calls ExecuteScript.
+                 * @param request ExecuteScriptRequest message or plain object
+                 * @returns Promise
+                 */
+                public executeScript(request: Ydb.Query.IExecuteScriptRequest): Promise<Ydb.Operations.Operation>;
+
+                /**
+                 * Calls FetchScriptResults.
+                 * @param request FetchScriptResultsRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and FetchScriptResultsResponse
+                 */
+                public fetchScriptResults(request: Ydb.Query.IFetchScriptResultsRequest, callback: Ydb.Query.V1.QueryService.FetchScriptResultsCallback): void;
+
+                /**
+                 * Calls FetchScriptResults.
+                 * @param request FetchScriptResultsRequest message or plain object
+                 * @returns Promise
+                 */
+                public fetchScriptResults(request: Ydb.Query.IFetchScriptResultsRequest): Promise<Ydb.Query.FetchScriptResultsResponse>;
+            }
+
+            namespace QueryService {
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#createSession}.
+                 * @param error Error, if any
+                 * @param [response] CreateSessionResponse
+                 */
+                type CreateSessionCallback = (error: (Error|null), response?: Ydb.Query.CreateSessionResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#deleteSession}.
+                 * @param error Error, if any
+                 * @param [response] DeleteSessionResponse
+                 */
+                type DeleteSessionCallback = (error: (Error|null), response?: Ydb.Query.DeleteSessionResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#attachSession}.
+                 * @param error Error, if any
+                 * @param [response] SessionState
+                 */
+                type AttachSessionCallback = (error: (Error|null), response?: Ydb.Query.SessionState) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#beginTransaction}.
+                 * @param error Error, if any
+                 * @param [response] BeginTransactionResponse
+                 */
+                type BeginTransactionCallback = (error: (Error|null), response?: Ydb.Query.BeginTransactionResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#commitTransaction}.
+                 * @param error Error, if any
+                 * @param [response] CommitTransactionResponse
+                 */
+                type CommitTransactionCallback = (error: (Error|null), response?: Ydb.Query.CommitTransactionResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#rollbackTransaction}.
+                 * @param error Error, if any
+                 * @param [response] RollbackTransactionResponse
+                 */
+                type RollbackTransactionCallback = (error: (Error|null), response?: Ydb.Query.RollbackTransactionResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#executeQuery}.
+                 * @param error Error, if any
+                 * @param [response] ExecuteQueryResponsePart
+                 */
+                type ExecuteQueryCallback = (error: (Error|null), response?: Ydb.Query.ExecuteQueryResponsePart) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#executeScript}.
+                 * @param error Error, if any
+                 * @param [response] Operation
+                 */
+                type ExecuteScriptCallback = (error: (Error|null), response?: Ydb.Operations.Operation) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Query.V1.QueryService#fetchScriptResults}.
+                 * @param error Error, if any
+                 * @param [response] FetchScriptResultsResponse
+                 */
+                type FetchScriptResultsCallback = (error: (Error|null), response?: Ydb.Query.FetchScriptResultsResponse) => void;
+            }
+        }
+    }
+
+    /** Properties of a DecimalType. */
+    interface IDecimalType {
+
+        /** DecimalType precision */
+        precision?: (number|null);
+
+        /** DecimalType scale */
+        scale?: (number|null);
+    }
+
+    /** Represents a DecimalType. */
+    class DecimalType implements IDecimalType {
+
+        /**
+         * Constructs a new DecimalType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IDecimalType);
+
+        /** DecimalType precision. */
+        public precision: number;
+
+        /** DecimalType scale. */
+        public scale: number;
+
+        /**
+         * Creates a new DecimalType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DecimalType instance
+         */
+        public static create(properties?: Ydb.IDecimalType): Ydb.DecimalType;
+
+        /**
+         * Encodes the specified DecimalType message. Does not implicitly {@link Ydb.DecimalType.verify|verify} messages.
+         * @param message DecimalType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IDecimalType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DecimalType message, length delimited. Does not implicitly {@link Ydb.DecimalType.verify|verify} messages.
+         * @param message DecimalType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IDecimalType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DecimalType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DecimalType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.DecimalType;
+
+        /**
+         * Decodes a DecimalType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DecimalType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.DecimalType;
+
+        /**
+         * Verifies a DecimalType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DecimalType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DecimalType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.DecimalType;
+
+        /**
+         * Creates a plain object from a DecimalType message. Also converts values to other types if specified.
+         * @param message DecimalType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.DecimalType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DecimalType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an OptionalType. */
+    interface IOptionalType {
+
+        /** OptionalType item */
+        item?: (Ydb.IType|null);
+    }
+
+    /** Represents an OptionalType. */
+    class OptionalType implements IOptionalType {
+
+        /**
+         * Constructs a new OptionalType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IOptionalType);
+
+        /** OptionalType item. */
+        public item?: (Ydb.IType|null);
+
+        /**
+         * Creates a new OptionalType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OptionalType instance
+         */
+        public static create(properties?: Ydb.IOptionalType): Ydb.OptionalType;
+
+        /**
+         * Encodes the specified OptionalType message. Does not implicitly {@link Ydb.OptionalType.verify|verify} messages.
+         * @param message OptionalType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IOptionalType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OptionalType message, length delimited. Does not implicitly {@link Ydb.OptionalType.verify|verify} messages.
+         * @param message OptionalType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IOptionalType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OptionalType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns OptionalType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.OptionalType;
+
+        /**
+         * Decodes an OptionalType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns OptionalType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.OptionalType;
+
+        /**
+         * Verifies an OptionalType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OptionalType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OptionalType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.OptionalType;
+
+        /**
+         * Creates a plain object from an OptionalType message. Also converts values to other types if specified.
+         * @param message OptionalType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.OptionalType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OptionalType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ListType. */
+    interface IListType {
+
+        /** ListType item */
+        item?: (Ydb.IType|null);
+    }
+
+    /** Represents a ListType. */
+    class ListType implements IListType {
+
+        /**
+         * Constructs a new ListType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IListType);
+
+        /** ListType item. */
+        public item?: (Ydb.IType|null);
+
+        /**
+         * Creates a new ListType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ListType instance
+         */
+        public static create(properties?: Ydb.IListType): Ydb.ListType;
+
+        /**
+         * Encodes the specified ListType message. Does not implicitly {@link Ydb.ListType.verify|verify} messages.
+         * @param message ListType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IListType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ListType message, length delimited. Does not implicitly {@link Ydb.ListType.verify|verify} messages.
+         * @param message ListType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IListType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ListType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ListType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.ListType;
+
+        /**
+         * Decodes a ListType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ListType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.ListType;
+
+        /**
+         * Verifies a ListType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ListType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ListType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.ListType;
+
+        /**
+         * Creates a plain object from a ListType message. Also converts values to other types if specified.
+         * @param message ListType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.ListType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ListType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a VariantType. */
+    interface IVariantType {
+
+        /** VariantType tupleItems */
+        tupleItems?: (Ydb.ITupleType|null);
+
+        /** VariantType structItems */
+        structItems?: (Ydb.IStructType|null);
+    }
+
+    /** Represents a VariantType. */
+    class VariantType implements IVariantType {
+
+        /**
+         * Constructs a new VariantType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IVariantType);
+
+        /** VariantType tupleItems. */
+        public tupleItems?: (Ydb.ITupleType|null);
+
+        /** VariantType structItems. */
+        public structItems?: (Ydb.IStructType|null);
+
+        /** VariantType type. */
+        public type?: ("tupleItems"|"structItems");
+
+        /**
+         * Creates a new VariantType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns VariantType instance
+         */
+        public static create(properties?: Ydb.IVariantType): Ydb.VariantType;
+
+        /**
+         * Encodes the specified VariantType message. Does not implicitly {@link Ydb.VariantType.verify|verify} messages.
+         * @param message VariantType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IVariantType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified VariantType message, length delimited. Does not implicitly {@link Ydb.VariantType.verify|verify} messages.
+         * @param message VariantType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IVariantType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a VariantType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns VariantType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.VariantType;
+
+        /**
+         * Decodes a VariantType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns VariantType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.VariantType;
+
+        /**
+         * Verifies a VariantType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a VariantType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns VariantType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.VariantType;
+
+        /**
+         * Creates a plain object from a VariantType message. Also converts values to other types if specified.
+         * @param message VariantType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.VariantType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this VariantType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TupleType. */
+    interface ITupleType {
+
+        /** TupleType elements */
+        elements?: (Ydb.IType[]|null);
+    }
+
+    /** Represents a TupleType. */
+    class TupleType implements ITupleType {
+
+        /**
+         * Constructs a new TupleType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.ITupleType);
+
+        /** TupleType elements. */
+        public elements: Ydb.IType[];
+
+        /**
+         * Creates a new TupleType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TupleType instance
+         */
+        public static create(properties?: Ydb.ITupleType): Ydb.TupleType;
+
+        /**
+         * Encodes the specified TupleType message. Does not implicitly {@link Ydb.TupleType.verify|verify} messages.
+         * @param message TupleType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.ITupleType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TupleType message, length delimited. Does not implicitly {@link Ydb.TupleType.verify|verify} messages.
+         * @param message TupleType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.ITupleType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TupleType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TupleType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TupleType;
+
+        /**
+         * Decodes a TupleType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TupleType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TupleType;
+
+        /**
+         * Verifies a TupleType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TupleType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TupleType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.TupleType;
+
+        /**
+         * Creates a plain object from a TupleType message. Also converts values to other types if specified.
+         * @param message TupleType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.TupleType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TupleType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a StructMember. */
+    interface IStructMember {
+
+        /** StructMember name */
+        name?: (string|null);
+
+        /** StructMember type */
+        type?: (Ydb.IType|null);
+    }
+
+    /** Represents a StructMember. */
+    class StructMember implements IStructMember {
+
+        /**
+         * Constructs a new StructMember.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IStructMember);
+
+        /** StructMember name. */
+        public name: string;
+
+        /** StructMember type. */
+        public type?: (Ydb.IType|null);
+
+        /**
+         * Creates a new StructMember instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns StructMember instance
+         */
+        public static create(properties?: Ydb.IStructMember): Ydb.StructMember;
+
+        /**
+         * Encodes the specified StructMember message. Does not implicitly {@link Ydb.StructMember.verify|verify} messages.
+         * @param message StructMember message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IStructMember, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified StructMember message, length delimited. Does not implicitly {@link Ydb.StructMember.verify|verify} messages.
+         * @param message StructMember message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IStructMember, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a StructMember message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns StructMember
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.StructMember;
+
+        /**
+         * Decodes a StructMember message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns StructMember
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.StructMember;
+
+        /**
+         * Verifies a StructMember message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a StructMember message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns StructMember
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.StructMember;
+
+        /**
+         * Creates a plain object from a StructMember message. Also converts values to other types if specified.
+         * @param message StructMember
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.StructMember, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this StructMember to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a StructType. */
+    interface IStructType {
+
+        /** StructType members */
+        members?: (Ydb.IStructMember[]|null);
+    }
+
+    /** Represents a StructType. */
+    class StructType implements IStructType {
+
+        /**
+         * Constructs a new StructType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IStructType);
+
+        /** StructType members. */
+        public members: Ydb.IStructMember[];
+
+        /**
+         * Creates a new StructType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns StructType instance
+         */
+        public static create(properties?: Ydb.IStructType): Ydb.StructType;
+
+        /**
+         * Encodes the specified StructType message. Does not implicitly {@link Ydb.StructType.verify|verify} messages.
+         * @param message StructType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IStructType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified StructType message, length delimited. Does not implicitly {@link Ydb.StructType.verify|verify} messages.
+         * @param message StructType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IStructType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a StructType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns StructType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.StructType;
+
+        /**
+         * Decodes a StructType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns StructType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.StructType;
+
+        /**
+         * Verifies a StructType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a StructType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns StructType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.StructType;
+
+        /**
+         * Creates a plain object from a StructType message. Also converts values to other types if specified.
+         * @param message StructType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.StructType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this StructType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DictType. */
+    interface IDictType {
+
+        /** DictType key */
+        key?: (Ydb.IType|null);
+
+        /** DictType payload */
+        payload?: (Ydb.IType|null);
+    }
+
+    /** Represents a DictType. */
+    class DictType implements IDictType {
+
+        /**
+         * Constructs a new DictType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IDictType);
+
+        /** DictType key. */
+        public key?: (Ydb.IType|null);
+
+        /** DictType payload. */
+        public payload?: (Ydb.IType|null);
+
+        /**
+         * Creates a new DictType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DictType instance
+         */
+        public static create(properties?: Ydb.IDictType): Ydb.DictType;
+
+        /**
+         * Encodes the specified DictType message. Does not implicitly {@link Ydb.DictType.verify|verify} messages.
+         * @param message DictType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IDictType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DictType message, length delimited. Does not implicitly {@link Ydb.DictType.verify|verify} messages.
+         * @param message DictType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IDictType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DictType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DictType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.DictType;
+
+        /**
+         * Decodes a DictType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DictType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.DictType;
+
+        /**
+         * Verifies a DictType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DictType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DictType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.DictType;
+
+        /**
+         * Creates a plain object from a DictType message. Also converts values to other types if specified.
+         * @param message DictType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.DictType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DictType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TaggedType. */
+    interface ITaggedType {
+
+        /** TaggedType tag */
+        tag?: (string|null);
+
+        /** TaggedType type */
+        type?: (Ydb.IType|null);
+    }
+
+    /** Represents a TaggedType. */
+    class TaggedType implements ITaggedType {
+
+        /**
+         * Constructs a new TaggedType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.ITaggedType);
+
+        /** TaggedType tag. */
+        public tag: string;
+
+        /** TaggedType type. */
+        public type?: (Ydb.IType|null);
+
+        /**
+         * Creates a new TaggedType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaggedType instance
+         */
+        public static create(properties?: Ydb.ITaggedType): Ydb.TaggedType;
+
+        /**
+         * Encodes the specified TaggedType message. Does not implicitly {@link Ydb.TaggedType.verify|verify} messages.
+         * @param message TaggedType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.ITaggedType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaggedType message, length delimited. Does not implicitly {@link Ydb.TaggedType.verify|verify} messages.
+         * @param message TaggedType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.ITaggedType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaggedType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaggedType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TaggedType;
+
+        /**
+         * Decodes a TaggedType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaggedType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TaggedType;
+
+        /**
+         * Verifies a TaggedType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaggedType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaggedType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.TaggedType;
+
+        /**
+         * Creates a plain object from a TaggedType message. Also converts values to other types if specified.
+         * @param message TaggedType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.TaggedType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaggedType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PgType. */
+    interface IPgType {
+
+        /** PgType oid */
+        oid?: (number|null);
+
+        /** PgType typlen */
+        typlen?: (number|null);
+
+        /** PgType typmod */
+        typmod?: (number|null);
+    }
+
+    /** Represents a PgType. */
+    class PgType implements IPgType {
+
+        /**
+         * Constructs a new PgType.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IPgType);
+
+        /** PgType oid. */
+        public oid: number;
+
+        /** PgType typlen. */
+        public typlen: number;
+
+        /** PgType typmod. */
+        public typmod: number;
+
+        /**
+         * Creates a new PgType instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PgType instance
+         */
+        public static create(properties?: Ydb.IPgType): Ydb.PgType;
+
+        /**
+         * Encodes the specified PgType message. Does not implicitly {@link Ydb.PgType.verify|verify} messages.
+         * @param message PgType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IPgType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PgType message, length delimited. Does not implicitly {@link Ydb.PgType.verify|verify} messages.
+         * @param message PgType message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IPgType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PgType message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PgType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.PgType;
+
+        /**
+         * Decodes a PgType message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PgType
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.PgType;
+
+        /**
+         * Verifies a PgType message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PgType message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PgType
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.PgType;
+
+        /**
+         * Creates a plain object from a PgType message. Also converts values to other types if specified.
+         * @param message PgType
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.PgType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PgType to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a Type. */
+    interface IType {
+
+        /** Type typeId */
+        typeId?: (Ydb.Type.PrimitiveTypeId|null);
+
+        /** Type decimalType */
+        decimalType?: (Ydb.IDecimalType|null);
+
+        /** Type optionalType */
+        optionalType?: (Ydb.IOptionalType|null);
+
+        /** Type listType */
+        listType?: (Ydb.IListType|null);
+
+        /** Type tupleType */
+        tupleType?: (Ydb.ITupleType|null);
+
+        /** Type structType */
+        structType?: (Ydb.IStructType|null);
+
+        /** Type dictType */
+        dictType?: (Ydb.IDictType|null);
+
+        /** Type variantType */
+        variantType?: (Ydb.IVariantType|null);
+
+        /** Type taggedType */
+        taggedType?: (Ydb.ITaggedType|null);
+
+        /** Type voidType */
+        voidType?: (google.protobuf.NullValue|null);
+
+        /** Type nullType */
+        nullType?: (google.protobuf.NullValue|null);
+
+        /** Type emptyListType */
+        emptyListType?: (google.protobuf.NullValue|null);
+
+        /** Type emptyDictType */
+        emptyDictType?: (google.protobuf.NullValue|null);
+
+        /** Type pgType */
+        pgType?: (Ydb.IPgType|null);
+    }
+
+    /** Represents a Type. */
+    class Type implements IType {
+
+        /**
+         * Constructs a new Type.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IType);
+
+        /** Type typeId. */
+        public typeId?: (Ydb.Type.PrimitiveTypeId|null);
+
+        /** Type decimalType. */
+        public decimalType?: (Ydb.IDecimalType|null);
+
+        /** Type optionalType. */
+        public optionalType?: (Ydb.IOptionalType|null);
+
+        /** Type listType. */
+        public listType?: (Ydb.IListType|null);
+
+        /** Type tupleType. */
+        public tupleType?: (Ydb.ITupleType|null);
+
+        /** Type structType. */
+        public structType?: (Ydb.IStructType|null);
+
+        /** Type dictType. */
+        public dictType?: (Ydb.IDictType|null);
+
+        /** Type variantType. */
+        public variantType?: (Ydb.IVariantType|null);
+
+        /** Type taggedType. */
+        public taggedType?: (Ydb.ITaggedType|null);
+
+        /** Type voidType. */
+        public voidType?: (google.protobuf.NullValue|null);
+
+        /** Type nullType. */
+        public nullType?: (google.protobuf.NullValue|null);
+
+        /** Type emptyListType. */
+        public emptyListType?: (google.protobuf.NullValue|null);
+
+        /** Type emptyDictType. */
+        public emptyDictType?: (google.protobuf.NullValue|null);
+
+        /** Type pgType. */
+        public pgType?: (Ydb.IPgType|null);
+
+        /** Type type. */
+        public type?: ("typeId"|"decimalType"|"optionalType"|"listType"|"tupleType"|"structType"|"dictType"|"variantType"|"taggedType"|"voidType"|"nullType"|"emptyListType"|"emptyDictType"|"pgType");
+
+        /**
+         * Creates a new Type instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Type instance
+         */
+        public static create(properties?: Ydb.IType): Ydb.Type;
+
+        /**
+         * Encodes the specified Type message. Does not implicitly {@link Ydb.Type.verify|verify} messages.
+         * @param message Type message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Type message, length delimited. Does not implicitly {@link Ydb.Type.verify|verify} messages.
+         * @param message Type message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Type message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Type
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Type;
+
+        /**
+         * Decodes a Type message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Type
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Type;
+
+        /**
+         * Verifies a Type message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Type message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Type
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.Type;
+
+        /**
+         * Creates a plain object from a Type message. Also converts values to other types if specified.
+         * @param message Type
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.Type, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Type to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace Type {
+
+        /** PrimitiveTypeId enum. */
+        enum PrimitiveTypeId {
+            PRIMITIVE_TYPE_ID_UNSPECIFIED = 0,
+            BOOL = 6,
+            INT8 = 7,
+            UINT8 = 5,
+            INT16 = 8,
+            UINT16 = 9,
+            INT32 = 1,
+            UINT32 = 2,
+            INT64 = 3,
+            UINT64 = 4,
+            FLOAT = 33,
+            DOUBLE = 32,
+            DATE = 48,
+            DATETIME = 49,
+            TIMESTAMP = 50,
+            INTERVAL = 51,
+            TZ_DATE = 52,
+            TZ_DATETIME = 53,
+            TZ_TIMESTAMP = 54,
+            STRING = 4097,
+            UTF8 = 4608,
+            YSON = 4609,
+            JSON = 4610,
+            UUID = 4611,
+            JSON_DOCUMENT = 4612,
+            DYNUMBER = 4866
+        }
+    }
+
+    /** Properties of a ValuePair. */
+    interface IValuePair {
+
+        /** ValuePair key */
+        key?: (Ydb.IValue|null);
+
+        /** ValuePair payload */
+        payload?: (Ydb.IValue|null);
+    }
+
+    /** Represents a ValuePair. */
+    class ValuePair implements IValuePair {
+
+        /**
+         * Constructs a new ValuePair.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IValuePair);
+
+        /** ValuePair key. */
+        public key?: (Ydb.IValue|null);
+
+        /** ValuePair payload. */
+        public payload?: (Ydb.IValue|null);
+
+        /**
+         * Creates a new ValuePair instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ValuePair instance
+         */
+        public static create(properties?: Ydb.IValuePair): Ydb.ValuePair;
+
+        /**
+         * Encodes the specified ValuePair message. Does not implicitly {@link Ydb.ValuePair.verify|verify} messages.
+         * @param message ValuePair message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ValuePair message, length delimited. Does not implicitly {@link Ydb.ValuePair.verify|verify} messages.
+         * @param message ValuePair message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ValuePair message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ValuePair
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.ValuePair;
+
+        /**
+         * Decodes a ValuePair message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ValuePair
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.ValuePair;
+
+        /**
+         * Verifies a ValuePair message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ValuePair message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ValuePair
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.ValuePair;
+
+        /**
+         * Creates a plain object from a ValuePair message. Also converts values to other types if specified.
+         * @param message ValuePair
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.ValuePair, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ValuePair to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a Value. */
+    interface IValue {
+
+        /** Value boolValue */
+        boolValue?: (boolean|null);
+
+        /** Value int32Value */
+        int32Value?: (number|null);
+
+        /** Value uint32Value */
+        uint32Value?: (number|null);
+
+        /** Value int64Value */
+        int64Value?: (number|Long|null);
+
+        /** Value uint64Value */
+        uint64Value?: (number|Long|null);
+
+        /** Value floatValue */
+        floatValue?: (number|null);
+
+        /** Value doubleValue */
+        doubleValue?: (number|null);
+
+        /** Value bytesValue */
+        bytesValue?: (Uint8Array|null);
+
+        /** Value textValue */
+        textValue?: (string|null);
+
+        /** Value nullFlagValue */
+        nullFlagValue?: (google.protobuf.NullValue|null);
+
+        /** Value nestedValue */
+        nestedValue?: (Ydb.IValue|null);
+
+        /** Value low_128 */
+        low_128?: (number|Long|null);
+
+        /** Value items */
+        items?: (Ydb.IValue[]|null);
+
+        /** Value pairs */
+        pairs?: (Ydb.IValuePair[]|null);
+
+        /** Value variantIndex */
+        variantIndex?: (number|null);
+
+        /** Value high_128 */
+        high_128?: (number|Long|null);
+    }
+
+    /** Represents a Value. */
+    class Value implements IValue {
+
+        /**
+         * Constructs a new Value.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IValue);
+
+        /** Value boolValue. */
+        public boolValue?: (boolean|null);
+
+        /** Value int32Value. */
+        public int32Value?: (number|null);
+
+        /** Value uint32Value. */
+        public uint32Value?: (number|null);
+
+        /** Value int64Value. */
+        public int64Value?: (number|Long|null);
+
+        /** Value uint64Value. */
+        public uint64Value?: (number|Long|null);
+
+        /** Value floatValue. */
+        public floatValue?: (number|null);
+
+        /** Value doubleValue. */
+        public doubleValue?: (number|null);
+
+        /** Value bytesValue. */
+        public bytesValue?: (Uint8Array|null);
+
+        /** Value textValue. */
+        public textValue?: (string|null);
+
+        /** Value nullFlagValue. */
+        public nullFlagValue?: (google.protobuf.NullValue|null);
+
+        /** Value nestedValue. */
+        public nestedValue?: (Ydb.IValue|null);
+
+        /** Value low_128. */
+        public low_128?: (number|Long|null);
+
+        /** Value items. */
+        public items: Ydb.IValue[];
+
+        /** Value pairs. */
+        public pairs: Ydb.IValuePair[];
+
+        /** Value variantIndex. */
+        public variantIndex: number;
+
+        /** Value high_128. */
+        public high_128: (number|Long);
+
+        /** Value value. */
+        public value?: ("boolValue"|"int32Value"|"uint32Value"|"int64Value"|"uint64Value"|"floatValue"|"doubleValue"|"bytesValue"|"textValue"|"nullFlagValue"|"nestedValue"|"low_128");
+
+        /**
+         * Creates a new Value instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Value instance
+         */
+        public static create(properties?: Ydb.IValue): Ydb.Value;
+
+        /**
+         * Encodes the specified Value message. Does not implicitly {@link Ydb.Value.verify|verify} messages.
+         * @param message Value message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Value message, length delimited. Does not implicitly {@link Ydb.Value.verify|verify} messages.
+         * @param message Value message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Value message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Value
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Value;
+
+        /**
+         * Decodes a Value message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Value
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Value;
+
+        /**
+         * Verifies a Value message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Value message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Value
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.Value;
+
+        /**
+         * Creates a plain object from a Value message. Also converts values to other types if specified.
+         * @param message Value
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.Value, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Value to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TypedValue. */
+    interface ITypedValue {
+
+        /** TypedValue type */
+        type?: (Ydb.IType|null);
+
+        /** TypedValue value */
+        value?: (Ydb.IValue|null);
+    }
+
+    /** Represents a TypedValue. */
+    class TypedValue implements ITypedValue {
+
+        /**
+         * Constructs a new TypedValue.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.ITypedValue);
+
+        /** TypedValue type. */
+        public type?: (Ydb.IType|null);
+
+        /** TypedValue value. */
+        public value?: (Ydb.IValue|null);
+
+        /**
+         * Creates a new TypedValue instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TypedValue instance
+         */
+        public static create(properties?: Ydb.ITypedValue): Ydb.TypedValue;
+
+        /**
+         * Encodes the specified TypedValue message. Does not implicitly {@link Ydb.TypedValue.verify|verify} messages.
+         * @param message TypedValue message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.ITypedValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TypedValue message, length delimited. Does not implicitly {@link Ydb.TypedValue.verify|verify} messages.
+         * @param message TypedValue message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.ITypedValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TypedValue message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TypedValue
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TypedValue;
+
+        /**
+         * Decodes a TypedValue message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TypedValue
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TypedValue;
+
+        /**
+         * Verifies a TypedValue message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TypedValue message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TypedValue
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.TypedValue;
+
+        /**
+         * Creates a plain object from a TypedValue message. Also converts values to other types if specified.
+         * @param message TypedValue
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.TypedValue, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TypedValue to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a Column. */
+    interface IColumn {
+
+        /** Column name */
+        name?: (string|null);
+
+        /** Column type */
+        type?: (Ydb.IType|null);
+    }
+
+    /** Represents a Column. */
+    class Column implements IColumn {
+
+        /**
+         * Constructs a new Column.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IColumn);
+
+        /** Column name. */
+        public name: string;
+
+        /** Column type. */
+        public type?: (Ydb.IType|null);
+
+        /**
+         * Creates a new Column instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Column instance
+         */
+        public static create(properties?: Ydb.IColumn): Ydb.Column;
+
+        /**
+         * Encodes the specified Column message. Does not implicitly {@link Ydb.Column.verify|verify} messages.
+         * @param message Column message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IColumn, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Column message, length delimited. Does not implicitly {@link Ydb.Column.verify|verify} messages.
+         * @param message Column message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IColumn, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Column message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Column
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Column;
+
+        /**
+         * Decodes a Column message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Column
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Column;
+
+        /**
+         * Verifies a Column message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Column message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Column
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.Column;
+
+        /**
+         * Creates a plain object from a Column message. Also converts values to other types if specified.
+         * @param message Column
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.Column, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Column to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ResultSet. */
+    interface IResultSet {
+
+        /** ResultSet columns */
+        columns?: (Ydb.IColumn[]|null);
+
+        /** ResultSet rows */
+        rows?: (Ydb.IValue[]|null);
+
+        /** ResultSet truncated */
+        truncated?: (boolean|null);
+    }
+
+    /** Represents a ResultSet. */
+    class ResultSet implements IResultSet {
+
+        /**
+         * Constructs a new ResultSet.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: Ydb.IResultSet);
+
+        /** ResultSet columns. */
+        public columns: Ydb.IColumn[];
+
+        /** ResultSet rows. */
+        public rows: Ydb.IValue[];
+
+        /** ResultSet truncated. */
+        public truncated: boolean;
+
+        /**
+         * Creates a new ResultSet instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ResultSet instance
+         */
+        public static create(properties?: Ydb.IResultSet): Ydb.ResultSet;
+
+        /**
+         * Encodes the specified ResultSet message. Does not implicitly {@link Ydb.ResultSet.verify|verify} messages.
+         * @param message ResultSet message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: Ydb.IResultSet, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ResultSet message, length delimited. Does not implicitly {@link Ydb.ResultSet.verify|verify} messages.
+         * @param message ResultSet message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: Ydb.IResultSet, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ResultSet message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ResultSet
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.ResultSet;
+
+        /**
+         * Decodes a ResultSet message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ResultSet
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.ResultSet;
+
+        /**
+         * Verifies a ResultSet message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ResultSet message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ResultSet
+         */
+        public static fromObject(object: { [k: string]: any }): Ydb.ResultSet;
+
+        /**
+         * Creates a plain object from a ResultSet message. Also converts values to other types if specified.
+         * @param message ResultSet
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: Ydb.ResultSet, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ResultSet to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
     }
 
     /** Namespace RateLimiter. */
     namespace RateLimiter {
-
-        /** Namespace V1. */
-        namespace V1 {
-
-            /** Represents a RateLimiterService */
-            class RateLimiterService extends $protobuf.rpc.Service {
-
-                /**
-                 * Constructs a new RateLimiterService service.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 */
-                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-                /**
-                 * Creates new RateLimiterService service using the specified rpc implementation.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 * @returns RPC service. Useful where requests and/or responses are streamed.
-                 */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): RateLimiterService;
-
-                /**
-                 * Calls CreateResource.
-                 * @param request CreateResourceRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and CreateResourceResponse
-                 */
-                public createResource(request: Ydb.RateLimiter.ICreateResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.CreateResourceCallback): void;
-
-                /**
-                 * Calls CreateResource.
-                 * @param request CreateResourceRequest message or plain object
-                 * @returns Promise
-                 */
-                public createResource(request: Ydb.RateLimiter.ICreateResourceRequest): Promise<Ydb.RateLimiter.CreateResourceResponse>;
-
-                /**
-                 * Calls AlterResource.
-                 * @param request AlterResourceRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and AlterResourceResponse
-                 */
-                public alterResource(request: Ydb.RateLimiter.IAlterResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.AlterResourceCallback): void;
-
-                /**
-                 * Calls AlterResource.
-                 * @param request AlterResourceRequest message or plain object
-                 * @returns Promise
-                 */
-                public alterResource(request: Ydb.RateLimiter.IAlterResourceRequest): Promise<Ydb.RateLimiter.AlterResourceResponse>;
-
-                /**
-                 * Calls DropResource.
-                 * @param request DropResourceRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DropResourceResponse
-                 */
-                public dropResource(request: Ydb.RateLimiter.IDropResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.DropResourceCallback): void;
-
-                /**
-                 * Calls DropResource.
-                 * @param request DropResourceRequest message or plain object
-                 * @returns Promise
-                 */
-                public dropResource(request: Ydb.RateLimiter.IDropResourceRequest): Promise<Ydb.RateLimiter.DropResourceResponse>;
-
-                /**
-                 * Calls ListResources.
-                 * @param request ListResourcesRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ListResourcesResponse
-                 */
-                public listResources(request: Ydb.RateLimiter.IListResourcesRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.ListResourcesCallback): void;
-
-                /**
-                 * Calls ListResources.
-                 * @param request ListResourcesRequest message or plain object
-                 * @returns Promise
-                 */
-                public listResources(request: Ydb.RateLimiter.IListResourcesRequest): Promise<Ydb.RateLimiter.ListResourcesResponse>;
-
-                /**
-                 * Calls DescribeResource.
-                 * @param request DescribeResourceRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DescribeResourceResponse
-                 */
-                public describeResource(request: Ydb.RateLimiter.IDescribeResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.DescribeResourceCallback): void;
-
-                /**
-                 * Calls DescribeResource.
-                 * @param request DescribeResourceRequest message or plain object
-                 * @returns Promise
-                 */
-                public describeResource(request: Ydb.RateLimiter.IDescribeResourceRequest): Promise<Ydb.RateLimiter.DescribeResourceResponse>;
-
-                /**
-                 * Calls AcquireResource.
-                 * @param request AcquireResourceRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and AcquireResourceResponse
-                 */
-                public acquireResource(request: Ydb.RateLimiter.IAcquireResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.AcquireResourceCallback): void;
-
-                /**
-                 * Calls AcquireResource.
-                 * @param request AcquireResourceRequest message or plain object
-                 * @returns Promise
-                 */
-                public acquireResource(request: Ydb.RateLimiter.IAcquireResourceRequest): Promise<Ydb.RateLimiter.AcquireResourceResponse>;
-            }
-
-            namespace RateLimiterService {
-
-                /**
-                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#createResource}.
-                 * @param error Error, if any
-                 * @param [response] CreateResourceResponse
-                 */
-                type CreateResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.CreateResourceResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#alterResource}.
-                 * @param error Error, if any
-                 * @param [response] AlterResourceResponse
-                 */
-                type AlterResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.AlterResourceResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#dropResource}.
-                 * @param error Error, if any
-                 * @param [response] DropResourceResponse
-                 */
-                type DropResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.DropResourceResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#listResources}.
-                 * @param error Error, if any
-                 * @param [response] ListResourcesResponse
-                 */
-                type ListResourcesCallback = (error: (Error|null), response?: Ydb.RateLimiter.ListResourcesResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#describeResource}.
-                 * @param error Error, if any
-                 * @param [response] DescribeResourceResponse
-                 */
-                type DescribeResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.DescribeResourceResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#acquireResource}.
-                 * @param error Error, if any
-                 * @param [response] AcquireResourceResponse
-                 */
-                type AcquireResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.AcquireResourceResponse) => void;
-            }
-        }
 
         /** Properties of a HierarchicalDrrSettings. */
         interface IHierarchicalDrrSettings {
@@ -19849,19 +25728,15 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
-
-    /** Namespace Scripting. */
-    namespace Scripting {
 
         /** Namespace V1. */
         namespace V1 {
 
-            /** Represents a ScriptingService */
-            class ScriptingService extends $protobuf.rpc.Service {
+            /** Represents a RateLimiterService */
+            class RateLimiterService extends $protobuf.rpc.Service {
 
                 /**
-                 * Constructs a new ScriptingService service.
+                 * Constructs a new RateLimiterService service.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
@@ -19869,81 +25744,148 @@ export namespace Ydb {
                 constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
                 /**
-                 * Creates new ScriptingService service using the specified rpc implementation.
+                 * Creates new RateLimiterService service using the specified rpc implementation.
                  * @param rpcImpl RPC implementation
                  * @param [requestDelimited=false] Whether requests are length-delimited
                  * @param [responseDelimited=false] Whether responses are length-delimited
                  * @returns RPC service. Useful where requests and/or responses are streamed.
                  */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ScriptingService;
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): RateLimiterService;
 
                 /**
-                 * Calls ExecuteYql.
-                 * @param request ExecuteYqlRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ExecuteYqlResponse
+                 * Calls CreateResource.
+                 * @param request CreateResourceRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CreateResourceResponse
                  */
-                public executeYql(request: Ydb.Scripting.IExecuteYqlRequest, callback: Ydb.Scripting.V1.ScriptingService.ExecuteYqlCallback): void;
+                public createResource(request: Ydb.RateLimiter.ICreateResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.CreateResourceCallback): void;
 
                 /**
-                 * Calls ExecuteYql.
-                 * @param request ExecuteYqlRequest message or plain object
+                 * Calls CreateResource.
+                 * @param request CreateResourceRequest message or plain object
                  * @returns Promise
                  */
-                public executeYql(request: Ydb.Scripting.IExecuteYqlRequest): Promise<Ydb.Scripting.ExecuteYqlResponse>;
+                public createResource(request: Ydb.RateLimiter.ICreateResourceRequest): Promise<Ydb.RateLimiter.CreateResourceResponse>;
 
                 /**
-                 * Calls StreamExecuteYql.
-                 * @param request ExecuteYqlRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ExecuteYqlPartialResponse
+                 * Calls AlterResource.
+                 * @param request AlterResourceRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and AlterResourceResponse
                  */
-                public streamExecuteYql(request: Ydb.Scripting.IExecuteYqlRequest, callback: Ydb.Scripting.V1.ScriptingService.StreamExecuteYqlCallback): void;
+                public alterResource(request: Ydb.RateLimiter.IAlterResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.AlterResourceCallback): void;
 
                 /**
-                 * Calls StreamExecuteYql.
-                 * @param request ExecuteYqlRequest message or plain object
+                 * Calls AlterResource.
+                 * @param request AlterResourceRequest message or plain object
                  * @returns Promise
                  */
-                public streamExecuteYql(request: Ydb.Scripting.IExecuteYqlRequest): Promise<Ydb.Scripting.ExecuteYqlPartialResponse>;
+                public alterResource(request: Ydb.RateLimiter.IAlterResourceRequest): Promise<Ydb.RateLimiter.AlterResourceResponse>;
 
                 /**
-                 * Calls ExplainYql.
-                 * @param request ExplainYqlRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and ExplainYqlResponse
+                 * Calls DropResource.
+                 * @param request DropResourceRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DropResourceResponse
                  */
-                public explainYql(request: Ydb.Scripting.IExplainYqlRequest, callback: Ydb.Scripting.V1.ScriptingService.ExplainYqlCallback): void;
+                public dropResource(request: Ydb.RateLimiter.IDropResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.DropResourceCallback): void;
 
                 /**
-                 * Calls ExplainYql.
-                 * @param request ExplainYqlRequest message or plain object
+                 * Calls DropResource.
+                 * @param request DropResourceRequest message or plain object
                  * @returns Promise
                  */
-                public explainYql(request: Ydb.Scripting.IExplainYqlRequest): Promise<Ydb.Scripting.ExplainYqlResponse>;
+                public dropResource(request: Ydb.RateLimiter.IDropResourceRequest): Promise<Ydb.RateLimiter.DropResourceResponse>;
+
+                /**
+                 * Calls ListResources.
+                 * @param request ListResourcesRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ListResourcesResponse
+                 */
+                public listResources(request: Ydb.RateLimiter.IListResourcesRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.ListResourcesCallback): void;
+
+                /**
+                 * Calls ListResources.
+                 * @param request ListResourcesRequest message or plain object
+                 * @returns Promise
+                 */
+                public listResources(request: Ydb.RateLimiter.IListResourcesRequest): Promise<Ydb.RateLimiter.ListResourcesResponse>;
+
+                /**
+                 * Calls DescribeResource.
+                 * @param request DescribeResourceRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DescribeResourceResponse
+                 */
+                public describeResource(request: Ydb.RateLimiter.IDescribeResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.DescribeResourceCallback): void;
+
+                /**
+                 * Calls DescribeResource.
+                 * @param request DescribeResourceRequest message or plain object
+                 * @returns Promise
+                 */
+                public describeResource(request: Ydb.RateLimiter.IDescribeResourceRequest): Promise<Ydb.RateLimiter.DescribeResourceResponse>;
+
+                /**
+                 * Calls AcquireResource.
+                 * @param request AcquireResourceRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and AcquireResourceResponse
+                 */
+                public acquireResource(request: Ydb.RateLimiter.IAcquireResourceRequest, callback: Ydb.RateLimiter.V1.RateLimiterService.AcquireResourceCallback): void;
+
+                /**
+                 * Calls AcquireResource.
+                 * @param request AcquireResourceRequest message or plain object
+                 * @returns Promise
+                 */
+                public acquireResource(request: Ydb.RateLimiter.IAcquireResourceRequest): Promise<Ydb.RateLimiter.AcquireResourceResponse>;
             }
 
-            namespace ScriptingService {
+            namespace RateLimiterService {
 
                 /**
-                 * Callback as used by {@link Ydb.Scripting.V1.ScriptingService#executeYql}.
+                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#createResource}.
                  * @param error Error, if any
-                 * @param [response] ExecuteYqlResponse
+                 * @param [response] CreateResourceResponse
                  */
-                type ExecuteYqlCallback = (error: (Error|null), response?: Ydb.Scripting.ExecuteYqlResponse) => void;
+                type CreateResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.CreateResourceResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Scripting.V1.ScriptingService#streamExecuteYql}.
+                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#alterResource}.
                  * @param error Error, if any
-                 * @param [response] ExecuteYqlPartialResponse
+                 * @param [response] AlterResourceResponse
                  */
-                type StreamExecuteYqlCallback = (error: (Error|null), response?: Ydb.Scripting.ExecuteYqlPartialResponse) => void;
+                type AlterResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.AlterResourceResponse) => void;
 
                 /**
-                 * Callback as used by {@link Ydb.Scripting.V1.ScriptingService#explainYql}.
+                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#dropResource}.
                  * @param error Error, if any
-                 * @param [response] ExplainYqlResponse
+                 * @param [response] DropResourceResponse
                  */
-                type ExplainYqlCallback = (error: (Error|null), response?: Ydb.Scripting.ExplainYqlResponse) => void;
+                type DropResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.DropResourceResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#listResources}.
+                 * @param error Error, if any
+                 * @param [response] ListResourcesResponse
+                 */
+                type ListResourcesCallback = (error: (Error|null), response?: Ydb.RateLimiter.ListResourcesResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#describeResource}.
+                 * @param error Error, if any
+                 * @param [response] DescribeResourceResponse
+                 */
+                type DescribeResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.DescribeResourceResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.RateLimiter.V1.RateLimiterService#acquireResource}.
+                 * @param error Error, if any
+                 * @param [response] AcquireResourceResponse
+                 */
+                type AcquireResourceCallback = (error: (Error|null), response?: Ydb.RateLimiter.AcquireResourceResponse) => void;
             }
         }
+    }
+
+    /** Namespace Scripting. */
+    namespace Scripting {
 
         /** Properties of an ExecuteYqlRequest. */
         interface IExecuteYqlRequest {
@@ -20740,1728 +26682,97 @@ export namespace Ydb {
              */
             public toJSON(): { [k: string]: any };
         }
-    }
 
-    /** Properties of a DecimalType. */
-    interface IDecimalType {
-
-        /** DecimalType precision */
-        precision?: (number|null);
-
-        /** DecimalType scale */
-        scale?: (number|null);
-    }
-
-    /** Represents a DecimalType. */
-    class DecimalType implements IDecimalType {
-
-        /**
-         * Constructs a new DecimalType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IDecimalType);
-
-        /** DecimalType precision. */
-        public precision: number;
-
-        /** DecimalType scale. */
-        public scale: number;
-
-        /**
-         * Creates a new DecimalType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns DecimalType instance
-         */
-        public static create(properties?: Ydb.IDecimalType): Ydb.DecimalType;
-
-        /**
-         * Encodes the specified DecimalType message. Does not implicitly {@link Ydb.DecimalType.verify|verify} messages.
-         * @param message DecimalType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IDecimalType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified DecimalType message, length delimited. Does not implicitly {@link Ydb.DecimalType.verify|verify} messages.
-         * @param message DecimalType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IDecimalType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a DecimalType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns DecimalType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.DecimalType;
-
-        /**
-         * Decodes a DecimalType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns DecimalType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.DecimalType;
-
-        /**
-         * Verifies a DecimalType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a DecimalType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns DecimalType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.DecimalType;
-
-        /**
-         * Creates a plain object from a DecimalType message. Also converts values to other types if specified.
-         * @param message DecimalType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.DecimalType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this DecimalType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of an OptionalType. */
-    interface IOptionalType {
-
-        /** OptionalType item */
-        item?: (Ydb.IType|null);
-    }
-
-    /** Represents an OptionalType. */
-    class OptionalType implements IOptionalType {
-
-        /**
-         * Constructs a new OptionalType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IOptionalType);
-
-        /** OptionalType item. */
-        public item?: (Ydb.IType|null);
-
-        /**
-         * Creates a new OptionalType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns OptionalType instance
-         */
-        public static create(properties?: Ydb.IOptionalType): Ydb.OptionalType;
-
-        /**
-         * Encodes the specified OptionalType message. Does not implicitly {@link Ydb.OptionalType.verify|verify} messages.
-         * @param message OptionalType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IOptionalType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified OptionalType message, length delimited. Does not implicitly {@link Ydb.OptionalType.verify|verify} messages.
-         * @param message OptionalType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IOptionalType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes an OptionalType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns OptionalType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.OptionalType;
-
-        /**
-         * Decodes an OptionalType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns OptionalType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.OptionalType;
-
-        /**
-         * Verifies an OptionalType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates an OptionalType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns OptionalType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.OptionalType;
-
-        /**
-         * Creates a plain object from an OptionalType message. Also converts values to other types if specified.
-         * @param message OptionalType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.OptionalType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this OptionalType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a ListType. */
-    interface IListType {
-
-        /** ListType item */
-        item?: (Ydb.IType|null);
-    }
-
-    /** Represents a ListType. */
-    class ListType implements IListType {
-
-        /**
-         * Constructs a new ListType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IListType);
-
-        /** ListType item. */
-        public item?: (Ydb.IType|null);
-
-        /**
-         * Creates a new ListType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns ListType instance
-         */
-        public static create(properties?: Ydb.IListType): Ydb.ListType;
-
-        /**
-         * Encodes the specified ListType message. Does not implicitly {@link Ydb.ListType.verify|verify} messages.
-         * @param message ListType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IListType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified ListType message, length delimited. Does not implicitly {@link Ydb.ListType.verify|verify} messages.
-         * @param message ListType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IListType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a ListType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns ListType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.ListType;
-
-        /**
-         * Decodes a ListType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ListType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.ListType;
-
-        /**
-         * Verifies a ListType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a ListType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns ListType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.ListType;
-
-        /**
-         * Creates a plain object from a ListType message. Also converts values to other types if specified.
-         * @param message ListType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.ListType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this ListType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a VariantType. */
-    interface IVariantType {
-
-        /** VariantType tupleItems */
-        tupleItems?: (Ydb.ITupleType|null);
-
-        /** VariantType structItems */
-        structItems?: (Ydb.IStructType|null);
-    }
-
-    /** Represents a VariantType. */
-    class VariantType implements IVariantType {
-
-        /**
-         * Constructs a new VariantType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IVariantType);
-
-        /** VariantType tupleItems. */
-        public tupleItems?: (Ydb.ITupleType|null);
-
-        /** VariantType structItems. */
-        public structItems?: (Ydb.IStructType|null);
-
-        /** VariantType type. */
-        public type?: ("tupleItems"|"structItems");
-
-        /**
-         * Creates a new VariantType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns VariantType instance
-         */
-        public static create(properties?: Ydb.IVariantType): Ydb.VariantType;
-
-        /**
-         * Encodes the specified VariantType message. Does not implicitly {@link Ydb.VariantType.verify|verify} messages.
-         * @param message VariantType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IVariantType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified VariantType message, length delimited. Does not implicitly {@link Ydb.VariantType.verify|verify} messages.
-         * @param message VariantType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IVariantType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a VariantType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns VariantType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.VariantType;
-
-        /**
-         * Decodes a VariantType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns VariantType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.VariantType;
-
-        /**
-         * Verifies a VariantType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a VariantType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns VariantType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.VariantType;
-
-        /**
-         * Creates a plain object from a VariantType message. Also converts values to other types if specified.
-         * @param message VariantType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.VariantType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this VariantType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a TupleType. */
-    interface ITupleType {
-
-        /** TupleType elements */
-        elements?: (Ydb.IType[]|null);
-    }
-
-    /** Represents a TupleType. */
-    class TupleType implements ITupleType {
-
-        /**
-         * Constructs a new TupleType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.ITupleType);
-
-        /** TupleType elements. */
-        public elements: Ydb.IType[];
-
-        /**
-         * Creates a new TupleType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns TupleType instance
-         */
-        public static create(properties?: Ydb.ITupleType): Ydb.TupleType;
-
-        /**
-         * Encodes the specified TupleType message. Does not implicitly {@link Ydb.TupleType.verify|verify} messages.
-         * @param message TupleType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.ITupleType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified TupleType message, length delimited. Does not implicitly {@link Ydb.TupleType.verify|verify} messages.
-         * @param message TupleType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.ITupleType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a TupleType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns TupleType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TupleType;
-
-        /**
-         * Decodes a TupleType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TupleType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TupleType;
-
-        /**
-         * Verifies a TupleType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a TupleType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns TupleType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.TupleType;
-
-        /**
-         * Creates a plain object from a TupleType message. Also converts values to other types if specified.
-         * @param message TupleType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.TupleType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this TupleType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a StructMember. */
-    interface IStructMember {
-
-        /** StructMember name */
-        name?: (string|null);
-
-        /** StructMember type */
-        type?: (Ydb.IType|null);
-    }
-
-    /** Represents a StructMember. */
-    class StructMember implements IStructMember {
-
-        /**
-         * Constructs a new StructMember.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IStructMember);
-
-        /** StructMember name. */
-        public name: string;
-
-        /** StructMember type. */
-        public type?: (Ydb.IType|null);
-
-        /**
-         * Creates a new StructMember instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns StructMember instance
-         */
-        public static create(properties?: Ydb.IStructMember): Ydb.StructMember;
-
-        /**
-         * Encodes the specified StructMember message. Does not implicitly {@link Ydb.StructMember.verify|verify} messages.
-         * @param message StructMember message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IStructMember, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified StructMember message, length delimited. Does not implicitly {@link Ydb.StructMember.verify|verify} messages.
-         * @param message StructMember message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IStructMember, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a StructMember message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns StructMember
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.StructMember;
-
-        /**
-         * Decodes a StructMember message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns StructMember
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.StructMember;
-
-        /**
-         * Verifies a StructMember message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a StructMember message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns StructMember
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.StructMember;
-
-        /**
-         * Creates a plain object from a StructMember message. Also converts values to other types if specified.
-         * @param message StructMember
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.StructMember, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this StructMember to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a StructType. */
-    interface IStructType {
-
-        /** StructType members */
-        members?: (Ydb.IStructMember[]|null);
-    }
-
-    /** Represents a StructType. */
-    class StructType implements IStructType {
-
-        /**
-         * Constructs a new StructType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IStructType);
-
-        /** StructType members. */
-        public members: Ydb.IStructMember[];
-
-        /**
-         * Creates a new StructType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns StructType instance
-         */
-        public static create(properties?: Ydb.IStructType): Ydb.StructType;
-
-        /**
-         * Encodes the specified StructType message. Does not implicitly {@link Ydb.StructType.verify|verify} messages.
-         * @param message StructType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IStructType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified StructType message, length delimited. Does not implicitly {@link Ydb.StructType.verify|verify} messages.
-         * @param message StructType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IStructType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a StructType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns StructType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.StructType;
-
-        /**
-         * Decodes a StructType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns StructType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.StructType;
-
-        /**
-         * Verifies a StructType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a StructType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns StructType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.StructType;
-
-        /**
-         * Creates a plain object from a StructType message. Also converts values to other types if specified.
-         * @param message StructType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.StructType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this StructType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a DictType. */
-    interface IDictType {
-
-        /** DictType key */
-        key?: (Ydb.IType|null);
-
-        /** DictType payload */
-        payload?: (Ydb.IType|null);
-    }
-
-    /** Represents a DictType. */
-    class DictType implements IDictType {
-
-        /**
-         * Constructs a new DictType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IDictType);
-
-        /** DictType key. */
-        public key?: (Ydb.IType|null);
-
-        /** DictType payload. */
-        public payload?: (Ydb.IType|null);
-
-        /**
-         * Creates a new DictType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns DictType instance
-         */
-        public static create(properties?: Ydb.IDictType): Ydb.DictType;
-
-        /**
-         * Encodes the specified DictType message. Does not implicitly {@link Ydb.DictType.verify|verify} messages.
-         * @param message DictType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IDictType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified DictType message, length delimited. Does not implicitly {@link Ydb.DictType.verify|verify} messages.
-         * @param message DictType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IDictType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a DictType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns DictType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.DictType;
-
-        /**
-         * Decodes a DictType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns DictType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.DictType;
-
-        /**
-         * Verifies a DictType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a DictType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns DictType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.DictType;
-
-        /**
-         * Creates a plain object from a DictType message. Also converts values to other types if specified.
-         * @param message DictType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.DictType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this DictType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a TaggedType. */
-    interface ITaggedType {
-
-        /** TaggedType tag */
-        tag?: (string|null);
-
-        /** TaggedType type */
-        type?: (Ydb.IType|null);
-    }
-
-    /** Represents a TaggedType. */
-    class TaggedType implements ITaggedType {
-
-        /**
-         * Constructs a new TaggedType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.ITaggedType);
-
-        /** TaggedType tag. */
-        public tag: string;
-
-        /** TaggedType type. */
-        public type?: (Ydb.IType|null);
-
-        /**
-         * Creates a new TaggedType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns TaggedType instance
-         */
-        public static create(properties?: Ydb.ITaggedType): Ydb.TaggedType;
-
-        /**
-         * Encodes the specified TaggedType message. Does not implicitly {@link Ydb.TaggedType.verify|verify} messages.
-         * @param message TaggedType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.ITaggedType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified TaggedType message, length delimited. Does not implicitly {@link Ydb.TaggedType.verify|verify} messages.
-         * @param message TaggedType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.ITaggedType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a TaggedType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns TaggedType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TaggedType;
-
-        /**
-         * Decodes a TaggedType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TaggedType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TaggedType;
-
-        /**
-         * Verifies a TaggedType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a TaggedType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns TaggedType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.TaggedType;
-
-        /**
-         * Creates a plain object from a TaggedType message. Also converts values to other types if specified.
-         * @param message TaggedType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.TaggedType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this TaggedType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a PgType. */
-    interface IPgType {
-
-        /** PgType oid */
-        oid?: (number|null);
-
-        /** PgType typlen */
-        typlen?: (number|null);
-
-        /** PgType typmod */
-        typmod?: (number|null);
-    }
-
-    /** Represents a PgType. */
-    class PgType implements IPgType {
-
-        /**
-         * Constructs a new PgType.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IPgType);
-
-        /** PgType oid. */
-        public oid: number;
-
-        /** PgType typlen. */
-        public typlen: number;
-
-        /** PgType typmod. */
-        public typmod: number;
-
-        /**
-         * Creates a new PgType instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns PgType instance
-         */
-        public static create(properties?: Ydb.IPgType): Ydb.PgType;
-
-        /**
-         * Encodes the specified PgType message. Does not implicitly {@link Ydb.PgType.verify|verify} messages.
-         * @param message PgType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IPgType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified PgType message, length delimited. Does not implicitly {@link Ydb.PgType.verify|verify} messages.
-         * @param message PgType message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IPgType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a PgType message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns PgType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.PgType;
-
-        /**
-         * Decodes a PgType message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PgType
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.PgType;
-
-        /**
-         * Verifies a PgType message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a PgType message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns PgType
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.PgType;
-
-        /**
-         * Creates a plain object from a PgType message. Also converts values to other types if specified.
-         * @param message PgType
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.PgType, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this PgType to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a Type. */
-    interface IType {
-
-        /** Type typeId */
-        typeId?: (Ydb.Type.PrimitiveTypeId|null);
-
-        /** Type decimalType */
-        decimalType?: (Ydb.IDecimalType|null);
-
-        /** Type optionalType */
-        optionalType?: (Ydb.IOptionalType|null);
-
-        /** Type listType */
-        listType?: (Ydb.IListType|null);
-
-        /** Type tupleType */
-        tupleType?: (Ydb.ITupleType|null);
-
-        /** Type structType */
-        structType?: (Ydb.IStructType|null);
-
-        /** Type dictType */
-        dictType?: (Ydb.IDictType|null);
-
-        /** Type variantType */
-        variantType?: (Ydb.IVariantType|null);
-
-        /** Type taggedType */
-        taggedType?: (Ydb.ITaggedType|null);
-
-        /** Type voidType */
-        voidType?: (google.protobuf.NullValue|null);
-
-        /** Type nullType */
-        nullType?: (google.protobuf.NullValue|null);
-
-        /** Type emptyListType */
-        emptyListType?: (google.protobuf.NullValue|null);
-
-        /** Type emptyDictType */
-        emptyDictType?: (google.protobuf.NullValue|null);
-
-        /** Type pgType */
-        pgType?: (Ydb.IPgType|null);
-    }
-
-    /** Represents a Type. */
-    class Type implements IType {
-
-        /**
-         * Constructs a new Type.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IType);
-
-        /** Type typeId. */
-        public typeId?: (Ydb.Type.PrimitiveTypeId|null);
-
-        /** Type decimalType. */
-        public decimalType?: (Ydb.IDecimalType|null);
-
-        /** Type optionalType. */
-        public optionalType?: (Ydb.IOptionalType|null);
-
-        /** Type listType. */
-        public listType?: (Ydb.IListType|null);
-
-        /** Type tupleType. */
-        public tupleType?: (Ydb.ITupleType|null);
-
-        /** Type structType. */
-        public structType?: (Ydb.IStructType|null);
-
-        /** Type dictType. */
-        public dictType?: (Ydb.IDictType|null);
-
-        /** Type variantType. */
-        public variantType?: (Ydb.IVariantType|null);
-
-        /** Type taggedType. */
-        public taggedType?: (Ydb.ITaggedType|null);
-
-        /** Type voidType. */
-        public voidType?: (google.protobuf.NullValue|null);
-
-        /** Type nullType. */
-        public nullType?: (google.protobuf.NullValue|null);
-
-        /** Type emptyListType. */
-        public emptyListType?: (google.protobuf.NullValue|null);
-
-        /** Type emptyDictType. */
-        public emptyDictType?: (google.protobuf.NullValue|null);
-
-        /** Type pgType. */
-        public pgType?: (Ydb.IPgType|null);
-
-        /** Type type. */
-        public type?: ("typeId"|"decimalType"|"optionalType"|"listType"|"tupleType"|"structType"|"dictType"|"variantType"|"taggedType"|"voidType"|"nullType"|"emptyListType"|"emptyDictType"|"pgType");
-
-        /**
-         * Creates a new Type instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns Type instance
-         */
-        public static create(properties?: Ydb.IType): Ydb.Type;
-
-        /**
-         * Encodes the specified Type message. Does not implicitly {@link Ydb.Type.verify|verify} messages.
-         * @param message Type message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified Type message, length delimited. Does not implicitly {@link Ydb.Type.verify|verify} messages.
-         * @param message Type message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IType, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a Type message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Type
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Type;
-
-        /**
-         * Decodes a Type message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Type
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Type;
-
-        /**
-         * Verifies a Type message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a Type message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Type
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.Type;
-
-        /**
-         * Creates a plain object from a Type message. Also converts values to other types if specified.
-         * @param message Type
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.Type, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Type to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    namespace Type {
-
-        /** PrimitiveTypeId enum. */
-        enum PrimitiveTypeId {
-            PRIMITIVE_TYPE_ID_UNSPECIFIED = 0,
-            BOOL = 6,
-            INT8 = 7,
-            UINT8 = 5,
-            INT16 = 8,
-            UINT16 = 9,
-            INT32 = 1,
-            UINT32 = 2,
-            INT64 = 3,
-            UINT64 = 4,
-            FLOAT = 33,
-            DOUBLE = 32,
-            DATE = 48,
-            DATETIME = 49,
-            TIMESTAMP = 50,
-            INTERVAL = 51,
-            TZ_DATE = 52,
-            TZ_DATETIME = 53,
-            TZ_TIMESTAMP = 54,
-            STRING = 4097,
-            UTF8 = 4608,
-            YSON = 4609,
-            JSON = 4610,
-            UUID = 4611,
-            JSON_DOCUMENT = 4612,
-            DYNUMBER = 4866
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents a ScriptingService */
+            class ScriptingService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new ScriptingService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new ScriptingService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ScriptingService;
+
+                /**
+                 * Calls ExecuteYql.
+                 * @param request ExecuteYqlRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ExecuteYqlResponse
+                 */
+                public executeYql(request: Ydb.Scripting.IExecuteYqlRequest, callback: Ydb.Scripting.V1.ScriptingService.ExecuteYqlCallback): void;
+
+                /**
+                 * Calls ExecuteYql.
+                 * @param request ExecuteYqlRequest message or plain object
+                 * @returns Promise
+                 */
+                public executeYql(request: Ydb.Scripting.IExecuteYqlRequest): Promise<Ydb.Scripting.ExecuteYqlResponse>;
+
+                /**
+                 * Calls StreamExecuteYql.
+                 * @param request ExecuteYqlRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ExecuteYqlPartialResponse
+                 */
+                public streamExecuteYql(request: Ydb.Scripting.IExecuteYqlRequest, callback: Ydb.Scripting.V1.ScriptingService.StreamExecuteYqlCallback): void;
+
+                /**
+                 * Calls StreamExecuteYql.
+                 * @param request ExecuteYqlRequest message or plain object
+                 * @returns Promise
+                 */
+                public streamExecuteYql(request: Ydb.Scripting.IExecuteYqlRequest): Promise<Ydb.Scripting.ExecuteYqlPartialResponse>;
+
+                /**
+                 * Calls ExplainYql.
+                 * @param request ExplainYqlRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ExplainYqlResponse
+                 */
+                public explainYql(request: Ydb.Scripting.IExplainYqlRequest, callback: Ydb.Scripting.V1.ScriptingService.ExplainYqlCallback): void;
+
+                /**
+                 * Calls ExplainYql.
+                 * @param request ExplainYqlRequest message or plain object
+                 * @returns Promise
+                 */
+                public explainYql(request: Ydb.Scripting.IExplainYqlRequest): Promise<Ydb.Scripting.ExplainYqlResponse>;
+            }
+
+            namespace ScriptingService {
+
+                /**
+                 * Callback as used by {@link Ydb.Scripting.V1.ScriptingService#executeYql}.
+                 * @param error Error, if any
+                 * @param [response] ExecuteYqlResponse
+                 */
+                type ExecuteYqlCallback = (error: (Error|null), response?: Ydb.Scripting.ExecuteYqlResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Scripting.V1.ScriptingService#streamExecuteYql}.
+                 * @param error Error, if any
+                 * @param [response] ExecuteYqlPartialResponse
+                 */
+                type StreamExecuteYqlCallback = (error: (Error|null), response?: Ydb.Scripting.ExecuteYqlPartialResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Scripting.V1.ScriptingService#explainYql}.
+                 * @param error Error, if any
+                 * @param [response] ExplainYqlResponse
+                 */
+                type ExplainYqlCallback = (error: (Error|null), response?: Ydb.Scripting.ExplainYqlResponse) => void;
+            }
         }
-    }
-
-    /** Properties of a ValuePair. */
-    interface IValuePair {
-
-        /** ValuePair key */
-        key?: (Ydb.IValue|null);
-
-        /** ValuePair payload */
-        payload?: (Ydb.IValue|null);
-    }
-
-    /** Represents a ValuePair. */
-    class ValuePair implements IValuePair {
-
-        /**
-         * Constructs a new ValuePair.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IValuePair);
-
-        /** ValuePair key. */
-        public key?: (Ydb.IValue|null);
-
-        /** ValuePair payload. */
-        public payload?: (Ydb.IValue|null);
-
-        /**
-         * Creates a new ValuePair instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns ValuePair instance
-         */
-        public static create(properties?: Ydb.IValuePair): Ydb.ValuePair;
-
-        /**
-         * Encodes the specified ValuePair message. Does not implicitly {@link Ydb.ValuePair.verify|verify} messages.
-         * @param message ValuePair message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified ValuePair message, length delimited. Does not implicitly {@link Ydb.ValuePair.verify|verify} messages.
-         * @param message ValuePair message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a ValuePair message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns ValuePair
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.ValuePair;
-
-        /**
-         * Decodes a ValuePair message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ValuePair
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.ValuePair;
-
-        /**
-         * Verifies a ValuePair message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a ValuePair message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns ValuePair
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.ValuePair;
-
-        /**
-         * Creates a plain object from a ValuePair message. Also converts values to other types if specified.
-         * @param message ValuePair
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.ValuePair, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this ValuePair to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a Value. */
-    interface IValue {
-
-        /** Value boolValue */
-        boolValue?: (boolean|null);
-
-        /** Value int32Value */
-        int32Value?: (number|null);
-
-        /** Value uint32Value */
-        uint32Value?: (number|null);
-
-        /** Value int64Value */
-        int64Value?: (number|Long|null);
-
-        /** Value uint64Value */
-        uint64Value?: (number|Long|null);
-
-        /** Value floatValue */
-        floatValue?: (number|null);
-
-        /** Value doubleValue */
-        doubleValue?: (number|null);
-
-        /** Value bytesValue */
-        bytesValue?: (Uint8Array|null);
-
-        /** Value textValue */
-        textValue?: (string|null);
-
-        /** Value nullFlagValue */
-        nullFlagValue?: (google.protobuf.NullValue|null);
-
-        /** Value nestedValue */
-        nestedValue?: (Ydb.IValue|null);
-
-        /** Value low_128 */
-        low_128?: (number|Long|null);
-
-        /** Value items */
-        items?: (Ydb.IValue[]|null);
-
-        /** Value pairs */
-        pairs?: (Ydb.IValuePair[]|null);
-
-        /** Value variantIndex */
-        variantIndex?: (number|null);
-
-        /** Value high_128 */
-        high_128?: (number|Long|null);
-    }
-
-    /** Represents a Value. */
-    class Value implements IValue {
-
-        /**
-         * Constructs a new Value.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IValue);
-
-        /** Value boolValue. */
-        public boolValue?: (boolean|null);
-
-        /** Value int32Value. */
-        public int32Value?: (number|null);
-
-        /** Value uint32Value. */
-        public uint32Value?: (number|null);
-
-        /** Value int64Value. */
-        public int64Value?: (number|Long|null);
-
-        /** Value uint64Value. */
-        public uint64Value?: (number|Long|null);
-
-        /** Value floatValue. */
-        public floatValue?: (number|null);
-
-        /** Value doubleValue. */
-        public doubleValue?: (number|null);
-
-        /** Value bytesValue. */
-        public bytesValue?: (Uint8Array|null);
-
-        /** Value textValue. */
-        public textValue?: (string|null);
-
-        /** Value nullFlagValue. */
-        public nullFlagValue?: (google.protobuf.NullValue|null);
-
-        /** Value nestedValue. */
-        public nestedValue?: (Ydb.IValue|null);
-
-        /** Value low_128. */
-        public low_128?: (number|Long|null);
-
-        /** Value items. */
-        public items: Ydb.IValue[];
-
-        /** Value pairs. */
-        public pairs: Ydb.IValuePair[];
-
-        /** Value variantIndex. */
-        public variantIndex: number;
-
-        /** Value high_128. */
-        public high_128: (number|Long);
-
-        /** Value value. */
-        public value?: ("boolValue"|"int32Value"|"uint32Value"|"int64Value"|"uint64Value"|"floatValue"|"doubleValue"|"bytesValue"|"textValue"|"nullFlagValue"|"nestedValue"|"low_128");
-
-        /**
-         * Creates a new Value instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns Value instance
-         */
-        public static create(properties?: Ydb.IValue): Ydb.Value;
-
-        /**
-         * Encodes the specified Value message. Does not implicitly {@link Ydb.Value.verify|verify} messages.
-         * @param message Value message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified Value message, length delimited. Does not implicitly {@link Ydb.Value.verify|verify} messages.
-         * @param message Value message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a Value message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Value
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Value;
-
-        /**
-         * Decodes a Value message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Value
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Value;
-
-        /**
-         * Verifies a Value message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a Value message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Value
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.Value;
-
-        /**
-         * Creates a plain object from a Value message. Also converts values to other types if specified.
-         * @param message Value
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.Value, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Value to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a TypedValue. */
-    interface ITypedValue {
-
-        /** TypedValue type */
-        type?: (Ydb.IType|null);
-
-        /** TypedValue value */
-        value?: (Ydb.IValue|null);
-    }
-
-    /** Represents a TypedValue. */
-    class TypedValue implements ITypedValue {
-
-        /**
-         * Constructs a new TypedValue.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.ITypedValue);
-
-        /** TypedValue type. */
-        public type?: (Ydb.IType|null);
-
-        /** TypedValue value. */
-        public value?: (Ydb.IValue|null);
-
-        /**
-         * Creates a new TypedValue instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns TypedValue instance
-         */
-        public static create(properties?: Ydb.ITypedValue): Ydb.TypedValue;
-
-        /**
-         * Encodes the specified TypedValue message. Does not implicitly {@link Ydb.TypedValue.verify|verify} messages.
-         * @param message TypedValue message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.ITypedValue, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified TypedValue message, length delimited. Does not implicitly {@link Ydb.TypedValue.verify|verify} messages.
-         * @param message TypedValue message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.ITypedValue, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a TypedValue message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns TypedValue
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TypedValue;
-
-        /**
-         * Decodes a TypedValue message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TypedValue
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TypedValue;
-
-        /**
-         * Verifies a TypedValue message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a TypedValue message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns TypedValue
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.TypedValue;
-
-        /**
-         * Creates a plain object from a TypedValue message. Also converts values to other types if specified.
-         * @param message TypedValue
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.TypedValue, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this TypedValue to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a Column. */
-    interface IColumn {
-
-        /** Column name */
-        name?: (string|null);
-
-        /** Column type */
-        type?: (Ydb.IType|null);
-    }
-
-    /** Represents a Column. */
-    class Column implements IColumn {
-
-        /**
-         * Constructs a new Column.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IColumn);
-
-        /** Column name. */
-        public name: string;
-
-        /** Column type. */
-        public type?: (Ydb.IType|null);
-
-        /**
-         * Creates a new Column instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns Column instance
-         */
-        public static create(properties?: Ydb.IColumn): Ydb.Column;
-
-        /**
-         * Encodes the specified Column message. Does not implicitly {@link Ydb.Column.verify|verify} messages.
-         * @param message Column message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IColumn, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified Column message, length delimited. Does not implicitly {@link Ydb.Column.verify|verify} messages.
-         * @param message Column message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IColumn, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a Column message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Column
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Column;
-
-        /**
-         * Decodes a Column message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Column
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Column;
-
-        /**
-         * Verifies a Column message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a Column message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Column
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.Column;
-
-        /**
-         * Creates a plain object from a Column message. Also converts values to other types if specified.
-         * @param message Column
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.Column, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Column to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
-    /** Properties of a ResultSet. */
-    interface IResultSet {
-
-        /** ResultSet columns */
-        columns?: (Ydb.IColumn[]|null);
-
-        /** ResultSet rows */
-        rows?: (Ydb.IValue[]|null);
-
-        /** ResultSet truncated */
-        truncated?: (boolean|null);
-    }
-
-    /** Represents a ResultSet. */
-    class ResultSet implements IResultSet {
-
-        /**
-         * Constructs a new ResultSet.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: Ydb.IResultSet);
-
-        /** ResultSet columns. */
-        public columns: Ydb.IColumn[];
-
-        /** ResultSet rows. */
-        public rows: Ydb.IValue[];
-
-        /** ResultSet truncated. */
-        public truncated: boolean;
-
-        /**
-         * Creates a new ResultSet instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns ResultSet instance
-         */
-        public static create(properties?: Ydb.IResultSet): Ydb.ResultSet;
-
-        /**
-         * Encodes the specified ResultSet message. Does not implicitly {@link Ydb.ResultSet.verify|verify} messages.
-         * @param message ResultSet message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: Ydb.IResultSet, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified ResultSet message, length delimited. Does not implicitly {@link Ydb.ResultSet.verify|verify} messages.
-         * @param message ResultSet message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: Ydb.IResultSet, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a ResultSet message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns ResultSet
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.ResultSet;
-
-        /**
-         * Decodes a ResultSet message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ResultSet
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.ResultSet;
-
-        /**
-         * Verifies a ResultSet message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a ResultSet message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns ResultSet
-         */
-        public static fromObject(object: { [k: string]: any }): Ydb.ResultSet;
-
-        /**
-         * Creates a plain object from a ResultSet message. Also converts values to other types if specified.
-         * @param message ResultSet
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: Ydb.ResultSet, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this ResultSet to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 
     /** Namespace Table. */
@@ -23831,7 +28142,8 @@ export namespace Ydb {
             /** Format enum. */
             enum Format {
                 FORMAT_UNSPECIFIED = 0,
-                FORMAT_JSON = 1
+                FORMAT_JSON = 1,
+                FORMAT_DYNAMODB_STREAMS_JSON = 2
             }
         }
 
@@ -23852,6 +28164,12 @@ export namespace Ydb {
 
             /** Changefeed virtualTimestamps */
             virtualTimestamps?: (boolean|null);
+
+            /** Changefeed initialScan */
+            initialScan?: (boolean|null);
+
+            /** Changefeed attributes */
+            attributes?: ({ [k: string]: string }|null);
         }
 
         /** Represents a Changefeed. */
@@ -23877,6 +28195,12 @@ export namespace Ydb {
 
             /** Changefeed virtualTimestamps. */
             public virtualTimestamps: boolean;
+
+            /** Changefeed initialScan. */
+            public initialScan: boolean;
+
+            /** Changefeed attributes. */
+            public attributes: { [k: string]: string };
 
             /**
              * Creates a new Changefeed instance using the specified properties.
@@ -23966,6 +28290,9 @@ export namespace Ydb {
 
             /** ChangefeedDescription virtualTimestamps */
             virtualTimestamps?: (boolean|null);
+
+            /** ChangefeedDescription attributes */
+            attributes?: ({ [k: string]: string }|null);
         }
 
         /** Represents a ChangefeedDescription. */
@@ -23991,6 +28318,9 @@ export namespace Ydb {
 
             /** ChangefeedDescription virtualTimestamps. */
             public virtualTimestamps: boolean;
+
+            /** ChangefeedDescription attributes. */
+            public attributes: { [k: string]: string };
 
             /**
              * Creates a new ChangefeedDescription instance using the specified properties.
@@ -24069,7 +28399,8 @@ export namespace Ydb {
             enum State {
                 STATE_UNSPECIFIED = 0,
                 STATE_ENABLED = 1,
-                STATE_DISABLED = 2
+                STATE_DISABLED = 2,
+                STATE_INITIAL_SCAN = 3
             }
         }
 
@@ -26446,6 +30777,9 @@ export namespace Ydb {
 
             /** CreateTableRequest readReplicasSettings */
             readReplicasSettings?: (Ydb.Table.IReadReplicasSettings|null);
+
+            /** CreateTableRequest tiering */
+            tiering?: (string|null);
         }
 
         /** Represents a CreateTableRequest. */
@@ -26507,6 +30841,9 @@ export namespace Ydb {
 
             /** CreateTableRequest readReplicasSettings. */
             public readReplicasSettings?: (Ydb.Table.IReadReplicasSettings|null);
+
+            /** CreateTableRequest tiering. */
+            public tiering: string;
 
             /** CreateTableRequest partitions. */
             public partitions?: ("uniformPartitions"|"partitionAtKeys");
@@ -27031,6 +31368,12 @@ export namespace Ydb {
 
             /** AlterTableRequest renameIndexes */
             renameIndexes?: (Ydb.Table.IRenameIndexItem[]|null);
+
+            /** AlterTableRequest setTiering */
+            setTiering?: (string|null);
+
+            /** AlterTableRequest dropTiering */
+            dropTiering?: (google.protobuf.IEmpty|null);
         }
 
         /** Represents an AlterTableRequest. */
@@ -27105,8 +31448,17 @@ export namespace Ydb {
             /** AlterTableRequest renameIndexes. */
             public renameIndexes: Ydb.Table.IRenameIndexItem[];
 
+            /** AlterTableRequest setTiering. */
+            public setTiering?: (string|null);
+
+            /** AlterTableRequest dropTiering. */
+            public dropTiering?: (google.protobuf.IEmpty|null);
+
             /** AlterTableRequest ttlAction. */
             public ttlAction?: ("setTtlSettings"|"dropTtlSettings");
+
+            /** AlterTableRequest tieringAction. */
+            public tieringAction?: ("setTiering"|"dropTiering");
 
             /**
              * Creates a new AlterTableRequest instance using the specified properties.
@@ -28309,6 +32661,9 @@ export namespace Ydb {
 
             /** DescribeTableResult changefeeds */
             changefeeds?: (Ydb.Table.IChangefeedDescription[]|null);
+
+            /** DescribeTableResult tiering */
+            tiering?: (string|null);
         }
 
         /** Represents a DescribeTableResult. */
@@ -28361,6 +32716,9 @@ export namespace Ydb {
 
             /** DescribeTableResult changefeeds. */
             public changefeeds: Ydb.Table.IChangefeedDescription[];
+
+            /** DescribeTableResult tiering. */
+            public tiering: string;
 
             /**
              * Creates a new DescribeTableResult instance using the specified properties.
@@ -32789,6 +37147,12 @@ export namespace Ydb {
 
             /** ReadTableRequest useSnapshot */
             useSnapshot?: (Ydb.FeatureFlag.Status|null);
+
+            /** ReadTableRequest batchLimitBytes */
+            batchLimitBytes?: (number|Long|null);
+
+            /** ReadTableRequest batchLimitRows */
+            batchLimitRows?: (number|Long|null);
         }
 
         /** Represents a ReadTableRequest. */
@@ -32820,6 +37184,12 @@ export namespace Ydb {
 
             /** ReadTableRequest useSnapshot. */
             public useSnapshot: Ydb.FeatureFlag.Status;
+
+            /** ReadTableRequest batchLimitBytes. */
+            public batchLimitBytes: (number|Long);
+
+            /** ReadTableRequest batchLimitRows. */
+            public batchLimitRows: (number|Long);
 
             /**
              * Creates a new ReadTableRequest instance using the specified properties.
@@ -33085,6 +37455,216 @@ export namespace Ydb {
 
             /**
              * Converts this ReadTableResult to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a ReadRowsRequest. */
+        interface IReadRowsRequest {
+
+            /** ReadRowsRequest sessionId */
+            sessionId?: (string|null);
+
+            /** ReadRowsRequest path */
+            path?: (string|null);
+
+            /** ReadRowsRequest keys */
+            keys?: (Ydb.ITypedValue|null);
+
+            /** ReadRowsRequest columns */
+            columns?: (string[]|null);
+        }
+
+        /** Represents a ReadRowsRequest. */
+        class ReadRowsRequest implements IReadRowsRequest {
+
+            /**
+             * Constructs a new ReadRowsRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Table.IReadRowsRequest);
+
+            /** ReadRowsRequest sessionId. */
+            public sessionId: string;
+
+            /** ReadRowsRequest path. */
+            public path: string;
+
+            /** ReadRowsRequest keys. */
+            public keys?: (Ydb.ITypedValue|null);
+
+            /** ReadRowsRequest columns. */
+            public columns: string[];
+
+            /**
+             * Creates a new ReadRowsRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ReadRowsRequest instance
+             */
+            public static create(properties?: Ydb.Table.IReadRowsRequest): Ydb.Table.ReadRowsRequest;
+
+            /**
+             * Encodes the specified ReadRowsRequest message. Does not implicitly {@link Ydb.Table.ReadRowsRequest.verify|verify} messages.
+             * @param message ReadRowsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Table.IReadRowsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ReadRowsRequest message, length delimited. Does not implicitly {@link Ydb.Table.ReadRowsRequest.verify|verify} messages.
+             * @param message ReadRowsRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Table.IReadRowsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ReadRowsRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ReadRowsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Table.ReadRowsRequest;
+
+            /**
+             * Decodes a ReadRowsRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ReadRowsRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Table.ReadRowsRequest;
+
+            /**
+             * Verifies a ReadRowsRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ReadRowsRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ReadRowsRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Table.ReadRowsRequest;
+
+            /**
+             * Creates a plain object from a ReadRowsRequest message. Also converts values to other types if specified.
+             * @param message ReadRowsRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Table.ReadRowsRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ReadRowsRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a ReadRowsResponse. */
+        interface IReadRowsResponse {
+
+            /** ReadRowsResponse status */
+            status?: (Ydb.StatusIds.StatusCode|null);
+
+            /** ReadRowsResponse issues */
+            issues?: (Ydb.Issue.IIssueMessage[]|null);
+
+            /** ReadRowsResponse resultSet */
+            resultSet?: (Ydb.IResultSet|null);
+        }
+
+        /** Represents a ReadRowsResponse. */
+        class ReadRowsResponse implements IReadRowsResponse {
+
+            /**
+             * Constructs a new ReadRowsResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Table.IReadRowsResponse);
+
+            /** ReadRowsResponse status. */
+            public status: Ydb.StatusIds.StatusCode;
+
+            /** ReadRowsResponse issues. */
+            public issues: Ydb.Issue.IIssueMessage[];
+
+            /** ReadRowsResponse resultSet. */
+            public resultSet?: (Ydb.IResultSet|null);
+
+            /**
+             * Creates a new ReadRowsResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ReadRowsResponse instance
+             */
+            public static create(properties?: Ydb.Table.IReadRowsResponse): Ydb.Table.ReadRowsResponse;
+
+            /**
+             * Encodes the specified ReadRowsResponse message. Does not implicitly {@link Ydb.Table.ReadRowsResponse.verify|verify} messages.
+             * @param message ReadRowsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Table.IReadRowsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ReadRowsResponse message, length delimited. Does not implicitly {@link Ydb.Table.ReadRowsResponse.verify|verify} messages.
+             * @param message ReadRowsResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Table.IReadRowsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ReadRowsResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ReadRowsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Table.ReadRowsResponse;
+
+            /**
+             * Decodes a ReadRowsResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ReadRowsResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Table.ReadRowsResponse;
+
+            /**
+             * Verifies a ReadRowsResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ReadRowsResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ReadRowsResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Table.ReadRowsResponse;
+
+            /**
+             * Creates a plain object from a ReadRowsResponse message. Also converts values to other types if specified.
+             * @param message ReadRowsResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Table.ReadRowsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ReadRowsResponse to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
@@ -33993,6 +38573,20 @@ export namespace Ydb {
                 public streamReadTable(request: Ydb.Table.IReadTableRequest): Promise<Ydb.Table.ReadTableResponse>;
 
                 /**
+                 * Calls ReadRows.
+                 * @param request ReadRowsRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ReadRowsResponse
+                 */
+                public readRows(request: Ydb.Table.IReadRowsRequest, callback: Ydb.Table.V1.TableService.ReadRowsCallback): void;
+
+                /**
+                 * Calls ReadRows.
+                 * @param request ReadRowsRequest message or plain object
+                 * @returns Promise
+                 */
+                public readRows(request: Ydb.Table.IReadRowsRequest): Promise<Ydb.Table.ReadRowsResponse>;
+
+                /**
                  * Calls BulkUpsert.
                  * @param request BulkUpsertRequest message or plain object
                  * @param callback Node-style callback called with the error, if any, and BulkUpsertResponse
@@ -34157,6 +38751,13 @@ export namespace Ydb {
                 type StreamReadTableCallback = (error: (Error|null), response?: Ydb.Table.ReadTableResponse) => void;
 
                 /**
+                 * Callback as used by {@link Ydb.Table.V1.TableService#readRows}.
+                 * @param error Error, if any
+                 * @param [response] ReadRowsResponse
+                 */
+                type ReadRowsCallback = (error: (Error|null), response?: Ydb.Table.ReadRowsResponse) => void;
+
+                /**
                  * Callback as used by {@link Ydb.Table.V1.TableService#bulkUpsert}.
                  * @param error Error, if any
                  * @param [response] BulkUpsertResponse
@@ -34173,941 +38774,8 @@ export namespace Ydb {
         }
     }
 
-    /** Namespace TableStats. */
-    namespace TableStats {
-
-        /** Properties of an OperationStats. */
-        interface IOperationStats {
-
-            /** OperationStats rows */
-            rows?: (number|Long|null);
-
-            /** OperationStats bytes */
-            bytes?: (number|Long|null);
-        }
-
-        /** Represents an OperationStats. */
-        class OperationStats implements IOperationStats {
-
-            /**
-             * Constructs a new OperationStats.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.TableStats.IOperationStats);
-
-            /** OperationStats rows. */
-            public rows: (number|Long);
-
-            /** OperationStats bytes. */
-            public bytes: (number|Long);
-
-            /**
-             * Creates a new OperationStats instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns OperationStats instance
-             */
-            public static create(properties?: Ydb.TableStats.IOperationStats): Ydb.TableStats.OperationStats;
-
-            /**
-             * Encodes the specified OperationStats message. Does not implicitly {@link Ydb.TableStats.OperationStats.verify|verify} messages.
-             * @param message OperationStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.TableStats.IOperationStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified OperationStats message, length delimited. Does not implicitly {@link Ydb.TableStats.OperationStats.verify|verify} messages.
-             * @param message OperationStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.TableStats.IOperationStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an OperationStats message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns OperationStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.OperationStats;
-
-            /**
-             * Decodes an OperationStats message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns OperationStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.OperationStats;
-
-            /**
-             * Verifies an OperationStats message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates an OperationStats message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns OperationStats
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.OperationStats;
-
-            /**
-             * Creates a plain object from an OperationStats message. Also converts values to other types if specified.
-             * @param message OperationStats
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.TableStats.OperationStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this OperationStats to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of a TableAccessStats. */
-        interface ITableAccessStats {
-
-            /** TableAccessStats name */
-            name?: (string|null);
-
-            /** TableAccessStats reads */
-            reads?: (Ydb.TableStats.IOperationStats|null);
-
-            /** TableAccessStats updates */
-            updates?: (Ydb.TableStats.IOperationStats|null);
-
-            /** TableAccessStats deletes */
-            deletes?: (Ydb.TableStats.IOperationStats|null);
-
-            /** TableAccessStats partitionsCount */
-            partitionsCount?: (number|Long|null);
-        }
-
-        /** Represents a TableAccessStats. */
-        class TableAccessStats implements ITableAccessStats {
-
-            /**
-             * Constructs a new TableAccessStats.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.TableStats.ITableAccessStats);
-
-            /** TableAccessStats name. */
-            public name: string;
-
-            /** TableAccessStats reads. */
-            public reads?: (Ydb.TableStats.IOperationStats|null);
-
-            /** TableAccessStats updates. */
-            public updates?: (Ydb.TableStats.IOperationStats|null);
-
-            /** TableAccessStats deletes. */
-            public deletes?: (Ydb.TableStats.IOperationStats|null);
-
-            /** TableAccessStats partitionsCount. */
-            public partitionsCount: (number|Long);
-
-            /**
-             * Creates a new TableAccessStats instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TableAccessStats instance
-             */
-            public static create(properties?: Ydb.TableStats.ITableAccessStats): Ydb.TableStats.TableAccessStats;
-
-            /**
-             * Encodes the specified TableAccessStats message. Does not implicitly {@link Ydb.TableStats.TableAccessStats.verify|verify} messages.
-             * @param message TableAccessStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.TableStats.ITableAccessStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified TableAccessStats message, length delimited. Does not implicitly {@link Ydb.TableStats.TableAccessStats.verify|verify} messages.
-             * @param message TableAccessStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.TableStats.ITableAccessStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TableAccessStats message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TableAccessStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.TableAccessStats;
-
-            /**
-             * Decodes a TableAccessStats message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns TableAccessStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.TableAccessStats;
-
-            /**
-             * Verifies a TableAccessStats message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a TableAccessStats message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns TableAccessStats
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.TableAccessStats;
-
-            /**
-             * Creates a plain object from a TableAccessStats message. Also converts values to other types if specified.
-             * @param message TableAccessStats
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.TableStats.TableAccessStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this TableAccessStats to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of a QueryPhaseStats. */
-        interface IQueryPhaseStats {
-
-            /** QueryPhaseStats durationUs */
-            durationUs?: (number|Long|null);
-
-            /** QueryPhaseStats tableAccess */
-            tableAccess?: (Ydb.TableStats.ITableAccessStats[]|null);
-
-            /** QueryPhaseStats cpuTimeUs */
-            cpuTimeUs?: (number|Long|null);
-
-            /** QueryPhaseStats affectedShards */
-            affectedShards?: (number|Long|null);
-
-            /** QueryPhaseStats literalPhase */
-            literalPhase?: (boolean|null);
-        }
-
-        /** Represents a QueryPhaseStats. */
-        class QueryPhaseStats implements IQueryPhaseStats {
-
-            /**
-             * Constructs a new QueryPhaseStats.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.TableStats.IQueryPhaseStats);
-
-            /** QueryPhaseStats durationUs. */
-            public durationUs: (number|Long);
-
-            /** QueryPhaseStats tableAccess. */
-            public tableAccess: Ydb.TableStats.ITableAccessStats[];
-
-            /** QueryPhaseStats cpuTimeUs. */
-            public cpuTimeUs: (number|Long);
-
-            /** QueryPhaseStats affectedShards. */
-            public affectedShards: (number|Long);
-
-            /** QueryPhaseStats literalPhase. */
-            public literalPhase: boolean;
-
-            /**
-             * Creates a new QueryPhaseStats instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns QueryPhaseStats instance
-             */
-            public static create(properties?: Ydb.TableStats.IQueryPhaseStats): Ydb.TableStats.QueryPhaseStats;
-
-            /**
-             * Encodes the specified QueryPhaseStats message. Does not implicitly {@link Ydb.TableStats.QueryPhaseStats.verify|verify} messages.
-             * @param message QueryPhaseStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.TableStats.IQueryPhaseStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified QueryPhaseStats message, length delimited. Does not implicitly {@link Ydb.TableStats.QueryPhaseStats.verify|verify} messages.
-             * @param message QueryPhaseStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.TableStats.IQueryPhaseStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a QueryPhaseStats message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns QueryPhaseStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.QueryPhaseStats;
-
-            /**
-             * Decodes a QueryPhaseStats message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns QueryPhaseStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.QueryPhaseStats;
-
-            /**
-             * Verifies a QueryPhaseStats message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a QueryPhaseStats message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns QueryPhaseStats
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.QueryPhaseStats;
-
-            /**
-             * Creates a plain object from a QueryPhaseStats message. Also converts values to other types if specified.
-             * @param message QueryPhaseStats
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.TableStats.QueryPhaseStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this QueryPhaseStats to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of a CompilationStats. */
-        interface ICompilationStats {
-
-            /** CompilationStats fromCache */
-            fromCache?: (boolean|null);
-
-            /** CompilationStats durationUs */
-            durationUs?: (number|Long|null);
-
-            /** CompilationStats cpuTimeUs */
-            cpuTimeUs?: (number|Long|null);
-        }
-
-        /** Represents a CompilationStats. */
-        class CompilationStats implements ICompilationStats {
-
-            /**
-             * Constructs a new CompilationStats.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.TableStats.ICompilationStats);
-
-            /** CompilationStats fromCache. */
-            public fromCache: boolean;
-
-            /** CompilationStats durationUs. */
-            public durationUs: (number|Long);
-
-            /** CompilationStats cpuTimeUs. */
-            public cpuTimeUs: (number|Long);
-
-            /**
-             * Creates a new CompilationStats instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns CompilationStats instance
-             */
-            public static create(properties?: Ydb.TableStats.ICompilationStats): Ydb.TableStats.CompilationStats;
-
-            /**
-             * Encodes the specified CompilationStats message. Does not implicitly {@link Ydb.TableStats.CompilationStats.verify|verify} messages.
-             * @param message CompilationStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.TableStats.ICompilationStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified CompilationStats message, length delimited. Does not implicitly {@link Ydb.TableStats.CompilationStats.verify|verify} messages.
-             * @param message CompilationStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.TableStats.ICompilationStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a CompilationStats message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns CompilationStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.CompilationStats;
-
-            /**
-             * Decodes a CompilationStats message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns CompilationStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.CompilationStats;
-
-            /**
-             * Verifies a CompilationStats message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a CompilationStats message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns CompilationStats
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.CompilationStats;
-
-            /**
-             * Creates a plain object from a CompilationStats message. Also converts values to other types if specified.
-             * @param message CompilationStats
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.TableStats.CompilationStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this CompilationStats to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of a QueryStats. */
-        interface IQueryStats {
-
-            /** QueryStats queryPhases */
-            queryPhases?: (Ydb.TableStats.IQueryPhaseStats[]|null);
-
-            /** QueryStats compilation */
-            compilation?: (Ydb.TableStats.ICompilationStats|null);
-
-            /** QueryStats processCpuTimeUs */
-            processCpuTimeUs?: (number|Long|null);
-
-            /** QueryStats queryPlan */
-            queryPlan?: (string|null);
-
-            /** QueryStats queryAst */
-            queryAst?: (string|null);
-
-            /** QueryStats totalDurationUs */
-            totalDurationUs?: (number|Long|null);
-
-            /** QueryStats totalCpuTimeUs */
-            totalCpuTimeUs?: (number|Long|null);
-        }
-
-        /** Represents a QueryStats. */
-        class QueryStats implements IQueryStats {
-
-            /**
-             * Constructs a new QueryStats.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.TableStats.IQueryStats);
-
-            /** QueryStats queryPhases. */
-            public queryPhases: Ydb.TableStats.IQueryPhaseStats[];
-
-            /** QueryStats compilation. */
-            public compilation?: (Ydb.TableStats.ICompilationStats|null);
-
-            /** QueryStats processCpuTimeUs. */
-            public processCpuTimeUs: (number|Long);
-
-            /** QueryStats queryPlan. */
-            public queryPlan: string;
-
-            /** QueryStats queryAst. */
-            public queryAst: string;
-
-            /** QueryStats totalDurationUs. */
-            public totalDurationUs: (number|Long);
-
-            /** QueryStats totalCpuTimeUs. */
-            public totalCpuTimeUs: (number|Long);
-
-            /**
-             * Creates a new QueryStats instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns QueryStats instance
-             */
-            public static create(properties?: Ydb.TableStats.IQueryStats): Ydb.TableStats.QueryStats;
-
-            /**
-             * Encodes the specified QueryStats message. Does not implicitly {@link Ydb.TableStats.QueryStats.verify|verify} messages.
-             * @param message QueryStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.TableStats.IQueryStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified QueryStats message, length delimited. Does not implicitly {@link Ydb.TableStats.QueryStats.verify|verify} messages.
-             * @param message QueryStats message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.TableStats.IQueryStats, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a QueryStats message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns QueryStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.TableStats.QueryStats;
-
-            /**
-             * Decodes a QueryStats message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns QueryStats
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.TableStats.QueryStats;
-
-            /**
-             * Verifies a QueryStats message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a QueryStats message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns QueryStats
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.TableStats.QueryStats;
-
-            /**
-             * Creates a plain object from a QueryStats message. Also converts values to other types if specified.
-             * @param message QueryStats
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.TableStats.QueryStats, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this QueryStats to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-    }
-
-    /** Namespace Formats. */
-    namespace Formats {
-
-        /** Properties of an ArrowBatchSettings. */
-        interface IArrowBatchSettings {
-
-            /** ArrowBatchSettings schema */
-            schema?: (Uint8Array|null);
-        }
-
-        /** Represents an ArrowBatchSettings. */
-        class ArrowBatchSettings implements IArrowBatchSettings {
-
-            /**
-             * Constructs a new ArrowBatchSettings.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.Formats.IArrowBatchSettings);
-
-            /** ArrowBatchSettings schema. */
-            public schema: Uint8Array;
-
-            /**
-             * Creates a new ArrowBatchSettings instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArrowBatchSettings instance
-             */
-            public static create(properties?: Ydb.Formats.IArrowBatchSettings): Ydb.Formats.ArrowBatchSettings;
-
-            /**
-             * Encodes the specified ArrowBatchSettings message. Does not implicitly {@link Ydb.Formats.ArrowBatchSettings.verify|verify} messages.
-             * @param message ArrowBatchSettings message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.Formats.IArrowBatchSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified ArrowBatchSettings message, length delimited. Does not implicitly {@link Ydb.Formats.ArrowBatchSettings.verify|verify} messages.
-             * @param message ArrowBatchSettings message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.Formats.IArrowBatchSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArrowBatchSettings message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArrowBatchSettings
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Formats.ArrowBatchSettings;
-
-            /**
-             * Decodes an ArrowBatchSettings message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns ArrowBatchSettings
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Formats.ArrowBatchSettings;
-
-            /**
-             * Verifies an ArrowBatchSettings message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates an ArrowBatchSettings message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns ArrowBatchSettings
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.Formats.ArrowBatchSettings;
-
-            /**
-             * Creates a plain object from an ArrowBatchSettings message. Also converts values to other types if specified.
-             * @param message ArrowBatchSettings
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.Formats.ArrowBatchSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this ArrowBatchSettings to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of a CsvSettings. */
-        interface ICsvSettings {
-
-            /** CsvSettings skipRows */
-            skipRows?: (number|null);
-
-            /** CsvSettings delimiter */
-            delimiter?: (Uint8Array|null);
-
-            /** CsvSettings nullValue */
-            nullValue?: (Uint8Array|null);
-
-            /** CsvSettings header */
-            header?: (boolean|null);
-        }
-
-        /** Represents a CsvSettings. */
-        class CsvSettings implements ICsvSettings {
-
-            /**
-             * Constructs a new CsvSettings.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: Ydb.Formats.ICsvSettings);
-
-            /** CsvSettings skipRows. */
-            public skipRows: number;
-
-            /** CsvSettings delimiter. */
-            public delimiter: Uint8Array;
-
-            /** CsvSettings nullValue. */
-            public nullValue: Uint8Array;
-
-            /** CsvSettings header. */
-            public header: boolean;
-
-            /**
-             * Creates a new CsvSettings instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns CsvSettings instance
-             */
-            public static create(properties?: Ydb.Formats.ICsvSettings): Ydb.Formats.CsvSettings;
-
-            /**
-             * Encodes the specified CsvSettings message. Does not implicitly {@link Ydb.Formats.CsvSettings.verify|verify} messages.
-             * @param message CsvSettings message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: Ydb.Formats.ICsvSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified CsvSettings message, length delimited. Does not implicitly {@link Ydb.Formats.CsvSettings.verify|verify} messages.
-             * @param message CsvSettings message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: Ydb.Formats.ICsvSettings, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a CsvSettings message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns CsvSettings
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Formats.CsvSettings;
-
-            /**
-             * Decodes a CsvSettings message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns CsvSettings
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Formats.CsvSettings;
-
-            /**
-             * Verifies a CsvSettings message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a CsvSettings message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns CsvSettings
-             */
-            public static fromObject(object: { [k: string]: any }): Ydb.Formats.CsvSettings;
-
-            /**
-             * Creates a plain object from a CsvSettings message. Also converts values to other types if specified.
-             * @param message CsvSettings
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: Ydb.Formats.CsvSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this CsvSettings to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-    }
-
     /** Namespace Topic. */
     namespace Topic {
-
-        /** Namespace V1. */
-        namespace V1 {
-
-            /** Represents a TopicService */
-            class TopicService extends $protobuf.rpc.Service {
-
-                /**
-                 * Constructs a new TopicService service.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 */
-                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-                /**
-                 * Creates new TopicService service using the specified rpc implementation.
-                 * @param rpcImpl RPC implementation
-                 * @param [requestDelimited=false] Whether requests are length-delimited
-                 * @param [responseDelimited=false] Whether responses are length-delimited
-                 * @returns RPC service. Useful where requests and/or responses are streamed.
-                 */
-                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): TopicService;
-
-                /**
-                 * Calls StreamWrite.
-                 * @param request FromClient message or plain object
-                 * @param callback Node-style callback called with the error, if any, and FromServer
-                 */
-                public streamWrite(request: Ydb.Topic.StreamWriteMessage.IFromClient, callback: Ydb.Topic.V1.TopicService.StreamWriteCallback): void;
-
-                /**
-                 * Calls StreamWrite.
-                 * @param request FromClient message or plain object
-                 * @returns Promise
-                 */
-                public streamWrite(request: Ydb.Topic.StreamWriteMessage.IFromClient): Promise<Ydb.Topic.StreamWriteMessage.FromServer>;
-
-                /**
-                 * Calls StreamRead.
-                 * @param request FromClient message or plain object
-                 * @param callback Node-style callback called with the error, if any, and FromServer
-                 */
-                public streamRead(request: Ydb.Topic.StreamReadMessage.IFromClient, callback: Ydb.Topic.V1.TopicService.StreamReadCallback): void;
-
-                /**
-                 * Calls StreamRead.
-                 * @param request FromClient message or plain object
-                 * @returns Promise
-                 */
-                public streamRead(request: Ydb.Topic.StreamReadMessage.IFromClient): Promise<Ydb.Topic.StreamReadMessage.FromServer>;
-
-                /**
-                 * Calls CreateTopic.
-                 * @param request CreateTopicRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and CreateTopicResponse
-                 */
-                public createTopic(request: Ydb.Topic.ICreateTopicRequest, callback: Ydb.Topic.V1.TopicService.CreateTopicCallback): void;
-
-                /**
-                 * Calls CreateTopic.
-                 * @param request CreateTopicRequest message or plain object
-                 * @returns Promise
-                 */
-                public createTopic(request: Ydb.Topic.ICreateTopicRequest): Promise<Ydb.Topic.CreateTopicResponse>;
-
-                /**
-                 * Calls DescribeTopic.
-                 * @param request DescribeTopicRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DescribeTopicResponse
-                 */
-                public describeTopic(request: Ydb.Topic.IDescribeTopicRequest, callback: Ydb.Topic.V1.TopicService.DescribeTopicCallback): void;
-
-                /**
-                 * Calls DescribeTopic.
-                 * @param request DescribeTopicRequest message or plain object
-                 * @returns Promise
-                 */
-                public describeTopic(request: Ydb.Topic.IDescribeTopicRequest): Promise<Ydb.Topic.DescribeTopicResponse>;
-
-                /**
-                 * Calls DescribeConsumer.
-                 * @param request DescribeConsumerRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DescribeConsumerResponse
-                 */
-                public describeConsumer(request: Ydb.Topic.IDescribeConsumerRequest, callback: Ydb.Topic.V1.TopicService.DescribeConsumerCallback): void;
-
-                /**
-                 * Calls DescribeConsumer.
-                 * @param request DescribeConsumerRequest message or plain object
-                 * @returns Promise
-                 */
-                public describeConsumer(request: Ydb.Topic.IDescribeConsumerRequest): Promise<Ydb.Topic.DescribeConsumerResponse>;
-
-                /**
-                 * Calls AlterTopic.
-                 * @param request AlterTopicRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and AlterTopicResponse
-                 */
-                public alterTopic(request: Ydb.Topic.IAlterTopicRequest, callback: Ydb.Topic.V1.TopicService.AlterTopicCallback): void;
-
-                /**
-                 * Calls AlterTopic.
-                 * @param request AlterTopicRequest message or plain object
-                 * @returns Promise
-                 */
-                public alterTopic(request: Ydb.Topic.IAlterTopicRequest): Promise<Ydb.Topic.AlterTopicResponse>;
-
-                /**
-                 * Calls DropTopic.
-                 * @param request DropTopicRequest message or plain object
-                 * @param callback Node-style callback called with the error, if any, and DropTopicResponse
-                 */
-                public dropTopic(request: Ydb.Topic.IDropTopicRequest, callback: Ydb.Topic.V1.TopicService.DropTopicCallback): void;
-
-                /**
-                 * Calls DropTopic.
-                 * @param request DropTopicRequest message or plain object
-                 * @returns Promise
-                 */
-                public dropTopic(request: Ydb.Topic.IDropTopicRequest): Promise<Ydb.Topic.DropTopicResponse>;
-            }
-
-            namespace TopicService {
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#streamWrite}.
-                 * @param error Error, if any
-                 * @param [response] FromServer
-                 */
-                type StreamWriteCallback = (error: (Error|null), response?: Ydb.Topic.StreamWriteMessage.FromServer) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#streamRead}.
-                 * @param error Error, if any
-                 * @param [response] FromServer
-                 */
-                type StreamReadCallback = (error: (Error|null), response?: Ydb.Topic.StreamReadMessage.FromServer) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#createTopic}.
-                 * @param error Error, if any
-                 * @param [response] CreateTopicResponse
-                 */
-                type CreateTopicCallback = (error: (Error|null), response?: Ydb.Topic.CreateTopicResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#describeTopic}.
-                 * @param error Error, if any
-                 * @param [response] DescribeTopicResponse
-                 */
-                type DescribeTopicCallback = (error: (Error|null), response?: Ydb.Topic.DescribeTopicResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#describeConsumer}.
-                 * @param error Error, if any
-                 * @param [response] DescribeConsumerResponse
-                 */
-                type DescribeConsumerCallback = (error: (Error|null), response?: Ydb.Topic.DescribeConsumerResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#alterTopic}.
-                 * @param error Error, if any
-                 * @param [response] AlterTopicResponse
-                 */
-                type AlterTopicCallback = (error: (Error|null), response?: Ydb.Topic.AlterTopicResponse) => void;
-
-                /**
-                 * Callback as used by {@link Ydb.Topic.V1.TopicService#dropTopic}.
-                 * @param error Error, if any
-                 * @param [response] DropTopicResponse
-                 */
-                type DropTopicCallback = (error: (Error|null), response?: Ydb.Topic.DropTopicResponse) => void;
-            }
-        }
 
         /** Codec enum. */
         enum Codec {
@@ -35474,6 +39142,102 @@ export namespace Ydb {
 
             /**
              * Converts this UpdateTokenResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a MetadataItem. */
+        interface IMetadataItem {
+
+            /** MetadataItem key */
+            key?: (string|null);
+
+            /** MetadataItem value */
+            value?: (Uint8Array|null);
+        }
+
+        /** Represents a MetadataItem. */
+        class MetadataItem implements IMetadataItem {
+
+            /**
+             * Constructs a new MetadataItem.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IMetadataItem);
+
+            /** MetadataItem key. */
+            public key: string;
+
+            /** MetadataItem value. */
+            public value: Uint8Array;
+
+            /**
+             * Creates a new MetadataItem instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns MetadataItem instance
+             */
+            public static create(properties?: Ydb.Topic.IMetadataItem): Ydb.Topic.MetadataItem;
+
+            /**
+             * Encodes the specified MetadataItem message. Does not implicitly {@link Ydb.Topic.MetadataItem.verify|verify} messages.
+             * @param message MetadataItem message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IMetadataItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified MetadataItem message, length delimited. Does not implicitly {@link Ydb.Topic.MetadataItem.verify|verify} messages.
+             * @param message MetadataItem message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IMetadataItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a MetadataItem message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MetadataItem
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.MetadataItem;
+
+            /**
+             * Decodes a MetadataItem message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns MetadataItem
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.MetadataItem;
+
+            /**
+             * Verifies a MetadataItem message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a MetadataItem message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns MetadataItem
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.MetadataItem;
+
+            /**
+             * Creates a plain object from a MetadataItem message. Also converts values to other types if specified.
+             * @param message MetadataItem
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.MetadataItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this MetadataItem to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
@@ -36136,6 +39900,9 @@ export namespace Ydb {
 
                     /** MessageData partitionId */
                     partitionId?: (number|Long|null);
+
+                    /** MessageData metadataItems */
+                    metadataItems?: (Ydb.Topic.IMetadataItem[]|null);
                 }
 
                 /** Represents a MessageData. */
@@ -36164,6 +39931,9 @@ export namespace Ydb {
 
                     /** MessageData partitionId. */
                     public partitionId?: (number|Long|null);
+
+                    /** MessageData metadataItems. */
+                    public metadataItems: Ydb.Topic.IMetadataItem[];
 
                     /** MessageData partitioning. */
                     public partitioning?: ("messageGroupId"|"partitionId");
@@ -37726,6 +41496,9 @@ export namespace Ydb {
 
                     /** MessageData messageGroupId */
                     messageGroupId?: (string|null);
+
+                    /** MessageData metadataItems */
+                    metadataItems?: (Ydb.Topic.IMetadataItem[]|null);
                 }
 
                 /** Represents a MessageData. */
@@ -37754,6 +41527,9 @@ export namespace Ydb {
 
                     /** MessageData messageGroupId. */
                     public messageGroupId: string;
+
+                    /** MessageData metadataItems. */
+                    public metadataItems: Ydb.Topic.IMetadataItem[];
 
                     /**
                      * Creates a new MessageData instance using the specified properties.
@@ -39497,6 +43273,294 @@ export namespace Ydb {
 
             /**
              * Converts this AddOffsetsToTransactionResult to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CommitOffsetRequest. */
+        interface ICommitOffsetRequest {
+
+            /** CommitOffsetRequest operationParams */
+            operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** CommitOffsetRequest path */
+            path?: (string|null);
+
+            /** CommitOffsetRequest partitionId */
+            partitionId?: (number|Long|null);
+
+            /** CommitOffsetRequest consumer */
+            consumer?: (string|null);
+
+            /** CommitOffsetRequest offset */
+            offset?: (number|Long|null);
+        }
+
+        /** Represents a CommitOffsetRequest. */
+        class CommitOffsetRequest implements ICommitOffsetRequest {
+
+            /**
+             * Constructs a new CommitOffsetRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.ICommitOffsetRequest);
+
+            /** CommitOffsetRequest operationParams. */
+            public operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** CommitOffsetRequest path. */
+            public path: string;
+
+            /** CommitOffsetRequest partitionId. */
+            public partitionId: (number|Long);
+
+            /** CommitOffsetRequest consumer. */
+            public consumer: string;
+
+            /** CommitOffsetRequest offset. */
+            public offset: (number|Long);
+
+            /**
+             * Creates a new CommitOffsetRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CommitOffsetRequest instance
+             */
+            public static create(properties?: Ydb.Topic.ICommitOffsetRequest): Ydb.Topic.CommitOffsetRequest;
+
+            /**
+             * Encodes the specified CommitOffsetRequest message. Does not implicitly {@link Ydb.Topic.CommitOffsetRequest.verify|verify} messages.
+             * @param message CommitOffsetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.ICommitOffsetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CommitOffsetRequest message, length delimited. Does not implicitly {@link Ydb.Topic.CommitOffsetRequest.verify|verify} messages.
+             * @param message CommitOffsetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.ICommitOffsetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CommitOffsetRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CommitOffsetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.CommitOffsetRequest;
+
+            /**
+             * Decodes a CommitOffsetRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CommitOffsetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.CommitOffsetRequest;
+
+            /**
+             * Verifies a CommitOffsetRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CommitOffsetRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CommitOffsetRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.CommitOffsetRequest;
+
+            /**
+             * Creates a plain object from a CommitOffsetRequest message. Also converts values to other types if specified.
+             * @param message CommitOffsetRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.CommitOffsetRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CommitOffsetRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CommitOffsetResponse. */
+        interface ICommitOffsetResponse {
+
+            /** CommitOffsetResponse operation */
+            operation?: (Ydb.Operations.IOperation|null);
+        }
+
+        /** Represents a CommitOffsetResponse. */
+        class CommitOffsetResponse implements ICommitOffsetResponse {
+
+            /**
+             * Constructs a new CommitOffsetResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.ICommitOffsetResponse);
+
+            /** CommitOffsetResponse operation. */
+            public operation?: (Ydb.Operations.IOperation|null);
+
+            /**
+             * Creates a new CommitOffsetResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CommitOffsetResponse instance
+             */
+            public static create(properties?: Ydb.Topic.ICommitOffsetResponse): Ydb.Topic.CommitOffsetResponse;
+
+            /**
+             * Encodes the specified CommitOffsetResponse message. Does not implicitly {@link Ydb.Topic.CommitOffsetResponse.verify|verify} messages.
+             * @param message CommitOffsetResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.ICommitOffsetResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CommitOffsetResponse message, length delimited. Does not implicitly {@link Ydb.Topic.CommitOffsetResponse.verify|verify} messages.
+             * @param message CommitOffsetResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.ICommitOffsetResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CommitOffsetResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CommitOffsetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.CommitOffsetResponse;
+
+            /**
+             * Decodes a CommitOffsetResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CommitOffsetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.CommitOffsetResponse;
+
+            /**
+             * Verifies a CommitOffsetResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CommitOffsetResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CommitOffsetResponse
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.CommitOffsetResponse;
+
+            /**
+             * Creates a plain object from a CommitOffsetResponse message. Also converts values to other types if specified.
+             * @param message CommitOffsetResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.CommitOffsetResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CommitOffsetResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a CommitOffsetResult. */
+        interface ICommitOffsetResult {
+        }
+
+        /** Represents a CommitOffsetResult. */
+        class CommitOffsetResult implements ICommitOffsetResult {
+
+            /**
+             * Constructs a new CommitOffsetResult.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.ICommitOffsetResult);
+
+            /**
+             * Creates a new CommitOffsetResult instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CommitOffsetResult instance
+             */
+            public static create(properties?: Ydb.Topic.ICommitOffsetResult): Ydb.Topic.CommitOffsetResult;
+
+            /**
+             * Encodes the specified CommitOffsetResult message. Does not implicitly {@link Ydb.Topic.CommitOffsetResult.verify|verify} messages.
+             * @param message CommitOffsetResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.ICommitOffsetResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CommitOffsetResult message, length delimited. Does not implicitly {@link Ydb.Topic.CommitOffsetResult.verify|verify} messages.
+             * @param message CommitOffsetResult message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.ICommitOffsetResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CommitOffsetResult message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CommitOffsetResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.CommitOffsetResult;
+
+            /**
+             * Decodes a CommitOffsetResult message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CommitOffsetResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.CommitOffsetResult;
+
+            /**
+             * Verifies a CommitOffsetResult message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CommitOffsetResult message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CommitOffsetResult
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.CommitOffsetResult;
+
+            /**
+             * Creates a plain object from a CommitOffsetResult message. Also converts values to other types if specified.
+             * @param message CommitOffsetResult
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.CommitOffsetResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CommitOffsetResult to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
@@ -42354,6 +46418,318 @@ export namespace Ydb {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
+        }
+
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents a TopicService */
+            class TopicService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new TopicService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new TopicService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): TopicService;
+
+                /**
+                 * Calls StreamWrite.
+                 * @param request FromClient message or plain object
+                 * @param callback Node-style callback called with the error, if any, and FromServer
+                 */
+                public streamWrite(request: Ydb.Topic.StreamWriteMessage.IFromClient, callback: Ydb.Topic.V1.TopicService.StreamWriteCallback): void;
+
+                /**
+                 * Calls StreamWrite.
+                 * @param request FromClient message or plain object
+                 * @returns Promise
+                 */
+                public streamWrite(request: Ydb.Topic.StreamWriteMessage.IFromClient): Promise<Ydb.Topic.StreamWriteMessage.FromServer>;
+
+                /**
+                 * Calls StreamRead.
+                 * @param request FromClient message or plain object
+                 * @param callback Node-style callback called with the error, if any, and FromServer
+                 */
+                public streamRead(request: Ydb.Topic.StreamReadMessage.IFromClient, callback: Ydb.Topic.V1.TopicService.StreamReadCallback): void;
+
+                /**
+                 * Calls StreamRead.
+                 * @param request FromClient message or plain object
+                 * @returns Promise
+                 */
+                public streamRead(request: Ydb.Topic.StreamReadMessage.IFromClient): Promise<Ydb.Topic.StreamReadMessage.FromServer>;
+
+                /**
+                 * Calls CommitOffset.
+                 * @param request CommitOffsetRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CommitOffsetResponse
+                 */
+                public commitOffset(request: Ydb.Topic.ICommitOffsetRequest, callback: Ydb.Topic.V1.TopicService.CommitOffsetCallback): void;
+
+                /**
+                 * Calls CommitOffset.
+                 * @param request CommitOffsetRequest message or plain object
+                 * @returns Promise
+                 */
+                public commitOffset(request: Ydb.Topic.ICommitOffsetRequest): Promise<Ydb.Topic.CommitOffsetResponse>;
+
+                /**
+                 * Calls CreateTopic.
+                 * @param request CreateTopicRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CreateTopicResponse
+                 */
+                public createTopic(request: Ydb.Topic.ICreateTopicRequest, callback: Ydb.Topic.V1.TopicService.CreateTopicCallback): void;
+
+                /**
+                 * Calls CreateTopic.
+                 * @param request CreateTopicRequest message or plain object
+                 * @returns Promise
+                 */
+                public createTopic(request: Ydb.Topic.ICreateTopicRequest): Promise<Ydb.Topic.CreateTopicResponse>;
+
+                /**
+                 * Calls DescribeTopic.
+                 * @param request DescribeTopicRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DescribeTopicResponse
+                 */
+                public describeTopic(request: Ydb.Topic.IDescribeTopicRequest, callback: Ydb.Topic.V1.TopicService.DescribeTopicCallback): void;
+
+                /**
+                 * Calls DescribeTopic.
+                 * @param request DescribeTopicRequest message or plain object
+                 * @returns Promise
+                 */
+                public describeTopic(request: Ydb.Topic.IDescribeTopicRequest): Promise<Ydb.Topic.DescribeTopicResponse>;
+
+                /**
+                 * Calls DescribeConsumer.
+                 * @param request DescribeConsumerRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DescribeConsumerResponse
+                 */
+                public describeConsumer(request: Ydb.Topic.IDescribeConsumerRequest, callback: Ydb.Topic.V1.TopicService.DescribeConsumerCallback): void;
+
+                /**
+                 * Calls DescribeConsumer.
+                 * @param request DescribeConsumerRequest message or plain object
+                 * @returns Promise
+                 */
+                public describeConsumer(request: Ydb.Topic.IDescribeConsumerRequest): Promise<Ydb.Topic.DescribeConsumerResponse>;
+
+                /**
+                 * Calls AlterTopic.
+                 * @param request AlterTopicRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and AlterTopicResponse
+                 */
+                public alterTopic(request: Ydb.Topic.IAlterTopicRequest, callback: Ydb.Topic.V1.TopicService.AlterTopicCallback): void;
+
+                /**
+                 * Calls AlterTopic.
+                 * @param request AlterTopicRequest message or plain object
+                 * @returns Promise
+                 */
+                public alterTopic(request: Ydb.Topic.IAlterTopicRequest): Promise<Ydb.Topic.AlterTopicResponse>;
+
+                /**
+                 * Calls DropTopic.
+                 * @param request DropTopicRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and DropTopicResponse
+                 */
+                public dropTopic(request: Ydb.Topic.IDropTopicRequest, callback: Ydb.Topic.V1.TopicService.DropTopicCallback): void;
+
+                /**
+                 * Calls DropTopic.
+                 * @param request DropTopicRequest message or plain object
+                 * @returns Promise
+                 */
+                public dropTopic(request: Ydb.Topic.IDropTopicRequest): Promise<Ydb.Topic.DropTopicResponse>;
+            }
+
+            namespace TopicService {
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#streamWrite}.
+                 * @param error Error, if any
+                 * @param [response] FromServer
+                 */
+                type StreamWriteCallback = (error: (Error|null), response?: Ydb.Topic.StreamWriteMessage.FromServer) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#streamRead}.
+                 * @param error Error, if any
+                 * @param [response] FromServer
+                 */
+                type StreamReadCallback = (error: (Error|null), response?: Ydb.Topic.StreamReadMessage.FromServer) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#commitOffset}.
+                 * @param error Error, if any
+                 * @param [response] CommitOffsetResponse
+                 */
+                type CommitOffsetCallback = (error: (Error|null), response?: Ydb.Topic.CommitOffsetResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#createTopic}.
+                 * @param error Error, if any
+                 * @param [response] CreateTopicResponse
+                 */
+                type CreateTopicCallback = (error: (Error|null), response?: Ydb.Topic.CreateTopicResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#describeTopic}.
+                 * @param error Error, if any
+                 * @param [response] DescribeTopicResponse
+                 */
+                type DescribeTopicCallback = (error: (Error|null), response?: Ydb.Topic.DescribeTopicResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#describeConsumer}.
+                 * @param error Error, if any
+                 * @param [response] DescribeConsumerResponse
+                 */
+                type DescribeConsumerCallback = (error: (Error|null), response?: Ydb.Topic.DescribeConsumerResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#alterTopic}.
+                 * @param error Error, if any
+                 * @param [response] AlterTopicResponse
+                 */
+                type AlterTopicCallback = (error: (Error|null), response?: Ydb.Topic.AlterTopicResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#dropTopic}.
+                 * @param error Error, if any
+                 * @param [response] DropTopicResponse
+                 */
+                type DropTopicCallback = (error: (Error|null), response?: Ydb.Topic.DropTopicResponse) => void;
+            }
+        }
+    }
+
+    /** Namespace Operation. */
+    namespace Operation {
+
+        /** Namespace V1. */
+        namespace V1 {
+
+            /** Represents an OperationService */
+            class OperationService extends $protobuf.rpc.Service {
+
+                /**
+                 * Constructs a new OperationService service.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 */
+                constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+                /**
+                 * Creates new OperationService service using the specified rpc implementation.
+                 * @param rpcImpl RPC implementation
+                 * @param [requestDelimited=false] Whether requests are length-delimited
+                 * @param [responseDelimited=false] Whether responses are length-delimited
+                 * @returns RPC service. Useful where requests and/or responses are streamed.
+                 */
+                public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): OperationService;
+
+                /**
+                 * Calls GetOperation.
+                 * @param request GetOperationRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and GetOperationResponse
+                 */
+                public getOperation(request: Ydb.Operations.IGetOperationRequest, callback: Ydb.Operation.V1.OperationService.GetOperationCallback): void;
+
+                /**
+                 * Calls GetOperation.
+                 * @param request GetOperationRequest message or plain object
+                 * @returns Promise
+                 */
+                public getOperation(request: Ydb.Operations.IGetOperationRequest): Promise<Ydb.Operations.GetOperationResponse>;
+
+                /**
+                 * Calls CancelOperation.
+                 * @param request CancelOperationRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and CancelOperationResponse
+                 */
+                public cancelOperation(request: Ydb.Operations.ICancelOperationRequest, callback: Ydb.Operation.V1.OperationService.CancelOperationCallback): void;
+
+                /**
+                 * Calls CancelOperation.
+                 * @param request CancelOperationRequest message or plain object
+                 * @returns Promise
+                 */
+                public cancelOperation(request: Ydb.Operations.ICancelOperationRequest): Promise<Ydb.Operations.CancelOperationResponse>;
+
+                /**
+                 * Calls ForgetOperation.
+                 * @param request ForgetOperationRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ForgetOperationResponse
+                 */
+                public forgetOperation(request: Ydb.Operations.IForgetOperationRequest, callback: Ydb.Operation.V1.OperationService.ForgetOperationCallback): void;
+
+                /**
+                 * Calls ForgetOperation.
+                 * @param request ForgetOperationRequest message or plain object
+                 * @returns Promise
+                 */
+                public forgetOperation(request: Ydb.Operations.IForgetOperationRequest): Promise<Ydb.Operations.ForgetOperationResponse>;
+
+                /**
+                 * Calls ListOperations.
+                 * @param request ListOperationsRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and ListOperationsResponse
+                 */
+                public listOperations(request: Ydb.Operations.IListOperationsRequest, callback: Ydb.Operation.V1.OperationService.ListOperationsCallback): void;
+
+                /**
+                 * Calls ListOperations.
+                 * @param request ListOperationsRequest message or plain object
+                 * @returns Promise
+                 */
+                public listOperations(request: Ydb.Operations.IListOperationsRequest): Promise<Ydb.Operations.ListOperationsResponse>;
+            }
+
+            namespace OperationService {
+
+                /**
+                 * Callback as used by {@link Ydb.Operation.V1.OperationService#getOperation}.
+                 * @param error Error, if any
+                 * @param [response] GetOperationResponse
+                 */
+                type GetOperationCallback = (error: (Error|null), response?: Ydb.Operations.GetOperationResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Operation.V1.OperationService#cancelOperation}.
+                 * @param error Error, if any
+                 * @param [response] CancelOperationResponse
+                 */
+                type CancelOperationCallback = (error: (Error|null), response?: Ydb.Operations.CancelOperationResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Operation.V1.OperationService#forgetOperation}.
+                 * @param error Error, if any
+                 * @param [response] ForgetOperationResponse
+                 */
+                type ForgetOperationCallback = (error: (Error|null), response?: Ydb.Operations.ForgetOperationResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Operation.V1.OperationService#listOperations}.
+                 * @param error Error, if any
+                 * @param [response] ListOperationsResponse
+                 */
+                type ListOperationsCallback = (error: (Error|null), response?: Ydb.Operations.ListOperationsResponse) => void;
+            }
         }
     }
 }
