@@ -21231,6 +21231,9 @@ export namespace Ydb {
 
             /** ExecuteQueryResponsePart execStats */
             execStats?: (Ydb.TableStats.IQueryStats|null);
+
+            /** ExecuteQueryResponsePart txMeta */
+            txMeta?: (Ydb.Query.ITransactionMeta|null);
         }
 
         /** Represents an ExecuteQueryResponsePart. */
@@ -21256,6 +21259,9 @@ export namespace Ydb {
 
             /** ExecuteQueryResponsePart execStats. */
             public execStats?: (Ydb.TableStats.IQueryStats|null);
+
+            /** ExecuteQueryResponsePart txMeta. */
+            public txMeta?: (Ydb.Query.ITransactionMeta|null);
 
             /**
              * Creates a new ExecuteQueryResponsePart instance using the specified properties.
@@ -39790,6 +39796,9 @@ export namespace Ydb {
 
                 /** WriteRequest codec */
                 codec?: (number|null);
+
+                /** WriteRequest tx */
+                tx?: (Ydb.Topic.ITransactionIdentity|null);
             }
 
             /** Represents a WriteRequest. */
@@ -39806,6 +39815,12 @@ export namespace Ydb {
 
                 /** WriteRequest codec. */
                 public codec: number;
+
+                /** WriteRequest tx. */
+                public tx?: (Ydb.Topic.ITransactionIdentity|null);
+
+                /** WriteRequest _tx. */
+                public _tx?: "tx";
 
                 /**
                  * Creates a new WriteRequest instance using the specified properties.
@@ -42792,121 +42807,211 @@ export namespace Ydb {
             }
         }
 
-        /** Properties of an AddOffsetsToTransactionRequest. */
-        interface IAddOffsetsToTransactionRequest {
+        /** Properties of a TransactionIdentity. */
+        interface ITransactionIdentity {
 
-            /** AddOffsetsToTransactionRequest operationParams */
-            operationParams?: (Ydb.Operations.IOperationParams|null);
+            /** TransactionIdentity id */
+            id?: (string|null);
 
-            /** AddOffsetsToTransactionRequest sessionId */
-            sessionId?: (string|null);
-
-            /** AddOffsetsToTransactionRequest txControl */
-            txControl?: (Ydb.Table.ITransactionControl|null);
-
-            /** AddOffsetsToTransactionRequest topics */
-            topics?: (Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets[]|null);
-
-            /** AddOffsetsToTransactionRequest consumer */
-            consumer?: (string|null);
+            /** TransactionIdentity session */
+            session?: (string|null);
         }
 
-        /** Represents an AddOffsetsToTransactionRequest. */
-        class AddOffsetsToTransactionRequest implements IAddOffsetsToTransactionRequest {
+        /** Represents a TransactionIdentity. */
+        class TransactionIdentity implements ITransactionIdentity {
 
             /**
-             * Constructs a new AddOffsetsToTransactionRequest.
+             * Constructs a new TransactionIdentity.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Ydb.Topic.IAddOffsetsToTransactionRequest);
+            constructor(properties?: Ydb.Topic.ITransactionIdentity);
 
-            /** AddOffsetsToTransactionRequest operationParams. */
-            public operationParams?: (Ydb.Operations.IOperationParams|null);
+            /** TransactionIdentity id. */
+            public id: string;
 
-            /** AddOffsetsToTransactionRequest sessionId. */
-            public sessionId: string;
-
-            /** AddOffsetsToTransactionRequest txControl. */
-            public txControl?: (Ydb.Table.ITransactionControl|null);
-
-            /** AddOffsetsToTransactionRequest topics. */
-            public topics: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets[];
-
-            /** AddOffsetsToTransactionRequest consumer. */
-            public consumer: string;
+            /** TransactionIdentity session. */
+            public session: string;
 
             /**
-             * Creates a new AddOffsetsToTransactionRequest instance using the specified properties.
+             * Creates a new TransactionIdentity instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns AddOffsetsToTransactionRequest instance
+             * @returns TransactionIdentity instance
              */
-            public static create(properties?: Ydb.Topic.IAddOffsetsToTransactionRequest): Ydb.Topic.AddOffsetsToTransactionRequest;
+            public static create(properties?: Ydb.Topic.ITransactionIdentity): Ydb.Topic.TransactionIdentity;
 
             /**
-             * Encodes the specified AddOffsetsToTransactionRequest message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.verify|verify} messages.
-             * @param message AddOffsetsToTransactionRequest message or plain object to encode
+             * Encodes the specified TransactionIdentity message. Does not implicitly {@link Ydb.Topic.TransactionIdentity.verify|verify} messages.
+             * @param message TransactionIdentity message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Ydb.Topic.IAddOffsetsToTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: Ydb.Topic.ITransactionIdentity, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified AddOffsetsToTransactionRequest message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.verify|verify} messages.
-             * @param message AddOffsetsToTransactionRequest message or plain object to encode
+             * Encodes the specified TransactionIdentity message, length delimited. Does not implicitly {@link Ydb.Topic.TransactionIdentity.verify|verify} messages.
+             * @param message TransactionIdentity message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Ydb.Topic.IAddOffsetsToTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: Ydb.Topic.ITransactionIdentity, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an AddOffsetsToTransactionRequest message from the specified reader or buffer.
+             * Decodes a TransactionIdentity message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AddOffsetsToTransactionRequest
+             * @returns TransactionIdentity
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.TransactionIdentity;
 
             /**
-             * Decodes an AddOffsetsToTransactionRequest message from the specified reader or buffer, length delimited.
+             * Decodes a TransactionIdentity message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AddOffsetsToTransactionRequest
+             * @returns TransactionIdentity
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.TransactionIdentity;
 
             /**
-             * Verifies an AddOffsetsToTransactionRequest message.
+             * Verifies a TransactionIdentity message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates an AddOffsetsToTransactionRequest message from a plain object. Also converts values to their respective internal types.
+             * Creates a TransactionIdentity message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns AddOffsetsToTransactionRequest
+             * @returns TransactionIdentity
              */
-            public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionRequest;
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.TransactionIdentity;
 
             /**
-             * Creates a plain object from an AddOffsetsToTransactionRequest message. Also converts values to other types if specified.
-             * @param message AddOffsetsToTransactionRequest
+             * Creates a plain object from a TransactionIdentity message. Also converts values to other types if specified.
+             * @param message TransactionIdentity
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: Ydb.Topic.AddOffsetsToTransactionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: Ydb.Topic.TransactionIdentity, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this AddOffsetsToTransactionRequest to JSON.
+             * Converts this TransactionIdentity to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
         }
 
-        namespace AddOffsetsToTransactionRequest {
+        /** Properties of an UpdateOffsetsInTransactionRequest. */
+        interface IUpdateOffsetsInTransactionRequest {
+
+            /** UpdateOffsetsInTransactionRequest operationParams */
+            operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** UpdateOffsetsInTransactionRequest tx */
+            tx?: (Ydb.Topic.ITransactionIdentity|null);
+
+            /** UpdateOffsetsInTransactionRequest topics */
+            topics?: (Ydb.Topic.UpdateOffsetsInTransactionRequest.ITopicOffsets[]|null);
+
+            /** UpdateOffsetsInTransactionRequest consumer */
+            consumer?: (string|null);
+        }
+
+        /** Represents an UpdateOffsetsInTransactionRequest. */
+        class UpdateOffsetsInTransactionRequest implements IUpdateOffsetsInTransactionRequest {
+
+            /**
+             * Constructs a new UpdateOffsetsInTransactionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Ydb.Topic.IUpdateOffsetsInTransactionRequest);
+
+            /** UpdateOffsetsInTransactionRequest operationParams. */
+            public operationParams?: (Ydb.Operations.IOperationParams|null);
+
+            /** UpdateOffsetsInTransactionRequest tx. */
+            public tx?: (Ydb.Topic.ITransactionIdentity|null);
+
+            /** UpdateOffsetsInTransactionRequest topics. */
+            public topics: Ydb.Topic.UpdateOffsetsInTransactionRequest.ITopicOffsets[];
+
+            /** UpdateOffsetsInTransactionRequest consumer. */
+            public consumer: string;
+
+            /**
+             * Creates a new UpdateOffsetsInTransactionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UpdateOffsetsInTransactionRequest instance
+             */
+            public static create(properties?: Ydb.Topic.IUpdateOffsetsInTransactionRequest): Ydb.Topic.UpdateOffsetsInTransactionRequest;
+
+            /**
+             * Encodes the specified UpdateOffsetsInTransactionRequest message. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionRequest.verify|verify} messages.
+             * @param message UpdateOffsetsInTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Ydb.Topic.IUpdateOffsetsInTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified UpdateOffsetsInTransactionRequest message, length delimited. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionRequest.verify|verify} messages.
+             * @param message UpdateOffsetsInTransactionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Ydb.Topic.IUpdateOffsetsInTransactionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an UpdateOffsetsInTransactionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UpdateOffsetsInTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.UpdateOffsetsInTransactionRequest;
+
+            /**
+             * Decodes an UpdateOffsetsInTransactionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns UpdateOffsetsInTransactionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.UpdateOffsetsInTransactionRequest;
+
+            /**
+             * Verifies an UpdateOffsetsInTransactionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an UpdateOffsetsInTransactionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns UpdateOffsetsInTransactionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.UpdateOffsetsInTransactionRequest;
+
+            /**
+             * Creates a plain object from an UpdateOffsetsInTransactionRequest message. Also converts values to other types if specified.
+             * @param message UpdateOffsetsInTransactionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: Ydb.Topic.UpdateOffsetsInTransactionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this UpdateOffsetsInTransactionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace UpdateOffsetsInTransactionRequest {
 
             /** Properties of a TopicOffsets. */
             interface ITopicOffsets {
@@ -42915,7 +43020,7 @@ export namespace Ydb {
                 path?: (string|null);
 
                 /** TopicOffsets partitions */
-                partitions?: (Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets[]|null);
+                partitions?: (Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.IPartitionOffsets[]|null);
             }
 
             /** Represents a TopicOffsets. */
@@ -42925,36 +43030,36 @@ export namespace Ydb {
                  * Constructs a new TopicOffsets.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets);
+                constructor(properties?: Ydb.Topic.UpdateOffsetsInTransactionRequest.ITopicOffsets);
 
                 /** TopicOffsets path. */
                 public path: string;
 
                 /** TopicOffsets partitions. */
-                public partitions: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets[];
+                public partitions: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.IPartitionOffsets[];
 
                 /**
                  * Creates a new TopicOffsets instance using the specified properties.
                  * @param [properties] Properties to set
                  * @returns TopicOffsets instance
                  */
-                public static create(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+                public static create(properties?: Ydb.Topic.UpdateOffsetsInTransactionRequest.ITopicOffsets): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets;
 
                 /**
-                 * Encodes the specified TopicOffsets message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.verify|verify} messages.
+                 * Encodes the specified TopicOffsets message. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.verify|verify} messages.
                  * @param message TopicOffsets message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: Ydb.Topic.UpdateOffsetsInTransactionRequest.ITopicOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified TopicOffsets message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.verify|verify} messages.
+                 * Encodes the specified TopicOffsets message, length delimited. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.verify|verify} messages.
                  * @param message TopicOffsets message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: Ydb.Topic.AddOffsetsToTransactionRequest.ITopicOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: Ydb.Topic.UpdateOffsetsInTransactionRequest.ITopicOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
                  * Decodes a TopicOffsets message from the specified reader or buffer.
@@ -42964,7 +43069,7 @@ export namespace Ydb {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets;
 
                 /**
                  * Decodes a TopicOffsets message from the specified reader or buffer, length delimited.
@@ -42973,7 +43078,7 @@ export namespace Ydb {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets;
 
                 /**
                  * Verifies a TopicOffsets message.
@@ -42987,7 +43092,7 @@ export namespace Ydb {
                  * @param object Plain object
                  * @returns TopicOffsets
                  */
-                public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets;
+                public static fromObject(object: { [k: string]: any }): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets;
 
                 /**
                  * Creates a plain object from a TopicOffsets message. Also converts values to other types if specified.
@@ -42995,7 +43100,7 @@ export namespace Ydb {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this TopicOffsets to JSON.
@@ -43023,7 +43128,7 @@ export namespace Ydb {
                      * Constructs a new PartitionOffsets.
                      * @param [properties] Properties to set
                      */
-                    constructor(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets);
+                    constructor(properties?: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.IPartitionOffsets);
 
                     /** PartitionOffsets partitionId. */
                     public partitionId: (number|Long);
@@ -43036,23 +43141,23 @@ export namespace Ydb {
                      * @param [properties] Properties to set
                      * @returns PartitionOffsets instance
                      */
-                    public static create(properties?: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+                    public static create(properties?: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.IPartitionOffsets): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets;
 
                     /**
-                     * Encodes the specified PartitionOffsets message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets.verify|verify} messages.
+                     * Encodes the specified PartitionOffsets message. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets.verify|verify} messages.
                      * @param message PartitionOffsets message or plain object to encode
                      * @param [writer] Writer to encode to
                      * @returns Writer
                      */
-                    public static encode(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encode(message: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.IPartitionOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
 
                     /**
-                     * Encodes the specified PartitionOffsets message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets.verify|verify} messages.
+                     * Encodes the specified PartitionOffsets message, length delimited. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets.verify|verify} messages.
                      * @param message PartitionOffsets message or plain object to encode
                      * @param [writer] Writer to encode to
                      * @returns Writer
                      */
-                    public static encodeDelimited(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.IPartitionOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.IPartitionOffsets, writer?: $protobuf.Writer): $protobuf.Writer;
 
                     /**
                      * Decodes a PartitionOffsets message from the specified reader or buffer.
@@ -43062,7 +43167,7 @@ export namespace Ydb {
                      * @throws {Error} If the payload is not a reader or valid buffer
                      * @throws {$protobuf.util.ProtocolError} If required fields are missing
                      */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets;
 
                     /**
                      * Decodes a PartitionOffsets message from the specified reader or buffer, length delimited.
@@ -43071,7 +43176,7 @@ export namespace Ydb {
                      * @throws {Error} If the payload is not a reader or valid buffer
                      * @throws {$protobuf.util.ProtocolError} If required fields are missing
                      */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets;
 
                     /**
                      * Verifies a PartitionOffsets message.
@@ -43085,7 +43190,7 @@ export namespace Ydb {
                      * @param object Plain object
                      * @returns PartitionOffsets
                      */
-                    public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets;
+                    public static fromObject(object: { [k: string]: any }): Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets;
 
                     /**
                      * Creates a plain object from a PartitionOffsets message. Also converts values to other types if specified.
@@ -43093,7 +43198,7 @@ export namespace Ydb {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: Ydb.Topic.AddOffsetsToTransactionRequest.TopicOffsets.PartitionOffsets, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public static toObject(message: Ydb.Topic.UpdateOffsetsInTransactionRequest.TopicOffsets.PartitionOffsets, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this PartitionOffsets to JSON.
@@ -43104,175 +43209,175 @@ export namespace Ydb {
             }
         }
 
-        /** Properties of an AddOffsetsToTransactionResponse. */
-        interface IAddOffsetsToTransactionResponse {
+        /** Properties of an UpdateOffsetsInTransactionResponse. */
+        interface IUpdateOffsetsInTransactionResponse {
 
-            /** AddOffsetsToTransactionResponse operation */
+            /** UpdateOffsetsInTransactionResponse operation */
             operation?: (Ydb.Operations.IOperation|null);
         }
 
-        /** Represents an AddOffsetsToTransactionResponse. */
-        class AddOffsetsToTransactionResponse implements IAddOffsetsToTransactionResponse {
+        /** Represents an UpdateOffsetsInTransactionResponse. */
+        class UpdateOffsetsInTransactionResponse implements IUpdateOffsetsInTransactionResponse {
 
             /**
-             * Constructs a new AddOffsetsToTransactionResponse.
+             * Constructs a new UpdateOffsetsInTransactionResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Ydb.Topic.IAddOffsetsToTransactionResponse);
+            constructor(properties?: Ydb.Topic.IUpdateOffsetsInTransactionResponse);
 
-            /** AddOffsetsToTransactionResponse operation. */
+            /** UpdateOffsetsInTransactionResponse operation. */
             public operation?: (Ydb.Operations.IOperation|null);
 
             /**
-             * Creates a new AddOffsetsToTransactionResponse instance using the specified properties.
+             * Creates a new UpdateOffsetsInTransactionResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns AddOffsetsToTransactionResponse instance
+             * @returns UpdateOffsetsInTransactionResponse instance
              */
-            public static create(properties?: Ydb.Topic.IAddOffsetsToTransactionResponse): Ydb.Topic.AddOffsetsToTransactionResponse;
+            public static create(properties?: Ydb.Topic.IUpdateOffsetsInTransactionResponse): Ydb.Topic.UpdateOffsetsInTransactionResponse;
 
             /**
-             * Encodes the specified AddOffsetsToTransactionResponse message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResponse.verify|verify} messages.
-             * @param message AddOffsetsToTransactionResponse message or plain object to encode
+             * Encodes the specified UpdateOffsetsInTransactionResponse message. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionResponse.verify|verify} messages.
+             * @param message UpdateOffsetsInTransactionResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Ydb.Topic.IAddOffsetsToTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: Ydb.Topic.IUpdateOffsetsInTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified AddOffsetsToTransactionResponse message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResponse.verify|verify} messages.
-             * @param message AddOffsetsToTransactionResponse message or plain object to encode
+             * Encodes the specified UpdateOffsetsInTransactionResponse message, length delimited. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionResponse.verify|verify} messages.
+             * @param message UpdateOffsetsInTransactionResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Ydb.Topic.IAddOffsetsToTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: Ydb.Topic.IUpdateOffsetsInTransactionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an AddOffsetsToTransactionResponse message from the specified reader or buffer.
+             * Decodes an UpdateOffsetsInTransactionResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AddOffsetsToTransactionResponse
+             * @returns UpdateOffsetsInTransactionResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.UpdateOffsetsInTransactionResponse;
 
             /**
-             * Decodes an AddOffsetsToTransactionResponse message from the specified reader or buffer, length delimited.
+             * Decodes an UpdateOffsetsInTransactionResponse message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AddOffsetsToTransactionResponse
+             * @returns UpdateOffsetsInTransactionResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.UpdateOffsetsInTransactionResponse;
 
             /**
-             * Verifies an AddOffsetsToTransactionResponse message.
+             * Verifies an UpdateOffsetsInTransactionResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates an AddOffsetsToTransactionResponse message from a plain object. Also converts values to their respective internal types.
+             * Creates an UpdateOffsetsInTransactionResponse message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns AddOffsetsToTransactionResponse
+             * @returns UpdateOffsetsInTransactionResponse
              */
-            public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionResponse;
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.UpdateOffsetsInTransactionResponse;
 
             /**
-             * Creates a plain object from an AddOffsetsToTransactionResponse message. Also converts values to other types if specified.
-             * @param message AddOffsetsToTransactionResponse
+             * Creates a plain object from an UpdateOffsetsInTransactionResponse message. Also converts values to other types if specified.
+             * @param message UpdateOffsetsInTransactionResponse
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: Ydb.Topic.AddOffsetsToTransactionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: Ydb.Topic.UpdateOffsetsInTransactionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this AddOffsetsToTransactionResponse to JSON.
+             * Converts this UpdateOffsetsInTransactionResponse to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
         }
 
-        /** Properties of an AddOffsetsToTransactionResult. */
-        interface IAddOffsetsToTransactionResult {
+        /** Properties of an UpdateOffsetsInTransactionResult. */
+        interface IUpdateOffsetsInTransactionResult {
         }
 
-        /** Represents an AddOffsetsToTransactionResult. */
-        class AddOffsetsToTransactionResult implements IAddOffsetsToTransactionResult {
+        /** Represents an UpdateOffsetsInTransactionResult. */
+        class UpdateOffsetsInTransactionResult implements IUpdateOffsetsInTransactionResult {
 
             /**
-             * Constructs a new AddOffsetsToTransactionResult.
+             * Constructs a new UpdateOffsetsInTransactionResult.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Ydb.Topic.IAddOffsetsToTransactionResult);
+            constructor(properties?: Ydb.Topic.IUpdateOffsetsInTransactionResult);
 
             /**
-             * Creates a new AddOffsetsToTransactionResult instance using the specified properties.
+             * Creates a new UpdateOffsetsInTransactionResult instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns AddOffsetsToTransactionResult instance
+             * @returns UpdateOffsetsInTransactionResult instance
              */
-            public static create(properties?: Ydb.Topic.IAddOffsetsToTransactionResult): Ydb.Topic.AddOffsetsToTransactionResult;
+            public static create(properties?: Ydb.Topic.IUpdateOffsetsInTransactionResult): Ydb.Topic.UpdateOffsetsInTransactionResult;
 
             /**
-             * Encodes the specified AddOffsetsToTransactionResult message. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResult.verify|verify} messages.
-             * @param message AddOffsetsToTransactionResult message or plain object to encode
+             * Encodes the specified UpdateOffsetsInTransactionResult message. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionResult.verify|verify} messages.
+             * @param message UpdateOffsetsInTransactionResult message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Ydb.Topic.IAddOffsetsToTransactionResult, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: Ydb.Topic.IUpdateOffsetsInTransactionResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified AddOffsetsToTransactionResult message, length delimited. Does not implicitly {@link Ydb.Topic.AddOffsetsToTransactionResult.verify|verify} messages.
-             * @param message AddOffsetsToTransactionResult message or plain object to encode
+             * Encodes the specified UpdateOffsetsInTransactionResult message, length delimited. Does not implicitly {@link Ydb.Topic.UpdateOffsetsInTransactionResult.verify|verify} messages.
+             * @param message UpdateOffsetsInTransactionResult message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Ydb.Topic.IAddOffsetsToTransactionResult, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: Ydb.Topic.IUpdateOffsetsInTransactionResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an AddOffsetsToTransactionResult message from the specified reader or buffer.
+             * Decodes an UpdateOffsetsInTransactionResult message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AddOffsetsToTransactionResult
+             * @returns UpdateOffsetsInTransactionResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.AddOffsetsToTransactionResult;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Ydb.Topic.UpdateOffsetsInTransactionResult;
 
             /**
-             * Decodes an AddOffsetsToTransactionResult message from the specified reader or buffer, length delimited.
+             * Decodes an UpdateOffsetsInTransactionResult message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AddOffsetsToTransactionResult
+             * @returns UpdateOffsetsInTransactionResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.AddOffsetsToTransactionResult;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Ydb.Topic.UpdateOffsetsInTransactionResult;
 
             /**
-             * Verifies an AddOffsetsToTransactionResult message.
+             * Verifies an UpdateOffsetsInTransactionResult message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates an AddOffsetsToTransactionResult message from a plain object. Also converts values to their respective internal types.
+             * Creates an UpdateOffsetsInTransactionResult message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns AddOffsetsToTransactionResult
+             * @returns UpdateOffsetsInTransactionResult
              */
-            public static fromObject(object: { [k: string]: any }): Ydb.Topic.AddOffsetsToTransactionResult;
+            public static fromObject(object: { [k: string]: any }): Ydb.Topic.UpdateOffsetsInTransactionResult;
 
             /**
-             * Creates a plain object from an AddOffsetsToTransactionResult message. Also converts values to other types if specified.
-             * @param message AddOffsetsToTransactionResult
+             * Creates a plain object from an UpdateOffsetsInTransactionResult message. Also converts values to other types if specified.
+             * @param message UpdateOffsetsInTransactionResult
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: Ydb.Topic.AddOffsetsToTransactionResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: Ydb.Topic.UpdateOffsetsInTransactionResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this AddOffsetsToTransactionResult to JSON.
+             * Converts this UpdateOffsetsInTransactionResult to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
@@ -46486,6 +46591,20 @@ export namespace Ydb {
                 public commitOffset(request: Ydb.Topic.ICommitOffsetRequest): Promise<Ydb.Topic.CommitOffsetResponse>;
 
                 /**
+                 * Calls UpdateOffsetsInTransaction.
+                 * @param request UpdateOffsetsInTransactionRequest message or plain object
+                 * @param callback Node-style callback called with the error, if any, and UpdateOffsetsInTransactionResponse
+                 */
+                public updateOffsetsInTransaction(request: Ydb.Topic.IUpdateOffsetsInTransactionRequest, callback: Ydb.Topic.V1.TopicService.UpdateOffsetsInTransactionCallback): void;
+
+                /**
+                 * Calls UpdateOffsetsInTransaction.
+                 * @param request UpdateOffsetsInTransactionRequest message or plain object
+                 * @returns Promise
+                 */
+                public updateOffsetsInTransaction(request: Ydb.Topic.IUpdateOffsetsInTransactionRequest): Promise<Ydb.Topic.UpdateOffsetsInTransactionResponse>;
+
+                /**
                  * Calls CreateTopic.
                  * @param request CreateTopicRequest message or plain object
                  * @param callback Node-style callback called with the error, if any, and CreateTopicResponse
@@ -46578,6 +46697,13 @@ export namespace Ydb {
                  * @param [response] CommitOffsetResponse
                  */
                 type CommitOffsetCallback = (error: (Error|null), response?: Ydb.Topic.CommitOffsetResponse) => void;
+
+                /**
+                 * Callback as used by {@link Ydb.Topic.V1.TopicService#updateOffsetsInTransaction}.
+                 * @param error Error, if any
+                 * @param [response] UpdateOffsetsInTransactionResponse
+                 */
+                type UpdateOffsetsInTransactionCallback = (error: (Error|null), response?: Ydb.Topic.UpdateOffsetsInTransactionResponse) => void;
 
                 /**
                  * Callback as used by {@link Ydb.Topic.V1.TopicService#createTopic}.
